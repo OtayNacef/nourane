@@ -1,0 +1,18 @@
+{% block _product_product_images_widget %}
+    <ul id="product-images-fields-list"
+        data-prototype="{{ form_widget(prototype)|e }}"
+        data-widget-tags="{{ '<li></li>'|e }}"
+        data-widget-counter="{{ value|length }}"
+    >
+        {% for key,productImageForm in form.children %}
+            {{ form_widget(productImageForm) }}
+
+        {% endfor %}
+    </ul>
+
+    <button type="button"
+            class="add-another-collection-widget btn btn-success"
+            data-list-selector="#product-images-fields-list">ajouter une Image</button>
+    <button class="btn btn-primary">{{ button_label|default('Submit') }}</button>
+
+{% endblock %}

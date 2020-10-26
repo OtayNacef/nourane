@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Donate</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ donate.id }}</td>
+            </tr>
+            <tr>
+                <th>Etat</th>
+                <td>{% if donate.etat %}Yes{% else %}No{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Information</th>
+                <td>{{ donate.information }}</td>
+            </tr>
+            <tr>
+                <th>Datecreation</th>
+                <td>{% if donate.dateCreation %}{{ donate.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ donate.montant }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('donate_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('donate_edit', { 'id': donate.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

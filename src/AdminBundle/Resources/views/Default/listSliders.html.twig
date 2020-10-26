@@ -1,0 +1,44 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+
+    <div class="card">
+        <div class="card-header">
+            <h1>Toutes les sliders</h1>
+            <a class="btn btn-primary pull-right" href="{{ path('addSlider') }}">ajouter un slider</a>
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="display table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">titre</th>
+                        <th scope="col">content</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for slider in sliders %}
+
+                        <tr>
+                            <th scope="row">{{ slider.id }}</th>
+                            <td><img class="rounded-circle m-0 avatar-sm-table" src="{{ asset('AppImg/') }}{{ slider.photo }} " alt=""></td>
+                            <td>{{ slider.title }}</td>
+                            <td>{{ slider.content }}</td>
+                            <td><a class="text-success mr-2" href="{{ path('editSlider', {'id': slider.id}) }}"><i
+                                            class="nav-icon i-Pen-2 font-weight-bold"></i></a>
+                                <a class="text-danger mr-2" href="{{ path('deleteSlider', {'id': slider.id}) }}"><i
+                                            class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

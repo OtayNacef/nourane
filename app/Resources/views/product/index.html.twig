@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <div class="inner-banner">
+        <div class="container">
+            <div class="container">
+                <h2>Gallery</h2>
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('index') }}">Acceuil</a></li>
+                    <li><a href="{{ path('product_index') }}">gallery</a></li>
+                </ol>
+                <a href="{{ path('product_index') }}" class="btn-filled-rounded">Images</a>
+                <a href="{{ path('video_index') }}" class="btn-filled-rounded">Videos</a>
+            </div>
+
+        </div>
+    </div>
+    <!--CONTENT START-->
+    <div class="content">
+        <div class="container">
+            <div class="content-cover">
+                <ul class="row kode-gallery">
+                    {% for product in products %}
+
+                        <li class="col-md-4">
+
+                            <div class="kode-gallery-item">
+                                <div class="kode-thumb">
+                                    <a href="{{ path('galley_details',{'id':product.id}) }}"><img
+                                             style="height: 172px;width: 291px"   src="{{ asset('AppImg/') }}{{ product.imageName }}" alt=""></a>
+                                </div>
+                                <div class="kode-text">
+                                    <h3>{{ product.name }}</h3>
+                                    <a href="#" class="like"><i class="fa fa-heart-o"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                    {% endfor %}
+
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+
+{% endblock %}

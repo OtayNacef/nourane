@@ -1,0 +1,43 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-header">
+            <h1>Tous les evenements</h1>
+            <a class="btn btn-primary pull-right" href="{{ path('event_new') }}">Créer un nouvel événement</a>
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="display table table-striped table-bordered" id="zero_configuration_table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Nom Evenement</th>
+                        <th scope="col">Date debut</th>
+                        <th scope="col">Date Fin</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for event in events %}
+
+                        <tr>
+                            <th scope="row">{{ event.id }}</th>
+                            <td>{{ event.nomEvenement }}</td>
+                            <td>{{ event.start|date }}</td>
+                            <td>{{ event.end|date }}</td>
+                            <td><a class="text-success mr-2" href="{{ path('event_edit', {'id': event.id}) }}"><i
+                                            class="nav-icon i-Pen-2 font-weight-bold"></i></a>
+                                <a class="text-danger mr-2" href="{{ path('event_delete', {'id': event.id}) }}"><i
+                                            class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

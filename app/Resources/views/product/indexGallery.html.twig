@@ -1,0 +1,61 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <div class="inner-banner">
+        <div class="container">
+            <div class="container">
+                <h2>Gallery</h2>
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('index') }}">Acceuil</a></li>
+                    <li><a href="{{ path('product_index') }}">gallery</a></li>
+                </ol>
+                <a href="{{ path('product_index') }}" class="btn-filled-rounded">Images</a>
+                <a href="{{ path('video_index') }}" class="btn-filled-rounded">Videos</a>
+            </div>
+
+        </div>
+    </div>
+    <!--CONTENT START-->
+    <div class="content">
+        <div class="container">
+            <div class="content-cover">
+                <div class="row">
+                    <div class="container gallery-container">
+                        <div class="row">
+                            <div class="tz-gallery">
+
+                                {% for product in products %}
+                                    <div class="col-sm-6 col-md-4">
+                                        <div class="thumbnail">
+                                            <a class="various fancybox"
+                                               href="{{ asset('AppImg/') }}{{ product.imageName }}"
+                                               data-fancybox="preview" data-width="1500" data-height="1000">
+                                                <img style="height: 211px!important;width: 360px!important;" src="{{ asset('AppImg/') }}{{ product.imageName }}"/>
+                                            </a>
+
+                                        </div>
+                                    </div>
+                                {% endfor %}
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--PAGINATION END-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        $('[data-fancybox="preview"]').fancybox({
+            thumbs: {
+                autoStart: true
+            }
+        });
+    </script>
+{% endblock %}

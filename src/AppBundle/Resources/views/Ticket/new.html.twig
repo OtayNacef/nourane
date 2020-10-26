@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+{% import hackzilla_ticket.templates.macros as macros %}
+
+{% block body %}
+    <div class="inner-banner">
+        <div class="container">
+            <h2>CONTACTEZ-NOUS</h2>
+
+        </div>
+    </div>
+    <!--CONTENT START-->
+    <div class="content">
+        <!--CONTACT SECTION START-->
+        <section>
+            <div class="container">
+                <!--HEADER SECTION START-->
+                <div style="padding-top: 15px" class="section-header">
+                    <h2>{{ 'HEADING_NEW_TICKET'|trans({}, translationDomain|default('messages')) }}</h2>
+                </div>
+                <!--HEADER SECTION END-->
+                <div class="well well-sm">
+                    {{ form_start(form, {'method': 'POST', 'action': path('hackzilla_ticket_create')}) }}
+                    <div class="form-group row">
+                        {{ form_label(form.subject, '', { 'label_attr': {'class': 'col-lg-2 col-md-2 col-sm-2 control-label'} }) }}
+                        <div class="col-lg-8 col-md-8 col-sm-8">
+                            {{ form_widget(form.subject, { 'attr': {'class': 'form-control', 'placeholder': 'LABEL_ENTER_SUBJECT' } }) }}
+                            {{ form_errors(form.subject) }}
+                        </div>
+                    </div>
+
+                    {% if form.messages|length == 0 %}
+                        {% include hackzilla_ticket.templates.prototype with {'form': form.messages.vars.prototype} %}
+                    {% else %}
+                        {% include hackzilla_ticket.templates.prototype with {'form': form.messages.__name__} %}
+                    {% endif %}
+
+                    {{ form_rest(form) }}
+
+                    <div class="form-group row">
+                        <div class="col-lg-offset-2 col-lg-10 col-md-offset-2 col-md-10 col-sm-offset-2 col-sm-10">
+                            <button style="margin-right: 10px" type="submit" class="btn-filled-rounded">{{ 'BUTTON_CREATE'|trans({}, translationDomain|default('messages')) }}</button>
+
+                            <a href="{{ path('hackzilla_ticket') }}" class="btn-filled-rounded">
+                                {{ 'BUTTON_BACK_TO_LIST'|trans({}, translationDomain|default('messages')) }}
+                            </a>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+    </div>
+
+
+
+{% endblock %}

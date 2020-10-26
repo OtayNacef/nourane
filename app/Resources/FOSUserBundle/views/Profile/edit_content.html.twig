@@ -1,0 +1,212 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <!-- jp Tittle Wrapper Start -->
+    <div class="jp_tittle_main_wrapper">
+        <div class="jp_tittle_img_overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="jp_tittle_heading_wrapper">
+                        <div class="jp_tittle_heading">
+                            <h2>Edit-Profile</h2>
+                        </div>
+                        <div class="jp_tittle_breadcrumb_main_wrapper">
+                            <div class="jp_tittle_breadcrumb_wrapper">
+                                <ul>
+                                    <li><a href="#">Home</a> <i class="fa fa-angle-right"></i></li>
+                                    <li>Edit-{{ app.user.username }}-Profile</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- jp Tittle Wrapper End -->
+    <!-- jp ad post Wrapper Start -->
+    <div class="jp_adp_main_section_wrapper">
+        <div class="container">
+            {{ form_start(form) }}
+
+            {{ form_errors(form) }}
+
+            <div class="row">
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="jp_adp_form_heading_wrapper">
+                        <h2 style="color: #8dc539">Edit Your Profile</h2>
+                    </div>
+                    <div class="jp_adp_form_wrapper">
+                        {{ form_widget(form.username) }}
+                    </div>
+
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                    <div class="jp_adp_form_heading_wrapper">
+                        <p>Fields with * are mandetory</p>
+                    </div>
+                    <div class="jp_adp_form_wrapper">
+                        {{  form_widget(form.email) }}
+
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                    <div class="jp_adp_form_wrapper">
+                        {{ form_widget(form.adresse, { 'id': 'ala', 'placeholder':'Worker Account ?' }) }}
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-6 col-md-6 col-xs-12">
+                            <div class="jp_adp_form_wrapper">
+                                {{ form_widget(form.nom, { 'id': 'type' , 'placeholder':'Worker Account ?'}) }}
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-md-6 col-xs-12">
+                            <div class="jp_adp_form_wrapper">
+                                {{ form_widget(form.prenom, { 'id': 'spe' }) }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 bottom_line_Wrapper">
+
+                    <div class="jp_adp_form_wrapper">
+                        {{  form_widget(form.telephone) }}
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-lg-6 col-md-6 col-md-6 col-xs-12">
+                            <div class="jp_adp_form_wrapper">
+                                {{ form_widget(form.current_password,{'placeholder':'your password' }) }}
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="jp_adp_choose_resume">
+                        <div class="custom-input">
+                            <span><i class="fa fa-upload"></i> &nbsp;Upload Picture</span>
+                            {{  form_widget(form.imageFile) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="jp_adp_choose_resume_bottom_btn_post">
+                        <ul>
+                            <li>
+                                <style>
+                                    #btn{
+                                        border-color:#8dc539;
+                                        background: #8dc539;
+                                        height: 50px; width: 160px;
+                                        transition-duration: 0.4s;
+                                    }
+                                    #btn:hover{
+                                        border-color: #8dc539;
+                                        background: transparent;
+                                        color: #8dc539;
+                                    }
+                                </style>
+                                <button id="btn" type="submit" class="btn btn-primary"><i class="fa fa-plus-circle"></i>&nbsp; Create My Profile</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {{ form_end(form) }}
+
+        </div>
+    </div>
+    <!-- jp ad post Wrapper End -->
+
+
+{% endblock %}
+
+{% block scripts %}
+
+    <script>
+        $('#spe').hide();
+        $("#type").change(function () {
+            var selected_option = $('#type').val();
+
+            if (selected_option === '1') {
+                document.getElementById("spe").required = true;
+                $('#spe').attr('pk','1').show();
+            }
+            if (selected_option !== '1') {
+                document.getElementById("spe").required = false;
+                $("#spe").removeAttr('pk').hide();
+            }
+        })
+    </script>
+    <script>
+
+        function initAutocomplete() {
+
+
+
+            // Create the search box and link it to the UI element.
+            var input = document.getElementById('ala');
+            var searchBox = new google.maps.places.SearchBox(input);
+
+            // Bias the SearchBox results towards current map's viewport.
+
+
+            var markers = [];
+            // Listen for the event fired when the user selects a prediction and retrieve
+            // more details for that place.
+            searchBox.addListener('places_changed', function() {
+                var places = searchBox.getPlaces();
+
+                if (places.length == 0) {
+                    return;
+                }
+
+                // Clear out the old markers.
+                markers.forEach(function(marker) {
+                    marker.setMap(null);
+                });
+                markers = [];
+
+                // For each place, get the icon, name and location.
+                var bounds = new google.maps.LatLngBounds();
+                places.forEach(function(place) {
+                    if (!place.geometry) {
+                        console.log("Returned place contains no geometry");
+                        return;
+                    }
+
+
+                    // Create a marker for each place.
+
+
+                    if (place.geometry.viewport) {
+                        // Only geocodes have viewport.
+                        bounds.union(place.geometry.viewport);
+                    } else {
+                        bounds.extend(place.geometry.location);
+                    }
+                });
+            });
+
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOogBL2cC0dSezucKzQGWxMIMmclqWNts&amp;sensor=false&libraries=places&callback=initAutocomplete"
+            async defer></script>
+
+
+{% endblock %}

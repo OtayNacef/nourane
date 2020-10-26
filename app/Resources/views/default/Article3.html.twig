@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="inner-banner">
+    <div class="container">
+        <h2>Faire un don  </h2>
+        <ol class="breadcrumb">
+            <li><a href="{{ path('index') }}">Acceuil</a></li>
+            <li><a href="{{ path('article3') }}">Faire un don </a></li>
+        </ol>
+    </div>
+</div>
+<!--CONTENT START-->
+<div class="content">
+    <div class="container">
+        <div class="content-cover">
+            <div class="row">
+                <!--PAGE CONTENT START-->
+                <div class="col-lg-8">
+                    <!--BLOG LIST START-->
+                    <div class="kode-blog-detail">
+                        <!--BLOG DETAIL TEXT START-->
+                        <div class="kode-text">
+                            <h2>Faire un don </h2>
+
+
+                            <p>
+                                Dans le but d’aider l’association Nourane pour la prévention contre les maladies cancéreuses faites un don pour permettre à ses membres de réaliser les objectifs de l’association , qui sont comme suit :
+                                <br/>-Contribuer avec les autorités du pays à rendre opérationnel et selon les standards internationaux un registre national du cancer ;
+                                <br/>- Créer un réseau de médecins relais à travers toute la république pour lancer les campagnes préventives des cancers selon un programme d’action
+                                <br/>- Organiser des rencontres entre les médecins de la capitale et les médecins des régions, qui connaissent le mieux la réalité sur le champ, pour asseoir et mettre en application un programme d’action commun ;
+                                <br/>- Offrir à des patients éloignés de la capitale, souffrants d’une maladie qui pose défi à la médecine, une stratégie thérapeutique de pointe par le biais de la transmission et la discussion de leurs dossiers médicaux entre médecins des grandes villes et les médecins des régions.
+                                <br/>- Identifier avec les organisations nationales de lutte contre le cancer et les sociétés savantes les essais thérapeutiques internationaux dans lesquels nous pouvons participer.
+
+                            </p>
+
+                            <blockquote>
+                                Nourane Pour La Prévention Du Cancer
+                            </blockquote>
+
+                            <div class="pull-right">
+                                <div>
+                                    <a class="btn-filled-rounded" href="{{ path('index') }}#don">Faire un don</a>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+                        <!--SHARE BLOG END-->
+                    </div>
+
+                </div>
+                <!--PAGE CONTENT END-->
+<div class="col-lg-4">
+    <img style="width: 500px" src="{{ asset('images/donate.png') }}">
+
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

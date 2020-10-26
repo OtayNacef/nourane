@@ -1,0 +1,44 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Team</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ team.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ team.nom }}</td>
+            </tr>
+            <tr>
+                <th>Poste</th>
+                <td>{{ team.poste }}</td>
+            </tr>
+            <tr>
+                <th>Specialite</th>
+                <td>{{ team.specialite }}</td>
+            </tr>
+            <tr>
+                <th>Image</th>
+                <td>{{ team.imageName }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('team_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('team_edit', { 'id': team.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

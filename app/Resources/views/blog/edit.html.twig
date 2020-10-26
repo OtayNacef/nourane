@@ -1,0 +1,41 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-header">
+            <h3>Modifier Actualite</h3>
+        </div>
+        <div class="card-body">
+            {{ form_start(edit_form) }}
+            <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                    <label for="nomEvenement">Nom Actualite</label>
+                    {{ form_widget(edit_form.title, {'attr': {'class': 'form-control'}}) }}
+                    <label for="nomEvenement">Content</label>
+                    {{ form_widget(edit_form.content, {'attr': {'class': 'form-control'}}) }}
+
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="nomEvenement">date creation</label>
+                    {{ form_widget(edit_form.dateCreation, {'attr': {'class': 'form-control'}}) }}
+
+                </div>
+
+                <div class="col-md-6  input-group mb-3">
+                    <div class="custom-file">
+                        <label for="nomEvenement">image upload</label>
+
+                        {{ form_widget(edit_form.imageFile, {'attr': {'class': 'custom-file-input'}}) }}
+                        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">choisir une image</label>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <button class="btn btn-primary">Modifier</button>
+                </div>
+            </div>
+            {{ form_end(edit_form) }}
+
+        </div>
+    </div>
+{% endblock %}

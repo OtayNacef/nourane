@@ -1,0 +1,108 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+        <div class="inner-banner">
+            <div class="container">
+                <h2>{{ blog.title }} </h2>
+                <ol class="breadcrumb">
+                    <li><a href="#">Acceuil</a></li>
+                    <li><a href="#">Actulaité</a></li>
+                </ol>
+            </div>
+        </div>
+        <!--CONTENT START-->
+        <div class="content">
+            <div class="container">
+                <div class="content-cover">
+                    <div class="row">
+                        <!--PAGE CONTENT START-->
+                        <div class="col-lg-9">
+                            <!--BLOG LIST START-->
+                            <div class="kode-blog-detail">
+
+                                <figure class="kode-detail-thumb"><img src="{{ asset('AppImg/') }}{{ blog.imageName }}" alt=""></figure>
+
+                                <!--BLOG DETAIL TEXT START-->
+                                <div class="kode-text">
+                                    <h2>{{ blog.title }}</h2>
+                                    <div class="blog-meta">
+                                        <ul>
+                                            <li>By:<a href="#"> {{ blog.author }}</a></li>
+                                            <li><a href="#">{{ blog.dateCreation|date }}</a></li>
+                                        </ul>
+                                    </div>
+
+                                    <p>{{ blog.content|raw }}</p>    </div>
+
+                            </div>
+                            <!--BLOG LIST START-->
+                            <div class="kode-admin-post">
+                                <figure><img width="100" height="100" src="{{ asset('AppImg/') }}{{ blog.author.imageName}}" alt=""></figure>
+                                <div class="admin-info">
+                                    <h2>Ecrit par {{ blog.author }}</h2>
+
+                                </div>
+
+                            </div>
+                            <div class="kode-comments">
+                                <h2>Recent Comments:</h2>
+                                <div id="disqus_thread"></div>
+                                <script>
+
+                                    (function() {
+                                        var d = document, s = d.createElement('script');
+                                        s.src = 'https://association-nourane.disqus.com/embed.js';
+                                        s.setAttribute('data-timestamp', +new Date());
+                                        (d.head || d.body).appendChild(s);
+                                    })();
+                                </script>
+                                <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+                            </div>
+
+                        </div>
+                        <!--PAGE CONTENT END-->
+                        <div class="col-md-3 sidebar">
+                            <div class="widget widget-blog">
+                                <div class="widget-header">
+                                    <h2>Actualites recentes</h2>
+                                </div>
+                                <ul>
+                                    {% for bloglatest in latest %}
+                                    <li>
+                                        <div class="kode-thumb">
+                                            <a href="{{ path('DetailsBlog' , {blog : bloglatest.id}) }}"><img width="70" height="70" src="{{ asset('AppImg/') }}{{ bloglatest.imageName }}" alt="" ></a>
+                                        </div>
+                                        <div class="kode-text">
+                                            <h5><a href="#">{{ bloglatest.title }}</a></h5>
+                                            <p>{{ bloglatest.dateCreation|date }} </p>
+                                        </div>
+                                    </li>
+                                   {% endfor %}
+                                    <!--BLOG LIST END-->
+                                </ul>
+                            </div>
+
+
+                            <div class="widget widget-social">
+                                <div class="widget-header">
+                                    <h2>
+                                        Suivez nous</h2>
+                                </div>
+                                <ul>
+                                    <li class="fb"><a href="#" data-toggle="tooltip" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                    <li class="twitter"><a href="#" data-toggle="tooltip" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+                                    <li class="youtube"><a href="#" data-toggle="tooltip" title="YouTube"><i class="fa fa-youtube-play"></i></a></li>
+                                    <li class="dribbble"><a href="#" data-toggle="tooltip" title="Dribbble"><i class="fa fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+
+                        </div>
+                        <!--RIGHT SIDE BAR END-->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

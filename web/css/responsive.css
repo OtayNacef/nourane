@@ -1,0 +1,436 @@
+@media (max-width: 1200px) {
+	.kode-wrap-boxed{width:100%;}
+	.navigation ul li a{font-size: 12px; padding: 20px 10px}
+	.header-2 .logo {width: 105%; text-align: center;}
+	.header-2 .logo img{position: static;}
+	.header-2 .logo:after{
+		display: block;
+	}
+	.wrapper{
+		overflow: hidden;
+	}
+	.header-2 .nav-content{
+		width: 100%;
+		float: left;
+	}
+	.header-2 .nav-content .kode-donate-now{
+		float: right;
+
+	}
+	.header-2 .nav-content{
+		margin: 8px 0px;
+	}
+	.header-2 .navigation{
+		margin: 4px 0px;
+
+	}
+}
+/*============	Media 768Px Start ============ */ 
+@media (min-width: 768px) and (max-width: 990px) {
+	/* Header */
+	.kode-wrap-boxed{width:100%;}
+	.kode-headbar .col-md-3 { width: 20%; float: left; }
+	.kode-headbar .col-md-9 { width: 80%; float: left; }
+	.logo { width: 100%; }
+	.navbar-nav > li > a { padding: 33px 4px 31px; font-size: 12px; }
+	.kode-donate-btn { padding: 6px 16px; font-size: 12px; margin: 27px 0 0 5px; }
+	.kode-search { display: none; }
+	.header-style-3 .logo{ text-align: center;}
+	/* MainBanner */
+	.kode-caption { bottom: 60px; }
+	.kode-caption h3 { font-size: 20px; }
+	.kode-caption h1 { font-size: 44px; }
+	.kode-caption span { font-size: 30px; margin-bottom: 25px; }
+
+	/* MainGrid */
+	.gallery-info h4 { font-size: 18px; }
+
+	/* Testimonial */
+	.kode-testimonial figure { width: 100%; }
+	.kode-testimonial figure ~ .testimonial-info,.kode-testimonial .testimonial-info { float: left; width: 100%; padding: 15px; }
+
+	/* Content */
+	.kode-subheader.subheader-height { height: auto; padding: 40px 0 0; }
+
+	/* Footer */
+	#footer-widget .col-md-3.widget.widget-text { width: 100%; }
+	#footer-widget .widget-text:before { right: 0px; }
+	.kode-newslatter { margin-bottom: 30px; }
+	.bottom-footer thbg-color { text-align: center; }
+	.bottom-footer thbg-color [class*="col-md-"] { display: inline-block; }
+	.main-banner .bxslider .caption h2{
+		font-size: 40px;
+	}
+	.main-banner .bxslider .caption h3{
+		font-size: 30px;
+	}
+	.main-banner .bxslider .caption{
+		top: 40%
+	}
+	.header-2 .navigation ul li a{
+		padding:10px 9px 
+	}
+	.kf-services{
+		margin: 0px 0px 30px 0px;
+	}
+	.main-banner-2 .bxslider .caption-2{
+		margin-left: -356px;
+	}
+	.progress-section .row div:first-child .count-up{
+		border-left: 1px solid rgba(255, 255, 255, 0.5);
+		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	.count-up{
+		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+	}
+	.kode-event-list-2 .kode-text h2{
+		font-size: 18px;
+	}
+	.video-title{
+		padding: 70px 0px;
+	}
+	section .kode-team-member{
+		margin-bottom: 30px;
+	}
+	footer .widget{
+		margin-bottom: 30px;
+	}
+	.kode-search-2 input[type="text"]{
+		font-size: 30px;
+	}
+	.main-banner-2 .bxslider .caption-2{
+		top: 16%;
+	}
+	.main-banner-2 .bxslider .caption-2 h2{
+		font-size: 50px;
+	}
+	section .kode-cause-list{
+		margin-bottom:30px;
+	}
+	.kode-blog-list .kode-text h2{
+		font-size:24px;
+	}
+	.inner-banner{
+		padding:180px 0 20px;
+	}
+	.kode-cause-list.kode-list-view .kode-cause-content{
+		float:left;
+		width:100%;
+		padding:0px;
+	}
+	.kode-cause-list.kode-list-view .kode-thumb{
+		float:left;
+		width:100%;
+	}
+	.is-countdown{
+		width:100%;
+	}
+	.countdown-amount{
+		font-size:70px;
+		line-height:60px;
+	}
+	.kode-contact-icon{
+		margin:0px 0px 30px 0px;
+	}
+	.kode-map #map_list{
+		height:400px;
+	}
+}
+
+/*============ Media 420Px Start ============ */
+@media (max-width: 767px) {
+	.kode-wrap-boxed{width:100%;}
+	/* Header */
+	#kode-responsive-navigation{
+		display: block;
+		float: right;
+		margin: 13px 0px
+	}
+	.navigation{
+		display: none;
+	}
+	/* Navigation */
+	.navbar-nav > li > a { padding: 12px 18px; }
+	.navbar-toggle { background-color: #fff; margin-top: 25px; }
+	.navbar-collapse { z-index: 99; position: absolute; right: 0px; top: 100%; width: 320px; background-color: #fcfcfc; }
+	.navbar-nav .children { background-color: #666; float: left; width: 100%; margin: 0px; position: static; visibility: visible; opacity: 1; -webkit-transform: none; -moz-transform: none; -ms-transform: none; -o-transform: none; transform: none; }
+	.navbar-nav { margin: 0px; }
+	.navbar-nav .children li a { width: 100%; }
+	.nav > li { float: left; width: 100%; }
+	.navbar-nav { text-align: left; }
+	.kode-header-absolute { position: static; } .kode-headbar { margin-top: 0px; } .kode-header-absolute ~ #mainbanner { padding: 0px; }
+	.kode-topbar { height: auto; }
+	.kode-barinfo,.kode-topbar:before,#footer-widget .widget-text:before { display: none; }
+	.main-navbaar .col-md-3 { float: right; width: 50%; }
+	.kode-header-two .navbar-toggle { margin-top: 8px; }
+	.kode-header-two .navbar-collapse { background-color: #333; right: auto; left: 0px; }
+
+	/* MainBanner */
+	.kode-caption { bottom: 40px; }
+	.kode-caption h3 { display: none; }
+	.kode-caption h1 { font-size: 44px; }
+	.kode-caption span { font-size: 30px; margin-bottom: 25px; }
+
+	/* MainGrid */
+	.kode-content .col-md-4 { float: left; width: 100%; }
+	.kode-content .col-md-3 { float: left;  width: 100%; }
+	.gallery-info h4 { font-size: 18px; }
+	
+	.kode-newslatter form input[type="submit"]{position:relative;left:0px;right:0px;margin:0 auto;display:block;float:none;text-align:center;}
+	.accordian-fram .ac-thumb{width:100%;}
+	.accordian-fram .ac-thumb ~ .ac-info{float:left;padding:0px;}
+	.kd-accordion .accordion span{padding:40px 0 0;}
+	.widget-section{padding:0px;}
+	#footer-widget .col-md-3, #footer-widget .col-md-4{float:left;padding-top:30px;padding-bottom:0px;}
+	#footer-widget .kode-newslatter{margin-top:30px;float:left;}
+	.kode-team-network,
+	.kode-email{float:none;display:block;text-align:center;}
+	.kode-team-network li{margin-left:0px;margin-right:15px;float:none;display:inline-block;margin-top:15px;}
+	.kode-headbar{border:none;}
+	.kode-large-blog ul li .kode-blog-info, .kode-editor .left-spacer{float:left;padding:0px;}
+	.kode-postoption li{padding:10px 0px;}
+	.kode-blog-list.kode-grid-blog .kode-blog-info{margin-bottom:0px;}
+	.kode-blog-info{margin-bottom:30px;}
+	.kode-editor p{clear:both;}
+	.kode-eventcountdown .countdown{margin:0px;}
+	#koderespond form p{padding:15px 0px;}
+	#koderespond form p i{display:none;}
+	.donation-nav ul li{display:inline-block;float:none;}
+	.donation-nav ul li a{display:inline-block;float:none;}
+	.kode-main-action span{width:100%;float:none;display:block;text-align:center;}
+	.kode-actionbtn{float:none;}
+	.kode-actionbtn a{float:none;display:block;text-align:center;margin:0px 0px 10px 0px;}
+	/* Testimonial */
+	.kode-testimonial figure { width: 100%; }
+	.kode-testimonial figure ~ .testimonial-info,.kode-testimonial .testimonial-info { float: left; width: 100%; padding: 15px; }
+
+	/*  Content */
+	.countdown .item { width: 100%; }
+	.countdown .item:before,.kode-header-two .kode-team-network { display: none; }
+	.kode-parallex-info-two span { font-size: 60px; }
+	.kode-parallex-info-two h2 { font-size: 40px; }
+	.kode-subheader.subheader-height { height: auto; padding: 40px 0px; }
+	.kode-subheader .col-md-6 { float: left; width: 50%; }
+	.kode-attachment ul li,.kode-couses-options li { width: 50%; }
+	#kodecomments .children > li { padding-left: 0px; }
+	.kode-admin-post figure ~ .admin-info,#kodecomments ul li figure ~ .text { float: left; width: 100%; padding: 0px; }
+	.kode-couses-options li { padding-bottom: 25px; }
+	.event-cell.short-info,.event-cell { float: left; width: 100%; }
+	.kode-innsec ul li { width: 50%; }
+
+	/* Footer */
+	#footer-widget .col-md-3.widget.widget-text { width: 100%; }
+	.kode-newslatter { margin-bottom: 30px; }
+	.bottom-footer thbg-color { text-align: center; }
+	.bottom-footer thbg-color [class*="col-md-"] { display: inline-block; }
+	.logo{width: 100%; text-align: center;}
+	.logo:before{display: none;}
+	.header-2 .logo::before{ display: block;}
+	.main-banner .bxslider .caption h2{
+		font-size: 40px;
+	}
+	.main-banner .bxslider .caption h3{
+		font-size: 30px;
+	}
+	.main-banner .bxslider .caption{
+		top: 40%
+	}
+	.header-style-3{
+		position: static;
+		background-color: #000;
+	}
+	.header-2 .nav-content .kode-donate-now{
+		float: left;
+	}
+	.header-2  #kode-responsive-navigation{
+		margin: 3px 0px;
+
+	}
+	.main-banner-2 .bxslider .caption-2{
+		margin-left: -340px;
+	}
+	.main-banner-2 .bxslider .caption-2 h2{
+		font-size: 40px;
+	}
+	.kode-search-2 input[type="text"]{
+		font-size: 30px;
+	}
+	.kf-services{
+		margin-bottom: 30px;
+	}
+	.causes-section .kode-cause h2{
+		margin: 20px 0px;
+	}
+	section .kode-cause-list{
+		margin-bottom: 30px;
+	}
+	.progress-section h1{
+		font-size: 40px;
+	}
+	.progress-section .row div:first-child .count-up{
+		border-bottom: 1px solid rgba(255, 255, 255, 0.5)
+
+	}
+	.count-up{
+		border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+		border-left: none;
+	}
+	section .kode-team-member{
+		margin-bottom: 30px;
+	}
+	.main-banner-2 .bxslider .caption-2 h2{
+		font-size: 30px;
+	}
+	.main-banner-2 .bxslider .caption-2{
+		top: 15%;
+		text-align: center;
+		margin: 0px;
+		left: 0px;
+		width: 100%;
+	}
+	.kode-search-2{
+		margin: 30px 0px 0px 0px;
+
+	}
+	.kode-search-2 input[type="text"]{
+		height: 70px;
+		font-size: 20px;
+	}
+	.inner-banner{
+		padding:180px 0 20px;
+	}
+	.inner-banner h2{
+		font-size:30px;
+	}
+	.kode-cause-list.kode-list-view .kode-cause-content{
+		float:left;
+		width:100%;
+		padding:0px;
+	}
+	.kode-cause-list.kode-list-view .kode-thumb{
+		float:left;
+		width:100%;
+	}
+	.is-countdown{
+		width:100%;
+	}
+	.countdown-amount{
+		font-size:50px;
+		line-height:30px;
+	}
+	.countdown-period{
+		font-size:14px;
+	}
+	.kode-error .input-container, .kode-under-construction .input-container{
+		width:90%;
+	}
+	.kode-under-construction h2{
+		font-size:40px;
+	}
+	.buy-template h2{
+		font-size:24px;
+	}
+	.buy-template h4{
+		font-size:14px;
+	}
+	.kode-error h2{
+		font-size:36px;
+	}
+	.kode-error h1.error{
+		font-size:200px;
+		line-height:200px;
+	}
+	.kode-contact-icon{
+		margin:0px 0px 30px 0px;
+	}
+	.kode-map #map_list{
+		height:300px;
+	}
+	.kode-cause-list.kode-list-view .kode-text{
+		width:100%;
+	}
+	.kode-cause-list.kode-list-view .kode-fund-raised{
+		width:100%;
+	}
+	
+	.kode-testimonials-7 .kode-text p{
+		font-size: 18px !important;
+	}
+}
+
+/*============ Media 300Px Star ============ */
+@media (max-width: 480px) {
+	.inner-banner{padding:165px 0 20px;}
+	.nav-content{float:none;}
+	/* Header */
+	.kode-wrap-boxed{width:100%;}
+	.kode-headbar { text-align: center; }
+	.logo,.kode-rightsection { display: inline-block; float: none; }
+	.navbar-collapse { width: 220px; right: auto; left: 0px; }
+	.main-navbaar .col-md-3 { width: 70%; }
+	.kode-attachment ul li,#koderespond form p,.kode-couses-options li { width: 100%; }
+
+	/* Main Banner */
+	.kode-caption { display: none; }
+	.main-banner .bxslider .caption h2{
+		font-size: 30px;
+	}
+	.main-banner .bxslider .caption h3{
+		font-size: 20px;
+	}
+	.main-banner .bxslider .caption{
+		top: 30%
+	}
+	.banner-meta{
+		display: none;
+	}
+	.main-banner-2 .bxslider .caption-2 h2{
+		font-size: 30px;
+	}
+	.main-banner-2 .bxslider .caption-2{
+		top: 15%;
+		text-align: center;
+		margin: 0px;
+		left: 0px;
+		width: 100%;
+	}
+	.kode-search-2{
+		margin: 30px 0px 0px 0px;
+
+	}
+	.kode-search-2 input[type="text"]{
+		height: 70px;
+		font-size: 20px;
+	}
+	.kode-cause-list.kode-list-view .kode-text{
+		width:100%;
+	}
+	.kode-cause-list.kode-list-view .kode-fund-raised{
+		width:100%;
+	}
+.main-banner .bxslider .caption a.donate{
+	display: none;
+}
+.kode-testimonials-7 .kode-thumb{
+	float: left;
+	width: 100% !important;
+	margin-bottom: 20px
+}
+.kode-testimonials-7 .kode-thumb img{
+	width: 100%;
+}
+.kode-testimonials-7 .kode-text{
+	padding: 0px !important;
+	float: left;
+	width: 100%;
+}
+.footer-nav ul li{
+	padding: 0px 10px;
+}
+}
+
+/*============	Media 940Px Start ============ */
+@media screen and (min-width: 991px) and (max-width: 1199px) {
+	.navbar-nav > li > a { font-size: 13px; padding: 35px 6px 31px; }
+	
+}

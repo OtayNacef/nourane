@@ -1,0 +1,88 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="inner-banner">
+    <div class="container">
+        <h2>Dépistage  </h2>
+        <ol class="breadcrumb">
+            <li><a href="{{ path('index') }}">Acceuil</a></li>
+            <li><a href="{{ path('article2') }}">Dépistage </a></li>
+        </ol>
+    </div>
+</div>
+<!--CONTENT START-->
+<div class="content">
+    <div class="container">
+        <div class="content-cover">
+            <div class="row">
+                <!--PAGE CONTENT START-->
+                <div class="col-lg-8">
+                    <!--BLOG LIST START-->
+                    <div class="kode-blog-detail">
+                        <!--BLOG DETAIL TEXT START-->
+                        <div class="kode-text">
+                            <h2>Dépistage </h2>
+
+
+                            <p>
+                                Le dépistage est un test qui permet de sélectionner dans la population générale les personnes porteuses d’une affection grâce à une utilisation (a priori), systématique et non pas en fonction de symptômes (a posteriori). C’est une action de santé publique. Elle permet donc de classer un grand nombre de personnes apparemment en bonne santé en deux catégories : ayant probablement la maladie ; et n’ayant probablement pas la maladie ; ceci dans le but de réduire la morbidité et/ou la mortalité de cette maladie dans la population soumise au dépistage.
+                                Il existe trois formes différentes de dépistage :
+
+                            </p>
+
+                            <li style="padding-left: 10px">le dépistage systématique s’applique à l’ensemble d’une classe d’âge, de manière la plus </li>exhaustive possible. C’est l’exemple du dépistage de la phénylcétonurie chez le nouveau-né ;
+                            <li style="padding-left: 10px">le dépistage organisé (ou de masse) s’applique à une classe d’âge, sur invitation. </li>Il est mis en place selon un cahier des charges et fait l’objet d’un contrôle qualité. Il s’applique à la population sans facteur de risque particulier. En France, sont mis en place les dépistages organisés du cancer du sein et du côlon/rectum. Le dépistage organisé du cancer du col de l’utérus par frottis est l’objet du prochain plan cancer et a déjà été mis en place dans certains départements pilotes ;
+                            <li style="padding-left: 10px">le dépistage opportuniste (ou individuel) est une démarche individuelle et non collective. </li>À l’occasion d’un contact avec un professionnel de santé, une personne sollicite ou se voit proposer un dépistage. Il n’y a pas de cahier des charges, ni de contrôle de qualité. Il existe en France des démarches de dépistage opportuniste pour les cancers du sein et de la prostate.
+
+                            <blockquote>
+                                Critères nécessaires pour la mise en œuvre d’un dépistage
+                            </blockquote>
+                            <p>
+                                Les 10 critères définis en 1986 par l’Organisation Mondiale de la Santé (OMS), auxquels doit répondre une pathologie pour justifier la mise en œuvre d’un dépistage, sont les suivants :
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li><b>1 :</b> Le cancer pose un problème de santé publique (fréquence, gravité).</li>
+                                        <li><b>2 :</b> L’histoire naturelle du cancer est connue. Il est précédé d’une phase préclinique longue permettant de répéter les examens à une fréquence acceptable.</li>
+                                        <li><b>3 :</b> Le cancer peut être décelé à un stade précoce.</li>
+                                        <li><b>4 :</b> Le traitement à un stade plus précoce apporte plus d’avantages que le traitement à un stade plus tardif.</li>
+                                        <li><b>5 :</b> La sensibilité et la spécificité des examens ont été étudiées pour le dépistage et sont satisfaisantes.</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul>
+                                        <li><b>6 :</b> Le test de dépistage est bien accepté par les patientes.</li>
+                                        <li><b>7 :</b> Le diagnostic et le traitement des anomalies détectées sont faciles à mettre en œuvre.</li>
+                                        <li><b>8 :</b> La périodicité des examens est adaptée à l’histoire naturelle de la maladie ; elle est connue.</li>
+                                        <li><b>9 :</b> Les avantages du dépistage sont supérieurs aux inconvénients.</li>
+                                        <li><b>10 :</b> Le coût du dépistage n’est pas trop élevé.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <!--BLOG DETAIL TEXT END-->
+                        <!--SHARE BLOG START-->
+                        <div class="kode-blog-option">
+                            <div class="kode-tags">
+                                <i class="fa fa-tags"></i>
+                                <a target="_blank" href="http://www.cngof.net/E-book/GO-2016/24-ch17-157-168-9782294715518-cancer.html#:~:text=La%20pr%C3%A9vention%20primaire%20%3A%20toute%20action,homme%20et%20chez%20la%20femme">Source:
+                                </a>
+                                http://www.cngof.net/E-book/GO-2016/24-ch17-157-168-9782294715518-cancer.html#:~:text =La%20pr%C3%A9vention%20primaire%20%3A%20toute%20action,homme%20et%20chez%20la%20femme
+
+                            </div>
+                        </div>
+                        <!--SHARE BLOG END-->
+                    </div>
+
+                </div>
+                <!--PAGE CONTENT END-->
+<div class="col-lg-4">
+    <img style="width: 500px" src="{{ asset('images/depistage.png') }}">
+
+</div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

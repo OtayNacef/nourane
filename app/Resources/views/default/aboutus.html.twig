@@ -1,0 +1,196 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div style="opacity: 0.7" class="inner-banner">
+        <div class="container">
+            <h2>A propos</h2>
+            <ol class="breadcrumb">
+                <li><a href="{{ path('index') }}">Acceuil</a></li>
+                <li><a href="{{ path('product_index') }}">A propos</a></li>
+            </ol>
+        </div>
+    </div>
+    <!--CONTENT START-->
+    <div class="content">
+        <!--SERVICES SECTION START-->
+        <section class="thumb-with-text">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="kode-taxt">
+                            <h2>Association Nourane pour la prévention des maladies cancéreuses</h2>
+                            <p>
+                                L’association NOURANE de prévention des maladies cancéreuse est une association à but non lucratif qui a obtenu son visa au mois de mars 2016.(Jort numéro 39 du 31 mars 2016).
+                                Elle rassemble 13 membres fondateurs , personnes de bonne volonté, motivées par un même objectif: faire reculer le cancer en Tunisie.
+                                Les membres de Nourane viennent d’horizons différents et complémentaires : médecins de différentes spécialités, pharmaciens, responsables du secteur public et personnalités connues dans les domaines des médias et de la culture.
+                            </p>
+                            <p>
+                                <b>Membres fondateurs</b>
+                            </p>
+                            <ul>
+                                <li>Président : Dr Ghazi Jerbi (chirurgien oncologue)</li>
+                                <li>Vice Président : Mr Kamel Idir (docteur en pharmacie, expert de l’OMS)</li>
+                                <li>Secrétaire général : Dr Kais Nouira (Imagerie médicale)</li>
+                                <li>Secrétaire générale adjointe : Dr Farah Messaï (biologiste)</li>
+                                <li>Trésorier : Dr Hatem Frikha (radiothérapeute)</li>
+                                <li>Trésorier adjoint : Mr Ridha Sarraj (docteur en pharmacie)</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="kode-thumb">
+                            <img src={{ asset('images/aboutus.jpg') }} alt="">
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!--TEAM SECTION END-->
+        <section class="news-subscription">
+            <div class="container">
+                <!--HEADER SECTION START-->
+                <div class="heading heading-4">
+                    <h2 style="color:#fff">Pour mieux prevenir le cancer</h2>
+                </div>
+                <!--HEADER SECTION END-->
+                <ul class="circle-wrap">
+                    <li><div class="circle-progress" data-percent="75"></div><span class="title-skill">Sport</span></li>
+                    <li><div class="circle-progress" data-percent="80"></div><span class="title-skill">Hygienne de vie</span></li>
+                    <li><div class="circle-progress" data-percent="0"></div><span class="title-skill">Tabac</span></li>
+                    <li><div class="circle-progress" data-percent="99"></div><span class="title-skill">Régime alimentaire équilibré</span></li>
+                </ul>
+
+            </div>
+        </section>
+        <!--EVENTS SECTION START-->
+        <section class="kode-about-us-accor">
+            <div class="container">
+                <!--HEADER SECTION START-->
+                <div class="heading heading-4">
+                    <p style="color:#333">Nourane pour la prévention du Cancer.</p>
+                    <h2 style="color:#333">WHAT WE ARE BEST</h2>
+                </div>
+                <!--HEADER SECTION END-->
+                <!--SECTION HEADE END-->
+                <div class="row">
+                    <div class="col-md-6 progress-chart-awar">
+                        <div class="kd-tab kd-vertical-tab">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#homeone" aria-controls="homeone" role="tab" data-toggle="tab">Lutter contre le Cancer</a></li>
+                                <li role="presentation"><a href="#profileone" aria-controls="profileone" role="tab" data-toggle="tab">Octobre Rose</a></li>
+                                <li role="presentation"><a href="#messagesone" aria-controls="messagesone" role="tab" data-toggle="tab">Courir Contre le Cancer</a></li>
+                            </ul>
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="homeone">
+                                    <div class="kd-dropcap">
+                                        <p>
+                                            La prévention: la stratégie la plus efficace pour lutter contre le cancer
+                                            A l’heure actuelle, tous les cancers ne peuvent pas être évités. Néanmoins, selon l’OMS, l’Organisme Mondial de la Santé, au moins un tiers de l’ensemble des cas de cancer sont évitables. Pour y parvenir, la prévention est indispensable et constitue la stratégie la plus efficace pour lutter contre le cancer sur le long terme
+
+                                        </p>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="profileone">
+                                    <div class="kd-dropcap">
+                                        <p>
+                                            Octobre Rose est le mois consacré à la lutte contre le cancer du sein. Du 1er au 31 octobre, professionnels de santé, ONG et associations sont rassemblés à travers le monde autour de l'information sur le dépistage du cancer du sein
+                                        </p>
+                                    </div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="messagesone">
+                                    <div class="kd-dropcap">
+                                        <p>
+                                            Les marathons organisés sous la tutelle "Courir contre le cancer" font partie d'un mouvement international de lutte et de prévention et présentent un geste de solidarité pour la lutte contre le cancer et pour la promotion de la pratique du Sport comme premier geste préventif
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h5><i class="fa fa-female"></i> Dépistage du Cancer du Sein</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+                                <span>80%</span>
+                            </div>
+                        </div>
+                        <h5><i class="fa fa-circle-thin"></i> Mammographe disponible sur le territoire Tunisien</h5>
+                        <div class="progress">
+                            <div  class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+                                <span>20%</span>
+                            </div>
+                        </div>
+                        <h5><i class="fa fa-bullhorn"></i> Dépistage d’autre Type de Cancer</h5>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                                <span>40%</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="kd-accordion">
+                            <div class="accordion" id="#section2"><i class="fa fa-child"></i> Qu’est ce que c’est que le cancer ? <span class="fa fa-plus"></span></div>
+                            <div class="accordion-content">
+                                <p>
+                                    Le cancer est une maladie qui peut affecter n’importe quel organe du corps humain. Il résulte de la déviation du fonctionnement cellulaire normal vers un fonctionnement anarchique. Chacun d’entre nous fabrique plusieurs cellules cancéreuses quotidiennement. Le système immunitaire est là pour les détruire. Un jour, et de manière souvent inexpliquée, ce système est défectueux et laisse passer entre ses maillons une cellule anormale qui va se dédoubler et qui va donner lieu, avec le temps, à une tumeur, elle-même pouvant donner lieu à des atteintes d’autres organes, communément appelées métastases.
+                                </p>
+                            </div>
+
+                            <div class="accordion"><i class="fa fa-hourglass-3"></i> Les Différents Type de Cancer
+                                <span class="fa fa-plus"></span></div>
+                            <div class="accordion-content">
+                                <p>
+                                    Le cancer touche les deux sexes et peut également toucher les enfants. Le cancer le plus fréquent chez l’homme tunisien est le cancer du poumon, il est le plus souvent secondaire au tabagisme, en deuxième position arrive le cancer de la vessie et le troisième cancer le plus fréquent est celui de la prostate. Chez la femme, le cancer du sein est de loin le plus répandu, à peu près un tiers de l’ensemble des cancers, le second est celui de la peau et le troisième, celui du colon.
+                                    cancer et prévention
+                                    Malgré toutes les campagnes de sensibilisation, nous continuons à avoir des cancers à un stade avancé en Tunisie, or vous savez tous que plus tôt le cancer est détecté, meilleur est le diagnostic et moins lourd est le traitement.
+                                    Le cancer touche les deux sexes et peut également toucher les enfants. Le cancer le plus fréquent chez l’homme tunisien est le cancer du poumon, il est le plus souvent secondaire au tabagisme, en deuxième position arrive le cancer de la vessie et le troisième cancer le plus fréquent est celui de la prostate. Chez la femme, le cancer du sein est de loin le plus répandu, à peu près un tiers de l’ensemble des cancers, le second est celui de la peau et le troisième, celui du colon.
+                                </p>
+                            </div>
+
+                            <div class="accordion"><i class="fa fa-hand-peace-o"></i> Facteurs favorisants <span class="fa fa-plus"></span></div>
+                            <div class="accordion-content">
+                                <p>
+                                    La cause de la plupart des cancers reste inconnue sauf pour certains cancers comme celui du col de l’utérus qui est secondaire à une infection virale causée par le Papilloma virus. Pour la plupart des autres cancers on cite, le plus souvent, parmi les facteurs favorisants, pour le cancer du poumon, les cancers ORL et celui de la vessie, le tabagisme excessif. Pour les cancers colorectaux on incrimine un régime riche en graisses animales et pour les cancers de la peau, une longue exposition au soleil. Certains cancers sont connus pour être secondaires à une transmission génétique comme c’est le cas pour les cancers héréditaires du sein, du côlon, de l’ovaire et de la thyroïde.
+                                </p>
+                            </div>
+                            <div class="accordion"><i class="fa fa-hourglass-3"></i> Prévention et Dépistage <span class="fa fa-plus"></span></div>
+                            <div class="accordion-content">
+                                <p>
+                                    Prévention et dépistage
+                                    Réduire le nombre de cancers et la mortalité qui en découle, nous incite à parler de la prévention. On pourrait ainsi actuellement identifier une prédisposition génétique familiale par la réalisation de tests chez les ascendants et les collatéraux de patients ayant une mutation génétique. Stigmatiser le tabac, appliquer la loi anti¬¬-tabac dans les espaces publics et encourager les fumeurs invétérés à arrêter réduiraient considérablement le nombre de cancers, notamment chez les hommes. La réalisation de frottis du col utérin ainsi que le dépistage par mammographie à partir de 40 ans permettraient de découvrir des états précancéreux ou cancéreux débutants avec pour corollaire une réduction notable de la mortalité par ces cancers.
+                                    Hygienne de vie
+                                    Lutter contre l’obésité et encourager la pratique régulière d’une activité physique sont des facteurs démontrés d’une réduction des cas de cancer et d’une réduction pour les patients du risque de récidive.
+
+
+                                    Prévention secondaire: Le dépistage
+                                    Pour guérir du cancer, le rôle du dépistage est primordial. Car détecter un début de cancer ou un cancer avant qu'il se manifeste symptomatiquement conduit à sa guérison dans presque 100% des cas.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--EVENTS SECTION END-->
+        <!--TEAM SECTION START-->
+        <section class="client-section">
+            <div class="container">
+                <div id="owl-demo" class="owl-carousel owl-theme">
+                    {% for par in partner %}
+
+                    <div class="item">
+                        <img height="80px" src="{{ asset('AppImg/') }}{{ par.photo}}" alt="">
+                    </div>
+                    {% endfor %}
+
+                </div>
+            </div>
+        </section>
+
+
+
+    </div>
+
+{% endblock %}

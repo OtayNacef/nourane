@@ -1,0 +1,303 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <style>
+        .video {
+            position: relative;
+        }
+
+        .video a {
+            position: absolute;
+            display: block;
+            background: url();
+            height: 40px;
+            width: 40px;
+            top: 20px;
+            left: 20px;
+        }
+
+        .video-play-button:before {
+            content: "";
+            position: absolute;
+            z-index: 0;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            display: block;
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border-radius: 50%;
+            -webkit-animation: pulse-border 1500ms ease-out infinite;
+            animation: pulse-border 1500ms ease-out infinite;
+        }
+
+        .video-play-button:after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 50%;
+            top: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            display: block;
+            width: 80px;
+            height: 80px;
+            background: #e5007e;
+            border-radius: 50%;
+            -webkit-transition: all 200ms;
+            transition: all 200ms;
+        }
+
+        @media(max-width: 660px) {
+            .video-play-button {
+                margin-top: 150px!important;
+                position: absolute;
+                z-index: 10;
+                left: 50%;
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+                box-sizing: content-box;
+                display: block;
+                width: 32px;
+                height: 44px;
+                /* background: #fa183d; */
+                border-radius: 50%;
+                padding: 18px 20px 18px 28px;
+            }
+
+        }
+
+        @media(min-width: 992px) {
+
+            .video-play-button {
+                position: absolute;
+                z-index: 10;
+                left: 50%;
+                top: 50%;
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+                box-sizing: content-box;
+                display: block;
+                width: 32px;
+                height: 44px;
+                /* background: #fa183d; */
+                border-radius: 50%;
+                padding: 18px 20px 18px 28px;
+            }
+
+        }
+
+        @media(max-width: 992px) {
+
+            .video-play-button {
+                margin-top: 150px!important;
+                position: absolute;
+                z-index: 10;
+                left: 50%;
+                -webkit-transform: translateX(-50%) translateY(-50%);
+                transform: translateX(-50%) translateY(-50%);
+                box-sizing: content-box;
+                display: block;
+                width: 32px;
+                height: 44px;
+                /* background: #fa183d; */
+                border-radius: 50%;
+                padding: 18px 20px 18px 28px;
+            }
+
+        }
+
+        .video-play-button:hover:after {
+            background-color: #199ad5;
+        }
+
+        .video-play-button img {
+            position: relative;
+            z-index: 3;
+            max-width: 100%;
+            width: auto;
+            height: auto;
+        }
+
+        .video-play-button span {
+            display: block;
+            position: relative;
+            z-index: 3;
+            width: 0;
+            height: 0;
+            border-left: 32px solid #fff;
+            border-top: 22px solid transparent;
+            border-bottom: 22px solid transparent;
+        }
+
+        @-webkit-keyframes pulse-border {
+            0% {
+                -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        @keyframes pulse-border {
+            0% {
+                -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+                opacity: 1;
+            }
+            100% {
+                -webkit-transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+                transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+                opacity: 0;
+            }
+        }
+        .video-overlay {
+            position: fixed;
+            z-index: -1;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            -webkit-transition: all ease 500ms;
+            transition: all ease 500ms;
+        }
+
+        .video-overlay.open {
+            position: fixed;
+            z-index: 1000;
+            opacity: 1;
+        }
+
+        .video-overlay-close {
+            position: absolute;
+            z-index: 1000;
+            top: 15px;
+            right: 20px;
+            font-size: 36px;
+            line-height: 1;
+            font-weight: 400;
+            color: #fff;
+            text-decoration: none;
+            cursor: pointer;
+            -webkit-transition: all 200ms;
+            transition: all 200ms;
+        }
+
+        .video-overlay-close:hover {
+            color: #fa183d;
+        }
+
+        .video-overlay iframe {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -webkit-transform: translateX(-50%) translateY(-50%);
+            transform: translateX(-50%) translateY(-50%);
+            /* width: 90%; */
+            /* height: auto; */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.75);
+        }
+
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css"/>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+    <div class="inner-banner">
+        <div class="container">
+            <div class="container">
+                <h2>Gallery</h2>
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('index') }}">Acceuil</a></li>
+                    <li><a href="{{ path('product_index') }}">gallery</a></li>
+                </ol>
+                <a href="{{ path('product_index') }}" class="btn-filled-rounded">Images</a>
+                <a href="{{ path('video_index') }}" class="btn-filled-rounded">Videos</a>
+            </div>
+        </div>
+    </div>
+    <!--CONTENT START-->
+    <div class="content">
+        <div class="container">
+            <div class="content-cover">
+                <div class="row">
+                    <div class="container gallery-container">
+                        <div class="row">
+                            <ul class="row kode-gallery">
+                                {% for video in videos %}
+
+
+
+
+
+                                    <li class="col-md-6">
+                                        <div class="kode-gallery-item">
+                                            <div class="kode-couse-thumb">
+                                                <a data-fancybox="gallery" href="{{ video.url }}" style="width: 30px!important;" id="play-video" class="video-play-button" href="#">
+                                                    <span></span>
+                                                </a>
+                                                <div id="video-overlay" class="video-overlay">
+                                                    <a class="video-overlay-close">&times;</a>
+                                                </div>
+                                                <a
+                                                   >
+                                                    <img src="{{ video.imageName }}"></a></div>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!--PAGINATION END-->
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
+    <script>
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+
+        function onPlayerStateChange(event) {
+            if (event.data === 0) {
+                $.fancybox.next();
+            }
+        }
+
+        function onYouTubePlayerAPIReady() {
+            $(document).ready(function () {
+                $(".fancybox")
+                    .attr('rel', 'gallery')
+                    .fancybox({
+                        beforeShow: function () {
+                            // Find the iframe ID
+                            var id = $.fancybox.inner.find('iframe').attr('id');
+
+                            // Create video player object and add event listeners
+                            var player = new YT.Player(id, {
+                                events: {
+                                    'onReady': onPlayerReady,
+                                    'onStateChange': onPlayerStateChange
+                                }
+                            });
+                        }
+                    });
+            });
+
+        }
+    </script>
+{% endblock %}

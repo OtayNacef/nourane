@@ -1,0 +1,70 @@
+
+    {% trans_default_domain 'FOSUserBundle' %}
+    {% extends 'base.html.twig' %}
+    {% block body %}
+
+        <section style="padding-top: 250px; padding-bottom: 130px;" class="kode-contact">
+            <div class="container">
+                <div class="section-header">
+                    <h2>S'inscrire</h2>
+                    <hr style="color: black !important;" class="space s" />
+
+                </div>
+
+
+                    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'comments-form','id':'my_form'}}) }}
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="input-container">
+                                <i class="fa fa-envelope"></i>
+                                {{ form_widget(form.email, {'attr': {'class': 'required','placeholder':'email'}}) }}
+                                {{ form_errors(form.email) }}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-container">
+                                <i class="fa fa-user"></i>
+                                {{ form_widget(form.username, {'attr': {'class': 'required','placeholder':'username'}}) }}
+                                {{ form_errors(form.username) }}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-container">
+                                <i class="fa fa-key"></i>
+                                {{ form_widget(form.plainPassword.first, {'attr': {'class': 'required','placeholder':'password'}}) }}
+                                {{ form_errors(form.plainPassword.first) }}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-container">
+                                <i class="fa fa-key"></i>
+                                {{ form_widget(form.plainPassword.second, {'attr': {'class': 'required','placeholder':'confirm password'}}) }}
+                                {{ form_errors(form.plainPassword.second) }}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="input-container">
+                                {{ form_widget(form.imageFile, {'attr': {'class': 'btn-filled-rounded','placeholder':'confirm password'}}) }}
+                                {{ form_errors(form.imageFile) }}
+                            </div>
+                        </div>
+                        <p style="color: black !important;">
+                            Vous avez déjà un compte ?<a href="{{ path('fos_user_security_login') }}">
+                                Connecte-vous maintenant </a> </p>
+                        <hr style="color: black !important;" class="space s" />
+
+                        <div class="col-md-3 justify-content-center pull-right">
+                            <button class="btn-filled">S'inscrire <i
+                                        class="fa fa-sign-in"></i></button>
+                        </div>
+
+                    </div>
+                    <div class="hidden-me" id="contact_form_responce"><p></p></div>
+                {{ form_end(form) }}
+            </div>
+        </section>
+
+
+    {% endblock %}
+

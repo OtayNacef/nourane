@@ -1,0 +1,71 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+    <div class="card">
+        <div class="card-header">
+            <h3>Ajout evenement</h3>
+        </div>
+        <div class="card-body">
+            {{ form_start(form) }}
+                <div class="row">
+                    <div class="col-md-6 form-group mb-3">
+                        {{ form_widget(form.nomEvenement, {'attr': {'class': 'form-control','placeholder':'nom evenement'}}) }}
+
+                    </div>
+                    <div class="col-md-6  input-group mb-3">
+                        <div class="custom-file">
+
+                            {{ form_widget(form.imageFile, {'attr': {'class': 'custom-file-input'}}) }}
+                            <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">choisir une image</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6 form-group mb-3">
+                        <label for="nomEvenement">Adresse</label>
+                        {{ form_widget(form.adr, {'attr': {'class': 'form-control'}}) }}
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="nomEvenement">Date debut</label>
+                                {{ form_widget(form.start, {'attr': {'class': ''}}) }}
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nomEvenement">Date fin</label>
+                                {{ form_widget(form.end, {'attr': {'class': '' }}) }}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3">
+                        <label for="nomEvenement">prix min</label>
+                        {{ form_widget(form.price,{'attr': {'class': 'form-control'}}) }}
+                    </div>
+
+                    <div class="col-md-6 form-group mb-3">
+                        <label for="nomEvenement">Evenement Payant</label>
+                        {{ form_widget(form.special,{'attr': {'class': 'form-control'}}) }}
+                        <label for="nomEvenement">Marathon ?</label>
+                        {{ form_widget(form.marathon) }}
+                    </div>
+
+
+                    <div class="col-md-12 form-group mb-3">
+                        <label for="nomEvenement">Description</label>
+                        {{ form_widget(form.description) }}
+                    </div>
+                    <div class="col-md-12">
+                        <button class="btn btn-primary">Submit</button>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+
+        </div>
+        <div class="card-footer">
+
+            <a class="btn btn-primary" href="{{ path('indexAdminActualite') }}#videos">
+                Retour à la liste</a>
+        </div>
+    </div>
+{% endblock %}

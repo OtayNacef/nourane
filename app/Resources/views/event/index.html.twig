@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="inner-banner">
+        <div class="container">
+            <h2>Listes des evenement</h2>
+            <ol class="breadcrumb">
+                <li><a href="{{ path('index') }}">Acceuil</a></li>
+                <li><a href="{{ path('team_index') }}">Evenements</a></li>
+            </ol>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="content-cover">
+                <div class="row">
+                    {% for event in events %}
+                        <div class="col-md-4">
+                            <div class="kode-event-list-2">
+                                <div class="kode-thumb">
+                                    <a href="{{ path('event_show', { 'id': event.id }) }}">
+                                        <img style="width: 360px;height: 300px" alt=""
+                                             src="{{ asset('AppImg/') }}{{ event.imageName }}">
+                                    </a>
+                                </div>
+                                <div class="kode-text">
+                                    <h2>{{ event.nomEvenement }}</h2>
+                                    <p class="title">  {% if event.start %}{{ event.start|date('Y-m-d') }}{% endif %}
+                                        ~
+                                        {% if event.end %}{{ event.end|date('Y-m-d') }}{% endif %}</p>
+                                    <a class="btn-filled" href="{{ path('event_show', { 'id': event.id }) }}">Lire la
+                                        suite</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <!--PAGINATION START-->
+
+                <nav>
+                    {{ knp_pagination_render(events) }}
+
+                </nav>
+                <!--PAGINATION END-->
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+    <div class="card">
+    <div class="card-header">
+        <h1>Toutes les actualités</h1>
+        <a class="btn btn-primary pull-right" href="{{ path('addBlog') }}">Créer un nouvel actualité</a>
+
+    </div>
+            <div class="card-body">
+           <div class="table-responsive">
+                    <table class="display table table-striped table-bordered" id="zero_configuration_table">
+                        <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Titre</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Date de Creation</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        {% for blog in blogs %}
+                            <tr>
+
+                                <th scope="row">{{ blog.id }}</th>
+                                <td>{{ blog.title }}</td>
+                                <td><img class="rounded-circle m-0 avatar-sm-table" src="{{ asset('AppImg/') }}{{ blog.imageName }} " alt=""></td>
+                                <td>{{ blog.dateCreation|date }}</td>
+                                <td>
+                                    <a class="text-success mr-2" href="{{path('editBlog',{blog:blog.id})}}"><i
+                                                class="nav-icon i-Pen-2 font-weight-bold"></i></a>
+                                    <a class="text-danger mr-2" href="{{path('deleteBlog',{blog:blog.id})}}"><i
+                                                class="nav-icon i-Close-Window font-weight-bold"></i></a>
+                                </td>
+                            </tr>
+
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+    </div>
+{% endblock %}

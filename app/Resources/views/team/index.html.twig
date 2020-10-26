@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="inner-banner">
+        <div class="container">
+            <h2>Membres du bureau</h2>
+            <ol class="breadcrumb">
+                <li><a href="{{ path('index') }}">Acceuil</a></li>
+                <li><a href="{{ path('team_index') }}">membres du bureau</a></li>
+            </ol>
+        </div>
+    </div>
+    <!--CONTENT START-->
+    <div class="content">
+        <div class="container">
+            <div class="content-cover">
+                <div class="row">
+                    {% for team in teams %}
+
+                    <div class="col-md-3">
+                        <!--TEAM MEMBER START-->
+                        <div class="kode-team-member">
+                            <a href="#"><img style="width: 250px;height: 360px" src="{{ asset('AppImg/') }}{{ team.imageName }}"></a>
+                            <div class="kode-text">
+                                <div class="kode-social-icons">
+                                    <ul>
+                                        <li><a title="" data-toggle="tooltip" href="{{ team.facebook }}" data-original-title="Facebook"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a title="" data-toggle="tooltip" href="{{ team.instagram }}" data-original-title="Instagram"><i class="fa fa-instagram"></i></a></li>
+                                        <li><a title="" data-toggle="tooltip" href="{{ team.linkedin }}" data-original-title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+                                    </ul>
+                                </div>
+                                <h3>{{ team.nom }}</h3>
+                                <h4>{{ team.poste }}</h4>
+                                <p>{{ team.specialite }}</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+                </div>
+                <!--PAGINATION START-->
+                <nav>
+                    <ul class="pagination">
+
+                    </ul>
+                </nav>
+                <!--PAGINATION END-->
+            </div>
+        </div>
+    </div>
+{% endblock %}

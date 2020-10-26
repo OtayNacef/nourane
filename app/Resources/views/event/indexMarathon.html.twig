@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="inner-banner">
+        <div class="container">
+            <h2>Listes des marathon</h2>
+            <ol class="breadcrumb">
+                <li><a href="{{ path('index') }}">Acceuil</a></li>
+                <li><a href="{{ path('team_index') }}">Evenements</a></li>
+            </ol>
+        </div>
+    </div>
+    <div class="content">
+        <div class="container">
+            <div class="content-cover">
+                <div class="row">
+                    {% for event in events %}
+                        <div class="kode-cause-list kode-list-view">
+                            <div class="kode-thumb">
+                                <a href="{{ path('event_show', { 'id': event.id }) }}"><img
+                                            style="width: 358px;height: 248px"
+                                            src="{{ asset('AppImg/') }}{{ event.imageName }}" alt=""></a>
+                            </div>
+                            <div class="kode-cause-content">
+                                <div class="kode-text">
+                                    <h2>{{ event.nomEvenement }}</h2>
+                                    <div class="kode-cause-meta">
+                                        <ul>
+                                            <li><a href="#"><i
+                                                            class="fa fa-calendar-times-o"></i> {% if event.start %}{{ event.start|date('Y-m-d') }}{% endif %}
+                                                    ~
+                                                    {% if event.end %}{{ event.end|date('Y-m-d') }}{% endif %}</a></li>
+                                            <li><a href="#"></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <p>{{ event.description|slice(0, 40)|raw("8") }}</p>
+                                </div>
+                                <div class="kode-fund-raised">
+                                    <div class="raised-text">
+                                        <i class="fa fa-map-marker"></i>    <h6><b>Localisation</b></h6><br>
+                                        <h6 class="pull-right">{{ event.adr }}</h6>
+                                    </div>
+                                    <div class="raised-text">
+                                        <i class="fa fa-dollar"></i>  <h6><b>Prix d'inscription</b></h6><br>
+                                        <h6 class="pull-right">{{ event.price }} TND</h6>
+                                    </div>
+                                    <a href="{{ path('event_show', { 'id': event.id }) }}" class="btn-filled-rounded">S'inscrire</a>
+                                    <div class="fund-meta">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+                </div>
+                <!--PAGINATION START-->
+
+                <nav>
+                    {{ knp_pagination_render(events) }}
+
+                </nav>
+                <!--PAGINATION END-->
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,24 @@
+donate_index:
+    path:     /
+    defaults: { _controller: "AppBundle:Donate:index" }
+    methods:  GET
+
+donate_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Donate:show" }
+    methods:  GET
+
+donate_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Donate:new" }
+    methods:  [GET, POST]
+
+donate_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Donate:edit" }
+    methods:  [GET, POST]
+
+donate_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Donate:delete" }
+    methods:  DELETE

@@ -1,0 +1,66 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+
+    <div class="card">
+        <div class="card-header">
+            <h1>Toutes les membres</h1>
+            <a class="btn btn-primary pull-right" href="{{ path('team_new') }}">Créer un nouvel membre</a>
+            <a style="margin-right: 10px" class="btn btn-primary pull-right" href="{{ path('listFriend') }}">liste des partenaires/Sponsors </a>
+            <a style="margin-right: 10px" class="btn btn-primary pull-right" href="{{ path('listSlider') }}">liste des sliders</a>
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="display table table-striped table-bordered" id="zero_configuration_table">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">image</th>
+                        <th>
+                            Nom
+                        </th>
+                        <th>
+                            poste
+                        </th>
+                        <th>
+                            specialite
+                        </th>
+
+                        <th>
+                            Actions
+                        </th>
+                    </tr>
+                    </thead>
+                    <tbody>
+
+                    {% for team in teams %}
+                        <tr>
+
+                            <th scope="row">{{ team.id }}</th>
+                            <td><img class="rounded-circle m-0 avatar-sm-table" src="{{ asset('AppImg/') }}{{ team.imageName }} " alt=""></td>
+                            <td>
+                                {{ team.nom }}
+                            </td>
+                            <td>
+                                {{ team.poste }}
+                            </td>
+                            <td>
+                                {{ team.specialite }}
+                            </td>
+                            <td>
+                                <a class="text-success mr-2" href="{{path('team_edit',{id:team.id})}}"><i
+                                            class="nav-icon i-Pen-2 font-weight-bold"></i></a>
+                                <a class="text-danger mr-2" href="{{path('team_delete',{id:team.id})}}"><i
+                                            class="nav-icon i-Close-Window font-weight-bold"></i></a>
+                            </td>
+                        </tr>
+
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,376 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
+    <div class="main-banner-2">
+        <div class="bxslider">
+            <div>
+                <img style="height: 90%" width="100%" src="{{ asset('images/Affiche-marathon-nourane.png') }}" alt="">
+                <div class="caption-2">
+                    <h2></h2>
+                    <p></p>
+                    <a style="margin-top: 410px" href="#marathon">Rejoignez-Nous</a>
+                </div>
+            </div>
+            <div>
+                <video id="myVideo" style="overflow: hidden;" width="100%">
+                    <source src="{{ asset('images/Marathon Nourane 2020.mp4') }}" type="video/mp4">
+                    <source src="movie.ogg" type="video/ogg">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="caption-2">
+                    <h2>Marathon Nourane</h2>
+                    <p>Du 25 AU 31 Octobre</p>
+                    <button onclick="enableAutoplay()" class="btn-filled-login">Lancer la video</button>
+                </div>
+            </div>
+            <script>
+                var vid = document.getElementById("myVideo");
+                var o = false
+
+                function enableAutoplay() {
+                    if (!o) {
+
+                        vid.play();
+                        o = true;
+                    } else {
+
+                        vid.pause();
+                        o = false;
+                    }
+
+                }
+            </script>
+            {% for slider in sliders %}
+                <li>
+                    <img style="height: 90%" width="100%" src="{{ asset('AppImg/') }}{{ slider.photo }}" alt="">
+                    <div class="caption-2">
+                        <h2>{{ slider.title }}</h2>
+                        <p>{{ slider.content }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="content">
+        <section class="gray-bg">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-md-4">
+                        <div class="kf-services">
+                            <i class="fa fa-hospital-o"></i>
+                            <div class="kf-text">
+                                <h2>Dépistage</h2>
+                                <p>Le dépistage est un test qui permet de sélectionner dans la population générale les
+                                    personnes porteuses d’une affection grâce à une utilisation (a priori), systématique
+                                    et non pas en fonction de symptômes (a posteriori). C’est une action de santé
+                                    publique.</p>
+                                <a target="_blank" href="{{ path('article2') }}" class="read-more">LIRE LA SUITE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="kf-services">
+                            <i class="fa fa-tint"></i>
+                            <div class="kf-text">
+                                <h2>Faire un <br>don</h2>
+                                <p> Dans le but d’aider l’association Nourane pour la prévention contre les maladies
+                                    cancéreuses faites un don pour permettre à ses membres de réaliser les objectifs de
+                                    l’association , qui sont comme suit </p>
+                                <a target="_blank" href="{{ path('article3') }}" class="read-more">LIRE LA SUITE</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="kf-services">
+                            <i class="fa fa-stethoscope"></i>
+                            <div class="kf-text">
+                                <h2>Prévention contre <br>le cancer</h2>
+                                <p>Un tiers au moins de l’ensemble des cas de cancer sont évitables.
+                                    La prévention constitue la stratégie à long terme la plus rentable pour lutter
+                                    contre le cancer.
+                                    La prévention ...</p>
+                                <a target="_blank" href="{{ path('article1') }}" class="read-more">LIRE LA SUITE</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="don" class="causes-section overlay">
+            <div class="container">
+                <div class="heading heading-4">
+                    <p style="color:#fff">Campagne de sensibilisation contre le Cancer </p>
+                    <h2 style="color:#fff">TOUS UNIS CONTRE LE CANCER </h2>
+                </div>
+                <div class=" kode-cause">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="{{ asset('images/bladder-cancer_web.png') }}" alt="">
+                        </div>
+                        <div class="col-md-6">
+                            <h2>Faire un don contre le cancer </h2>
+                            <p>
+                                Ce que nous ne pouvons pas faire seul, nous pouvons le faire ensemble.!
+                                Grâce à vos dons, le cancer recule tous les jours un peu.
+                                Gardez la foi et contribuez à la victoire contre le cancer !
+                            </p>
+                            <!--RANGE SLIDER START-->
+                            <form method="post">
+
+                                <div class="kode-range">
+                                    <p>LE MONTANT DE MON DON : <b style="color: #e5007e"><span
+                                                    class="range-slider">10</span> TND</b></p>
+                                    <br/>
+                                    <input name="don" class="range" type="text" data-slider-min="10"
+                                           data-slider-max="5000"
+                                           data-slider-step="1" data-slider-value="10"/>
+                                    <span id="ex6CurrentSliderValLabel"></span>
+                                </div>
+                                <div class="donate-text">
+                                    <p style="color: #e5007e"><i class="fa fa-lock"></i> Plateforme de paiement 100%
+                                        sécurisée</p>
+                                    <br>
+                                    <br>
+                                    <a type="submit" class="btn-filled">Valider et payer</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="white-bg">
+            <div class="container">
+                <div class="heading heading-4">
+                    <h2 style="color:#333">dernières actualités</h2>
+                </div>
+                <div class="row">
+                    {% for b in blogs %}
+                        <div class="col-md-4">
+                            <div class="kode-event-list-2">
+                                <div class="kode-thumb">
+                                    <a href="{{ path('DetailsBlog',{blog:b.id}) }}"><img alt="" width="300" height="360"
+                                                                                       src="{{ asset('AppImg/') }}{{ b.imageName }}"></a>
+                                </div>
+                                <div class="kode-text">
+                                    <h2>{{ b.title }}</h2>
+                                    <p class="title">{{ b.dateCreation|date }}</p>
+                                    <a class="btn-filled" href="{{ path('DetailsBlog',{blog:b.id}) }}">Lire la suite</a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <section class="progress-section parallax-bg-count">
+            <div class="container">
+                <p>Notre engagement est de prévenir le Cancer en Tunisie </p>
+                <h1>Cancer en chiffre </h1>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="count-up">
+                            <p>Personnes Diagnostiquées</p>
+                            <span class="counter circle">18,1 M</span>
+
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="count-up">
+                            <p>Le Cancer du Sein</p>
+                            <span class="counter circle">2.09 M</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="count-up">
+                            <p>Cancer du Poumon</p>
+                            <span class="counter circle">2.09 M</span>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="count-up">
+                            <p>Cancer colorectal </p>
+                            <span class="counter circle">1,6 M</span>
+
+                        </div>
+                    </div>
+                </div>
+                <p style="font-size: 10px">Chiffres rapportés par l'OMS , 2018 </p>
+            </div>
+        </section>
+        <section class="white-bg">
+            <div class="container">
+                <div class="heading heading-4">
+                    <p style="color:#333">Nourane pour la Prévention du cancer</p>
+                    <h2 style="color:#333">DERNIÈRS Evénements</h2>
+                </div>
+
+
+                <div class="row">
+                    {% for  key,  e in events %}
+                        {% if key == 0 %}
+                            <div class="col-md-8">
+                                <!--EVENT LIST START-->
+                                <div class="kode-event-list">
+                                    <img style="width: 750px;height: 370px"
+                                         src="{{ asset('AppImg/') }}{{ e.imageName }}" alt="">
+                                    <div class="kode-caption">
+                                        <h2>{{ e.nomEvenement }}</h2>
+                                        <p>{{ e.start|date() }}</p>
+                                        <a class="btn-borderd" href="{{ path('event_show',{id:e.id}) }}">Lire la
+                                            suite</a>
+
+                                    </div>
+                                </div>
+                                <!--EVENT LIST END-->
+                            </div>
+                        {% else %}
+                            <div class="col-md-4">
+                                <!--EVENT LIST START-->
+                                <div class="kode-event-list">
+                                    <img style="width: 360px;height: 370px"
+                                         src="{{ asset('AppImg/') }}{{ e.imageName }}" alt="">
+                                    <div class="kode-caption">
+                                        <h2>{{ e.nomEvenement }}</h2>
+                                        <p>{{ e.start|date() }}</p>
+                                        <a class="btn-borderd" href="{{ path('event_show',{id:e.id}) }}">Lire la
+                                            suite</a>
+                                    </div>
+                                </div>
+                                <!--EVENT LIST END-->
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="kode-team-section overlay movingbg"
+                 class="normaltopmargin normalbottommargin light movingbg"
+                 data-id="customizer" data-title="Theme Customizer" data-direction='horizontal'>
+            <div class="container">
+                <div class="heading heading-4">
+                    <p style="color:#fff">Nourane pour la prévention du Cancer</p>
+                    <h2 style="color:#fff">Notre équipe</h2>
+                </div>
+                <div class="row">
+                    {% for t in team %}
+                        <div class="col-md-3">
+                            <div class="kode-team-member">
+                                <a href="#"><img height="65%" src="{{ asset('AppImg/') }}{{ t.imageName }}" alt=""></a>
+                                <div class="kode-text">
+                                    <div class="kode-social-icons">
+                                        <ul>
+                                            <li><a href="{{ t.facebook }}" data-toggle="tooltip" title="Facebook"><i
+                                                            class="fa fa-facebook"></i></a></li>
+                                            <li><a href="{{ t.instagram }}" data-toggle="tooltip" title="Instagram"><i
+                                                            class="fa fa-instagram"></i></a></li>
+                                            <li><a href="{{ t.linkedin }}" data-toggle="tooltip" title="Linkedin"><i
+                                                            class="fa fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
+                                    <h3>{{ t.nom }}</h3>
+                                    <p>{{ t.specialite }}</p>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}</div>
+            </div>
+        </section>
+
+        <section id="marathon" class="white-bg">
+
+            <div class="container">
+                <div class="heading heading-4">
+                    <p style="color:#333">Nourane pour la Prévention du cancer</p>
+                    <h2 style="color:#333">MARATHON NOURANE</h2>
+                </div>
+            </div>
+        </section>
+        <section id="marathon" class="white-bg">
+
+            <div class="container">
+
+                <div class="row">
+
+                    <div class="embed-responsive embed-responsive-16by9">
+                        <iframe class="embed-responsive-item" src="https://marathon-nourane.com"></iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="testimonial-sec buy-template">
+            <div class="container">
+                <!--TESTIMONIAL STYLE 1 START-->
+                <div class="heading heading-4">
+                    <p style="color:#fff">Nourane pour la prévention du Cancer</p>
+                    <h2 style="color:#fff">Témoignage</h2>
+                </div>
+                <div class="kode-testimonials-7">
+                    <ul class="bxslider">
+                        <li>
+                            <div class="kode-cover">
+                                <div class="kode-thumb">
+                                    <img width="150" height="150" src="{{ asset('images/temoignage2.jpg') }}"
+                                         alt="">
+                                </div>
+                                <div class="kode-text">
+                                    <p>Le jour où j’ai appris que j’étais malade est sans doute le jour le plus
+                                        difficile de ma vie. C’est un peu comme si le ciel me tombait dessus. J’ai
+                                        ressenti beaucoup de crainte, de tristesse, de colère. Je n’étais pas
+                                        préparée à
+                                        tout cela.
+                                        Une étape que j’ai vite dépassée car après toute cette émotion, j’avais
+                                        juste
+                                        envie de vivre, de vaincre, de guérir.</p>
+                                    <h2>
+                                        <b>Maguy</b>
+                                    </h2>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="kode-cover">
+                                <div class="kode-thumb">
+                                    <img width="150" height="150"
+                                         src="{{ asset('images/temoignage-Yamina-Baccar.jpg') }}" alt="">
+                                </div>
+                                <div class="kode-text">
+                                    <p> Le cancer face à face
+                                        J'ai longtemps considéré la maladie comme un tabou absolu, un élément de la
+                                        sphère privée que personne, outre le corps médical, ne devait connaître.
+                                        Plus encore, j'avais la phobie des institutions hospitalières et des blouses
+                                        blanches.
+                                        Rien d'étonnant donc à ce que je sois restée des années dans le déni de mon
+                                        cancer du sein !
+                                    </p>
+                                    <h2>
+                                        <b>Yamina Baccar</b>
+                                    </h2>
+                                </div>
+                            </div>
+                        </li>
+
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+
+
+    <!-- partial -->
+
+{% endblock %}

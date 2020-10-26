@@ -1,0 +1,32 @@
+product_index:
+    path:     /images
+    defaults: { _controller: "AppBundle:Product:index" }
+    methods:  GET
+video_index:
+    path:     /videos
+    defaults: { _controller: "AppBundle:Product:indexvideo" }
+galley_details:
+    path: /{id}/list-images
+    defaults: { _controller: "AppBundle:Product:indexGallery" }
+product_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Product:new" }
+    methods:  [GET, POST]
+
+product_new_videos:
+    path:     /newVideos
+    defaults: { _controller: "AppBundle:Product:newVedio" }
+    methods:  [GET, POST]
+
+product_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Product:edit" }
+    methods:  [GET, POST]
+
+product_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Product:delete" }
+    
+product_delete_image:
+    path:     /{id}/deleteImage
+    defaults: { _controller: "AppBundle:Product:deleteImage" }

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" dir="">
+
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Nourane Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900" rel="stylesheet"/>
+    <link href="{{ asset("") }}assets/css/themes/lite-purple.min.css" rel="stylesheet"/>
+    <link href="{{ asset("") }}assets/css/plugins/perfect-scrollbar.min.css" rel="stylesheet"/>
+    <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+
+</head>
+
+<body class="text-left">
+<div class="app-admin-wrap layout-sidebar-large">
+    <div class="main-header">
+        <div class="logo">
+            <img style="width: 120px!important;" src="{{ asset("") }}images/logo1.png" alt="">
+        </div>
+        <div class="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div style="margin: auto">
+
+        </div>
+    </div>
+    <div class="side-content-wrap">
+        <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
+
+                <ul class="navigation-left">
+                    <li class="nav-item"><a class="nav-item-hold" href="{{path('index')}}"><i class="nav-icon i-Home1">
+                            </i><span class="nav-text">Site Web</span></a>
+                        <div class="triangle"></div>
+                    </li>
+
+                    <li class="nav-item"><a class="nav-item-hold" href="{{ path('users')}}"><i
+                                    class="nav-icon i-Administrator"></i><span
+                                    class="nav-text">Utilisateurs</span></a>
+                        <div class="triangle"></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-item-hold" href="{{ path('indexAdminActualite') }}"><i
+                                    class="nav-icon i-Notepad"></i><span
+                                    class="nav-text"> Actualité</span></a>
+                        <div class="triangle"></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-item-hold" href="{{ path('indexEventAdmin') }}"><i
+                                    class="nav-icon i-Calendar"></i><span
+                                    class="nav-text"> Events</span></a>
+                        <div class="triangle"></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-item-hold" href="{{path('teamAdmin')}}"><i
+                                    class="nav-icon i-Doctor"></i><span class="nav-text"> Members & Site parameter</span></a>
+                        <div class="triangle"></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-item-hold" href="{{ path('indexGallery') }}"><i
+                                    class="nav-icon i-Folder"></i><span class="nav-text"> Gallery</span></a>
+                        <div class="triangle"></div>
+                    </li>
+                </ul>
+        </div>
+        <div class="sidebar-overlay"></div>
+    </div>
+    <!-- =============== Left side End ================-->
+    <div class="main-content-wrap sidenav-open d-flex flex-column">
+        {% block body %}
+
+        {% endblock %}
+        <div class="flex-grow-1"></div>
+
+    </div>
+</div>
+
+<script src="{{ asset('assets/js/plugins/jquery-3.5.1.min.js') }}"></script>
+<script src="{{ asset("") }}assets/js/plugins/bootstrap.bundle.min.js"></script>
+<script src="{{ asset("") }}assets/js/plugins/perfect-scrollbar.min.js"></script>
+<script src="{{ asset("") }}assets/js/scripts/script.min.js"></script>
+<script src="{{ asset("") }}assets/js/scripts/sidebar.large.script.min.js"></script>
+<script src="{{ asset("") }}assets/js/plugins/echarts.min.js"></script>
+<script src="{{ asset("") }}assets/js/scripts/echart.options.min.js"></script>
+<script src="{{ asset("") }}assets/js/scripts/dashboard.v1.script.min.js"></script>
+<script src="{{ asset("") }}assets/js/plugins/datatables.min.js"></script>
+<script src="{{ asset("") }}assets/js/scripts/datatables.script.min.js"></script>*
+
+</body>

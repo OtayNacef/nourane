@@ -1,0 +1,4127 @@
+@import url("https://fonts.googleapis.com/css?family=Nunito:300,400,400i,600,700,800,900");
+@import url(https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap);
+
+/* Default Css */
+.wrapper {
+    float: left;
+    width: 100%;
+}
+
+.content {
+    float: left;
+    width: 100%;
+}
+
+.content nav {
+    text-align: center;
+}
+
+.content-cover {
+    padding: 50px 0px 20px 0px;
+    float: left;
+    width: 100%;
+}
+
+p {
+    margin: 0 0 10px;
+    line-height: 26px;
+    font-size: 15px;
+}
+
+/*
+===========================================
+				HEADER START
+===========================================
+*/
+header {
+    float: left;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.header-2 {
+    position: static;
+}
+
+.nav-container {
+    float: left;
+    width: 100%;
+}
+
+.nav-container .container {
+    position: relative;
+    z-index: 100;
+}
+
+.btn-filled {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    color: #fff;
+    font-family: 'Slabo 27px', serif;
+    border-radius: 2px;
+}
+
+.btn-filled:hover {
+    background-color: #000;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-filled-rounded {
+    display: inline-block;
+    font-size: 16px;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    color: #fff;
+    border-radius: 50px;
+    font-family: 'Slabo 27px', serif;
+}
+
+.btn-filled-rounded:hover {
+    background-color: #199ad5;
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-borderd {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    color: #fff;
+    border: solid 2px #fff;
+    font-family: 'Slabo 27px', serif;
+}
+
+.btn-filled-white {
+    display: inline-block;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 10px 30px;
+    color: #000;
+    background: #fff;
+    font-family: 'Slabo 27px', serif;
+    text-decoration: none;
+}
+
+.btn-filled-white:hover {
+    color: #fff;
+    background-color: #000;
+    text-decoration: none;
+}
+
+.btn-borderd:hover {
+    text-decoration: none;
+    color: #fff;
+}
+
+.btn-filled-login {
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    background-color: #199ad5 ;
+    padding: 8px 20px;
+    color: #fff;
+    border-radius: 50px;
+    font-family: 'Slabo 27px', serif;
+    font-weight: bold;
+}
+
+.btn-filled-login:hover {
+    background-color: #fff;
+    text-decoration: none;
+    color: #e5007e;
+}
+
+.btn-filled-register {
+    display: inline-block;
+    font-size: 13px;
+    text-transform: uppercase;
+    background-color: #fff ;
+    padding: 8px 20px;
+    color: #e5007e;
+    border-radius: 50px;
+    font-family: 'Slabo 27px', serif;
+    font-weight: bold;
+}
+
+.btn-filled-register:hover {
+    background-color: #199ad5;
+    text-decoration: none;
+    color: #fff;
+}
+
+/*
+===========================================
+				HEADER 2
+===========================================
+*/
+.header-2 .nav-container {
+    background-color: #e5007e;
+}
+
+.header-2 .navigation ul li a {
+    color: #7f7f7f;
+    padding: 10px 14px;
+}
+
+.header-2 .navigation ul ul li a {
+    color: #fff;
+}
+
+.header-2 .navigation ul ul li a, .header-2 .navigation ul li a:hover {
+
+}
+
+.header-2 .logo {
+    height: 80px;
+    width: 240px;
+}
+
+.header-2 .logo img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+
+.nav-content {
+    margin: 6px 0px 0px 0px;
+}
+
+.header-2 .nav-content {
+    margin: 18px 0px 16px 0px;
+}
+
+.header-2 .nav-content .kode-donate-now {
+    float: left;
+    margin: 0px 0px 0px 15px;
+}
+
+.header-2 .nav-content .kode-donate-now a {
+    display: block;
+    height: 46px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 3px;
+    text-decoration: none;
+}
+
+.header-2 .nav-content .kode-donate-now a i {
+    margin: 0px 8px 0px 0px;
+}
+
+.header-2 .nav-content .kode-donate-now a:hover {
+    background-color: #000;
+}
+
+.header-2 .logo:after {
+    content: "";
+    position: absolute;
+    left: 100%;
+    height: 100%;
+    width: 2000%;
+    top: 0px;
+    display: none;
+}
+
+/*
+===========================================
+				LOGO
+===========================================
+*/
+
+.logo {
+    float: left;
+    padding: 18px 40px 18px 40px;
+    position: relative;
+}
+
+.logo:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    height: 100%;
+    width: 2000%;
+    top: 0px;
+}
+
+
+
+/*
+===========================================
+			NAVIGATION START
+===========================================
+*/
+.navigation {
+    float: left;
+}
+
+.navigation ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    width: 100%;
+}
+
+.navigation ul li {
+    float: left;
+    position: relative;
+}
+
+.navigation ul li a {
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+    display: block;
+    padding: 20px 14px;
+    position: relative;
+    z-index: 10;
+}
+
+.navigation ul li:hover > a {
+}
+
+.navigation ul li:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    margin: auto;
+    height: 3px;
+    width: 0px;
+    opacity: 0
+}
+
+.navigation ul li:hover:before {
+    width: 100%;
+    border-radius: 0px;
+    opacity: 1;
+}
+
+.navigation ul ul {
+    position: absolute;
+    top: 116%;
+    left: 0px;
+    opacity: 0;
+    visibility: hidden;
+    margin: 20px 0px 0px 0px;
+    width: auto;
+    padding: 6px;
+    border-bottom: solid 6px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.navigation ul ul:before {
+    content: "";
+    height: 16px;
+    width: 16px;
+    transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    position: absolute;
+    left: 30px;
+    top: -4px;
+}
+
+.navigation ul li.last ul:before {
+    left: auto;
+    right: 30px;
+
+}
+
+.navigation ul li.last ul ul:before {
+    left: auto;
+    right: -4px;
+
+}
+
+.navigation ul li.last ul {
+    left: auto;
+    right: 0px;
+}
+
+.navigation ul li.last ul ul {
+    left: auto;
+    right: 107%;
+
+}
+
+.navigation ul ul ul:before {
+    left: -4px;
+    top: 10px;
+
+}
+
+.navigation ul li:hover > ul {
+    opacity: 1;
+    margin-top: 0px;
+    visibility: visible;
+}
+
+.navigation ul ul li {
+    float: left;
+    width: 100%;
+    min-width: 200px;
+
+}
+
+.navigation ul ul li a {
+    color: #fff;
+}
+
+.navigation ul ul li:before {
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    right: auto;
+    background-color: #199ad5;
+}
+
+.navigation ul ul li a {
+    padding: 10px 14px;
+    position: relative;
+}
+
+.navigation ul ul li:hover a {
+    padding: 10px 14px 10px 25px;
+}
+
+.navigation ul ul li a:before {
+    content: "\f105";
+    font-family: FontAwesome;
+    font-size: 12px;
+    color: #fff;
+    position: absolute;
+    left: 5px;
+    top: 12px;
+}
+
+.navigation ul ul li:hover a:before {
+    left: 10px;
+}
+
+.navigation ul ul ul {
+    left: 107%;
+    top: -7px;
+}
+
+/*
+===========================================
+		SEARCH, NAV BARS, FAV
+===========================================
+*/
+
+.kf-nav-options {
+    float: left;
+}
+
+.kf-nav-options ul {
+    list-style: none;
+    float: left;
+    padding: 0px 10px;
+    margin: 19px 0px;
+}
+
+.kf-nav-options ul li {
+    float: left;
+    margin: 0px 10px;
+}
+
+.kf-nav-options ul li a {
+    color: #fff;
+    font-size: 16px;
+}
+
+/*
+===========================================
+				BANNER
+===========================================
+*/
+.main-banner {
+    float: left;
+    width: 100%;
+}
+
+.main-banner .bxslider li:before {
+    content: "";
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.main-banner .bxslider .caption {
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+}
+
+.main-banner .bxslider .caption h2 {
+    font-size: 60px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0px;
+    color: #fff;
+}
+
+.main-banner .bxslider .caption h3 {
+    font-size: 40px;
+    font-weight: normal;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0px 0px 20px 0px;
+}
+
+.main-banner .bxslider .caption a.donate {
+    display: inline-block;
+    padding: 10px 30px;
+    border: solid 1px #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+}
+
+.main-banner .bxslider .caption .banner-meta {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+}
+
+.main-banner .bxslider .caption .banner-meta a {
+    font-size: 14px;
+    color: #fff;
+    display: inline-block;
+    margin: 0px 5px;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.main-banner .bxslider .caption .banner-meta i {
+    margin: 0px 10px 0px 0px;
+}
+
+.main-banner-2 .bx-pager,
+.main-banner .bx-pager {
+    position: absolute;
+    bottom: 20px;
+    left: 0px;
+    width: 100%;
+    display: block;
+}
+
+.main-banner-2 .bx-wrapper .bx-pager.bx-default-pager a,
+.main-banner .bx-wrapper .bx-pager.bx-default-pager a {
+    height: 10px;
+    width: 10px;
+}
+
+.main-banner-2 .bx-wrapper .bx-pager.bx-default-pager a.active,
+.main-banner .bx-wrapper .bx-pager.bx-default-pager a.active {
+    height: 15px;
+    width: 15px;
+}
+
+.main-banner .bx-wrapper .bx-controls-direction {
+    display: none;
+}
+
+.main-banner-2 {
+    float: left;
+    width: 100%;
+}
+
+.main-banner-2 .bx-wrapper .bx-pager {
+    display: none;
+}
+
+.main-banner-2 .bxslider li {
+    position: relative;
+}
+
+.main-banner-2 .bxslider li:before {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    opacity: 0.2;
+    background-color: #000;
+}
+
+.main-banner-2 .bxslider .caption-2 {
+    position: absolute;
+    left: 50%;
+    margin-left: -500px;
+    width: 600px;
+    z-index: 100;
+    top: 30%;
+}
+
+.main-banner-2 .bxslider .caption-2 h2 {
+    font-size: 60px;
+    color: #fff;
+}
+
+.main-banner-2 .bxslider .caption-2 p {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.main-banner-2 .bxslider .caption-2 a {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.main-banner-2 .bx-wrapper .bx-controls-direction a:before {
+    content: "";
+    font-family: FontAwesome;
+}
+
+.content section.big-search {
+    padding: 0px;
+}
+
+.kode-search-2 {
+    float: left;
+    width: 100%;
+    margin-top: -50px;
+    position: relative;
+    z-index: 200;
+}
+
+.kode-search-2 input[type="text"] {
+    float: left;
+    width: 100%;
+    height: 100px;
+    font-size: 22px;
+    border: none;
+    color: #000;
+}
+
+.kode-search-2 button {
+    position: absolute;
+    border: none;
+    border-radius: 0px;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    padding: 20px 30px;
+    font-size: 18px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.kode-search-2 button i {
+    margin: 0px 10px 0px 0px;
+}
+
+/*
+===========================================
+			SECTION SETTING
+===========================================
+*/
+.content section {
+    padding: 50px 0px 20px;
+    float: left;
+    width: 100%;
+}
+
+.heading.heading-4 {
+    margin-top: -2px;
+}
+
+.gray-bg {
+    background-color: ghostwhite;
+}
+
+.white-bg {
+    background-color: #f3f3f3;
+}
+
+.section-header {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-size: 40px;
+    line-height: 40px;
+    margin: 0px 0px 10px 0px;
+    color: #333;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+.section-header p {
+    font-size: 14px;
+    margin: 0px;
+    color: #666;
+}
+
+.content section.overlay {
+    position: relative;
+}
+
+.content section.overlay .section-header h2 {
+    color: #fff;
+}
+
+.content section.overlay .section-header p {
+    color: #fff;
+}
+
+.content section.overlay .container {
+    position: relative;
+}
+
+/*
+===========================================
+			SERVICES SECTION
+===========================================
+*/
+.kf-services {
+    float: left;
+    width: 100%;
+    text-align: center;
+    background-color: #fff;
+    padding: 30px 20px;
+    border-bottom: solid 3px transparent;
+    overflow: hidden;
+    min-height: 350px;
+    margin-bottom: 30px;
+}
+
+.kf-services:hover {
+    box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0px 10px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.kf-services i {
+    width: 100%;
+    float: left;
+    font-size: 60px;
+    margin: 0px 0px 15px 0px;
+}
+
+.kf-services h2 {
+    margin: 0px 0px 15px 0px;
+}
+
+.kf-services p {
+    margin: 0px 0px 15px 0px;
+}
+
+.kf-services:hover i {
+    transform: scale(4);
+    opacity: 0.5
+}
+
+.kf-services .kf-text {
+    position: relative;
+    z-index: 10;
+}
+
+.kf-services h2 {
+    font-size: 24px;
+    text-transform: uppercase;
+    color: #333333;
+}
+
+.kf-services p {
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.kf-services a.read-more {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/*
+===========================================
+			CAUSES SECTION
+===========================================
+*/
+.causes-section {
+    background-image: url(images/bg.jpg);
+    position: relative;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.causes-section:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+    background-color: rgba(52, 42, 47, 0.9);
+}
+
+.causes-section .kode-cause {
+    float: left;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.causes-section .kode-cause img {
+    width: 100%;
+}
+
+.causes-section .kode-cause h2 {
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 30px;
+}
+
+.causes-section .kode-cause p {
+    color: #fff;
+    font-size: 15px;
+    font-weight: normal;
+}
+
+.causes-section .kode-cause a.read-more {
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    float: left;
+    margin-bottom: 5px;
+}
+
+.kode-range {
+    float: left;
+    width: 100%;
+    font-size: 18px;
+    color: #fff;
+    margin: 10px 0px 15px 0px;
+}
+
+.donate-text {
+    float: left;
+    width: 100%;
+}
+
+.donate-text .btn-filled {
+    float: right;
+}
+
+.donate-text p {
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #fff;
+    float: left;
+    margin: 10px 0px;
+    font-weight: bold;
+}
+
+/*
+===========================================
+			CAUSES LISTING SECTION
+===========================================
+*/
+
+.kode-cause-list {
+    float: left;
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 30px;
+}
+
+.kode-cause-list:hover {
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.kode-cause-list .kode-thumb {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.kode-cause-list:hover .kode-thumb img {
+    transform: scale(1.3) rotate(10deg);
+    -moz-transform: scale(1.3) rotate(10deg);
+    -webkit-transform: scale(1.3) rotate(10deg);
+    opacity: 0.1;
+}
+
+.kode-cause-list .kode-thumb img {
+    width: 100%;
+}
+
+.kode-cause-list .kode-cause-content {
+    float: left;
+    width: 100%;
+}
+
+.kode-cause-meta {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+}
+
+.kode-cause-meta ul {
+    float: left;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+}
+
+.kode-cause-meta ul li {
+    float: left;
+    margin: 0px 0px 0px 15px;
+    color: #394241;
+}
+
+.kode-cause-meta ul li:first-child {
+    margin: 0px;
+}
+
+.kode-cause-meta ul li a {
+    color: #394241;
+    text-decoration: none;
+    display: block;
+}
+
+.kode-cause-meta ul li i {
+    margin: 0px 5px 0px 0px;
+}
+
+.kode-cause-list .kode-text {
+    float: left;
+    width: 100%;
+    padding: 20px;
+}
+
+.kode-fund-raised {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    border-top: solid 1px #e7e7e7;
+    text-align: center;
+}
+
+.raised-text {
+    float: left;
+    width: 100%;
+    text-align: left;
+}
+
+.raised-text h6 {
+    display: inline-block;
+    color: #606666;
+    font-family: "Roboto", sans-serif;
+
+}
+
+.kode-fund-raised .progress {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 10px 0px;
+    border-radius: 10px;
+    height: 19px;
+}
+
+.kode-fund-raised .progress-bar {
+    line-height: 19px;
+
+}
+
+.kode-skills .progress-bar {
+    border-radius: 10px;
+}
+
+.kode-fund-raised .fund-meta {
+    float: left;
+    width: 100%;
+    margin: 20px 0px 10px 0px;
+}
+
+.kode-fund-raised .fund-meta ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    text-align: center;
+}
+
+.kode-fund-raised ul li {
+    display: inline-block;
+    margin: 0px 4px;
+}
+
+.kode-fund-raised ul li i {
+    margin: 0px 5px 0px 0px;
+}
+
+.kode-fund-raised ul li a {
+    font-size: 14px;
+    color: #6e7474;
+}
+
+/*list view*/
+.kode-cause-list,
+.kode-cause-list.kode-list-view {
+    border: 1px solid #eee;
+}
+
+.kode-cause-list.kode-list-view .kode-thumb {
+    float: left;
+    width: auto;
+}
+
+.kode-cause-list.kode-list-view .kode-cause-content {
+    float: none;
+    padding: 0 0 0 370px;
+}
+
+.kode-cause-list.kode-list-view .kode-fund-raised {
+    width: 30%;
+    border-top: 0px;
+    border-left: 1px solid #e7e7e7;
+    min-height: 248px;
+}
+
+.kode-cause-list.kode-list-view .kode-text {
+    width: 70%;
+}
+
+.kode-cause-list.kode-list-view .fund-meta {
+
+}
+
+.share-cause {
+    float: right;
+    margin: 15px 0px;
+}
+
+.share-cause h4 {
+    font-size: 16px;
+    float: left;
+    color: #666666;
+    margin: 0px 0px;
+    font-weight: normal;
+}
+
+.share-cause ul {
+    float: left;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.share-cause li {
+    float: left;
+    margin: 0px 10px;
+}
+
+.share-cause li a {
+    font-size: 14px;
+    color: #6e7474;
+}
+
+/*
+===========================================
+			PROGRESS SECTION
+===========================================
+*/
+.progress-section {
+    text-align: center;
+}
+
+.progress-section p {
+    font-size: 24px;
+    margin: 0px 0px 20px 0px;
+    line-height: 24px;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.progress-section h1 {
+    font-size: 55px;
+    margin: 0px;
+    line-height: 55px;
+    color: #fff;
+}
+
+.progress-section .container {
+    position: relative;
+    z-index: 99;
+}
+
+.parallax-bg-count {
+    position: relative;
+}
+
+.parallax-bg-count:before {
+    background: #333;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    bottom: 0px;
+    left: 0;
+    position: absolute;
+    content: "";
+    z-index: 1;
+    opacity: 0.8;
+
+}
+
+.parallax-bg-count {
+    background: url(images/causes-bg.jpg);
+    background-size: cover;
+    position: relative;
+    background-attachment: fixed;
+}
+
+.count-up {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin: 30px 0px 30px 0px;
+    padding: 20px 0px;
+    position: relative;
+}
+
+.count-up:before {
+    content: "";
+    position: absolute;;
+    left: -15px;
+    top: 0px;
+    height: 100%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+.progress-section .row div:first-child .count-up:before {
+    display: none;
+}
+
+.count-up p {
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0px 0px 10px 0px;
+}
+
+.count-up span {
+    font-size: 40px;
+    color: #fff;
+}
+
+/*
+===========================================
+			VIDEO SECTION
+===========================================
+*/
+.video-section {
+    background-image: url(images/video-bg.jpg);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.kode-team-section.testimonial-sec {
+    background-attachment: fixed;
+    background-image: none;
+}
+
+.video-section:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    opacity: 0.6;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+
+.video-title {
+    float: left;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding: 80px 0px;
+}
+
+.video-title a.play {
+    height: 80px;
+    width: 80px;
+    border-radius: 100%;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: solid 2px #fff;
+    font-size: 30px;
+    line-height: 80px;
+    display: inline-block;
+    margin: 0px 0px 30px 0px;
+    color: #fff;
+    padding-left: 9px;
+}
+
+.video-title a.play:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.video-title h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 30px;
+}
+
+.video-title h3 {
+    color: #fff;
+}
+
+/*
+===========================================
+			EVENTS SECTION
+===========================================
+*/
+
+.kode-event-list {
+    float: left;
+    width: 100%;
+    position: relative;
+    margin: 0px 0px 30px 0px;
+    overflow: hidden;
+}
+
+.kode-event-list img {
+    width: 100%;
+}
+
+.kode-event-list:hover img {
+    transform: scale(1.3) rotate(10deg);
+    -moz-transform: scale(1.3) rotate(10deg);
+    -webkit-transform: scale(1.3) rotate(10deg);
+}
+
+.kode-event-list:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background: -webkit-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); /*Safari 5.1-6*/
+    background: -o-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); /*Opera 11.1-12*/
+    background: -moz-linear-gradient(bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); /*Fx 3.6-15*/
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)); /*Standard*/
+    opacity: 0.7;
+    z-index: 50;
+}
+
+.kode-event-list:hover:before {
+    opacity: 1;
+}
+
+.kode-event-list .kode-caption {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    padding: 30px;
+    width: 100%;
+    z-index: 100;
+}
+
+.kode-event-list .kode-caption h2 {
+    color: #fff;
+    text-transform: uppercase;
+    margin: 0px;
+    font-size: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.kode-event-list .kode-caption p {
+    font-size: 16px;
+    color: #fff;
+    margin: 0px 0px 15px 0px;
+}
+
+.kode-event-list .btn-borderd {
+    padding: 4px 15px;
+    font-size: 16px;
+    border-width: 1px;
+    border-radius: 5px;
+}
+
+/*
+===========================================
+			EVENTS SECTION 2
+===========================================
+*/
+.kode-event-list-2 {
+    float: left;
+    width: 100%;
+    border: solid 1px #e6e6e6;
+    margin-bottom: 30px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.kode-event-list-2:hover {
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.kode-event-list-2 .kode-thumb {
+    float: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.kode-event-list-2 .kode-thumb a:before, .kode-blog-list .kode-thumb a:before, .kode-cause-list .kode-thumb a:before, .kode-gallery-item .kode-thumb a:before {
+    content: "\f067";
+    font-family: FontAwesome;
+    font-size: 30px;
+    color: #fff;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    margin-top: -15px;
+    z-index: 10;
+    transform: scale(0);
+    -moz-transform: scale(0);
+    -webkit-transform: scale(0)
+
+}
+
+.kode-event-list-2:hover a:before, .kode-blog-list:hover .kode-thumb a:before, .kode-cause-list:hover .kode-thumb a:before, .kode-gallery-item:hover .kode-thumb a:before {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+}
+
+.kode-event-list-2 .kode-thumb img {
+    width: 100%;
+}
+
+.kode-event-list-2:hover img {
+    opacity: 0.1;
+    transform: scale(1.3) rotate(10deg);
+    -moz-transform: scale(1.3) rotate(10deg);
+    -webkit-transform: scale(1.3) rotate(10deg);
+}
+
+.kode-event-list-2 .kode-text {
+    float: left;
+    width: 100%;
+    padding: 30px;
+}
+
+.kode-event-list-2 .kode-text h2 {
+    font-size: 27px;
+    margin: 0px 0px 10px 0px;
+}
+
+.kode-event-list-2 .kode-text p.title {
+    font-size: 16px;
+    margin: 0px 0px 10px 0px;
+}
+
+.kode-event-list-2 .kode-text p {
+    margin: 0px 0px 15px 0px;
+}
+
+.kode-event-list-2 .kode-text .btn-filled {
+    font-size: 14px;
+    font-weight: normal;
+    border-radius: 3px;
+    padding: 5px 20px;
+}
+
+/*
+===========================================
+				TEAM SECTION
+===========================================
+*/
+.kode-team-section {
+    background-image: url(images/aboutus.png);
+}
+
+.kode-team-member {
+    float: left;
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.kode-team-member:hover {
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.3);
+}
+
+.kode-team-member img {
+    width: 100%;
+}
+
+.kode-team-member a {
+    display: block;
+}
+
+.kode-team-member a:before {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    outline: 1px solid #333;
+    outline-offset: -10px;
+    border: solid 10px transparent;
+
+}
+
+.kode-team-member:hover a:before {
+    border: solid 10px #fff;
+}
+
+.kode-team-member .kode-text {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    position: absolute;
+    left: 9px;
+    bottom: -100%;
+    right: 9px;
+    border-top: 1px solid #F00;
+}
+
+.kode-team-member:hover .kode-text {
+    bottom: 0px;
+}
+
+.kode-team-member .kode-text h3 {
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+.kode-team-member .kode-text p {
+    font-size: 14px;
+    font-weight: 600;
+    color: #242424;
+    text-transform: uppercase;
+    margin: 0px;
+}
+
+
+.kode-social-icons {
+    float: left;
+    width: 100%;
+    position: absolute;
+    top: -60px;
+    left: 0px;
+}
+
+.kode-social-icons ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+.kode-social-icons ul li {
+    display: inline-block;
+    margin: 0px 2px;
+}
+
+.kode-social-icons ul li a {
+    font-size: 18px;
+    color: #fff;
+    height: 34px;
+    width: 34px;
+    display: block;
+    padding: 4px 0px;
+    border-radius: 2px;
+}
+
+.kode-social-icons ul li a:hover {
+    background-color: #000;
+}
+
+.kode-social-icons ul li a:before {
+    display: none;
+}
+
+/*
+===========================================
+			BLOG LISTING SECTION
+===========================================
+*/
+.kode-blog-list {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 30px 0px;
+    background-color: #fff;
+}
+
+.kode-blog-list:hover {
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.kode-blog-list .kode-thumb {
+    float: left;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.kode-blog-list .kode-thumb iframe {
+    float: left;
+    width: 100%;
+    height: 350px;
+    margin: 0px;
+}
+
+.kode-blog-list .kode-thumb ul, .kode-blog-list .kode-thumb .bx-wrapper {
+    float: left;
+    margin: 0px;
+    padding: 0px;
+}
+
+.kode-blog-list:hover .kode-thumb .bx-wrapper img {
+    opacity: 1;
+    transform: none;
+    -moz-transform: none;
+    -webkit-transform: none;
+}
+
+.kode-blog-list .bx-pager {
+    position: absolute;
+    left: 20px;
+    bottom: 10px;
+}
+
+.kode-blog-list .bx-pager a {
+    height: 10px;
+    width: 10px;
+    background-color: #333;
+}
+
+.kode-blog-list .bx-controls-direction {
+    display: none
+}
+
+.kode-blog-list .kode-thumb img {
+    width: 100%;
+}
+
+.kode-blog-list:hover .kode-thumb img {
+    transform: scale(1.3) rotate(10deg);
+    -moz-transform: scale(1.3) rotate(10deg);
+    -webkit-transform: scale(1.3) rotate(10deg);
+    opacity: 0.1;
+}
+
+.kode-blog-list .kode-text {
+    float: left;
+    width: 100%;
+    text-align: center;
+    position: relative;
+    padding: 40px 20px 30px 20px;
+    border: solid 1px #f1f1f1;
+}
+
+.kode-blog-list .kode-text h2 {
+    font-weight: normal;
+    font-size: 30px
+}
+
+.kode-blog-list .kode-text p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.kode-blog-list .kode-text h4 {
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+    position: relative;
+    margin: 0px;
+    display: inline-block;
+    color: #666;
+}
+
+.kode-blog-list .kode-text h4 a {
+    color: #394241;
+}
+
+.kode-blog-list .kode-text h4:before {
+    content: "";
+    width: 100px;
+    height: 1px;
+    background-color: #333;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+}
+
+.kode-blog-list .kode-avatar, .kode-blog-list i, .kode-blog-detail .kode-thumb i {
+    height: 70px;
+    width: 70px;
+    display: inline-block;
+    border-radius: 100%;
+    overflow: hidden;
+    border: solid 4px #fff;
+    top: -35px;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+
+}
+
+.kode-blog-list i, .kode-blog-detail .kode-thumb i {
+    color: #fff;
+    text-align: center;
+    font-size: 24px;
+    padding: 18px 0px;
+}
+
+.kode-blog-detail .kode-thumb i {
+    top: 20px;
+    right: auto;
+    left: 20px;
+}
+
+.kode-blog-list p.title {
+    font-size: 18px;
+    position: relative;
+    padding: 0px 0px 1px 0px;
+}
+
+.kode-blog-list p.title:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    bottom: -5px;
+    width: 50px;
+    height: 1px;
+    background-color: #333;
+}
+
+.kode-blog-list:hover .kode-avatar, .kode-blog-list:hover i {
+    top: -50px;
+}
+
+.kode-blog-list .kode-avatar img {
+    width: 100%;
+}
+
+.kode-blog-list .btn-borderd {
+    color: #333333;
+    border-color: #e6e5e5;
+    font-weight: normal;
+    font-size: 18px;
+    margin-top: 0px;
+}
+
+.kode-blog-list .btn-borderd:hover {
+    color: #fff;
+}
+
+/*
+===========================================
+			BUY TEMPLATE SECTION
+===========================================
+*/
+.content section.buy-template {
+    text-align: center;
+    padding: 50px 0px;
+}
+
+.buy-template h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 34px;
+}
+
+.buy-template h4 {
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.buy-template a {
+    margin: 0px 10px;
+}
+
+.buy-template .btn-borderd:hover {
+    background-color: #252525;
+    border-color: #252525;
+}
+
+/*
+===========================================
+				FOOTER
+===========================================
+*/
+footer {
+    float: left;
+    width: 100%;
+    background-image: url(images/footer-bg.png);
+    background-size: cover;
+    position: relative;
+    padding: 50px 0px;
+}
+
+footer:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+footer .container {
+    position: relative;
+}
+
+.copyrights {
+    float: left;
+    width: 100%;
+    background-color: #e4e4e4;
+    padding: 20px 0px;
+}
+
+.copyrights p {
+    margin: 0px;
+    display: inline-block;
+    color: #e6009e;
+}
+
+.footer-nav {
+    float: right;
+}
+
+.footer-nav ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    width: 100%;
+}
+
+.footer-nav ul li {
+    float: left;
+    padding: 0px 20px;
+    position: relative;
+}
+
+.footer-nav ul li:before {
+    content: "|";
+    position: absolute;
+    left: 0px;
+    color: #666;
+}
+
+.footer-nav ul li:first-child {
+    padding-left: 0px;
+}
+
+.footer-nav ul li:first-child:before {
+    display: none;
+}
+
+.footer-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-nav ul li a:hover {
+    color: #CCC;
+}
+
+/*
+===========================================
+			INNER PAGE BANNER
+===========================================
+*/
+.inner-banner {
+    float: left;
+    opacity: 0.7;
+    width: 100%;
+    padding: 130px 0 20px 0;
+    background-image: url(images/banner.png);
+    background-size: cover;
+    min-height: 260px;
+    position: relative;
+    text-align: center;
+}
+
+.inner-banner .container {
+    position: relative;
+}
+
+.inner-banner:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(229, 0, 126, 0.5)
+}
+
+.inner-banner h2 {
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+section.kode-about-us-accor,
+section.thumb-with-text {
+    padding-bottom: 50px;
+}
+
+.thumb-with-text .kode-taxt p {
+    font-size: 15px;
+    margin-bottom: 15px;
+}
+
+.thumb-with-text .kode-thumb {
+    float: left;
+    width: 100%;
+}
+
+.thumb-with-text .kode-thumb img {
+    width: 100%;
+}
+
+/*
+===========================================
+			TESTIMONIALS
+===========================================
+*/
+
+section.kode-testimonials {
+    padding-bottom: 50px;
+}
+
+.kode-testimonials-cover {
+    float: left;
+    padding: 0px 40px;
+    text-align: center;
+}
+
+.kode-testimonials-cover p {
+    font-size: 22px;
+}
+
+.kode-testimonials-cover p.title {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    margin: 0px 0px 40px 0px;
+}
+
+.kode-testimonials-cover .bx-wrapper {
+    border: solid 1px #f1f1f1;
+}
+
+.kode-testimonials-cover .kode-avatar {
+    display: inline-block;
+    height: 90px;
+    width: 90px;
+    border: solid 1px #f1f1f1;
+    padding: 10px;
+}
+
+.kode-testimonials-cover .bx-wrapper li {
+    padding: 50px 30px;
+}
+
+.kode-testimonials-cover .bx-pager {
+    display: none;
+}
+
+.kode-testimonials-cover .bx-wrapper .bx-controls-direction a {
+    height: 100px;
+    width: 66px;
+    border: solid 1px #f1f1f1;
+    margin-top: -50px;
+    left: -33px;
+    background-color: #fff;
+}
+
+.kode-testimonials-cover .bx-wrapper .bx-controls-direction a:hover {
+    box-shadow: 11px 0px 12px -10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 11px 0px 12px -10px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 11px 0px 12px -10px rgba(0, 0, 0, 0.3);
+}
+
+.kode-testimonials-cover .bx-wrapper .bx-controls-direction a.bx-next:hover {
+    box-shadow: -11px 0px 12px -10px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: -11px 0px 12px -10px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: -11px 0px 12px -10px rgba(0, 0, 0, 0.3);
+}
+
+.kode-testimonials-cover .bx-wrapper .bx-controls-direction a.bx-next {
+    left: auto;
+    right: -33px;
+}
+
+.kode-testimonials-cover .bx-wrapper .bx-controls-direction a:before {
+    content: "\f104";
+    position: absolute;
+    font-family: FontAwesome;
+    font-size: 40px;
+    color: #333;
+    text-align: center;
+    width: 100%;
+    left: 0px;
+    top: 0px;
+    padding: 35px 0px;
+}
+
+.kode-testimonials-cover .bx-wrapper .bx-controls-direction a.bx-next:before {
+    content: "\f105";
+}
+
+/*
+===========================================
+			SIDE BAR START
+===========================================
+*/
+.kode-gallery {
+}
+
+.kode-gallery {
+    list-style: none;
+}
+
+.kode-gallery-item {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 30px 0px;
+    background-color: #fff;
+    border: solid 1px #e9e9e9;
+}
+
+.kode-gallery-item:hover {
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.kode-gallery-item .kode-thumb {
+    float: left;
+    width: 100%;
+    position: relative;
+
+}
+
+.kode-gallery-item .kode-thumb img {
+    width: 100%;
+}
+
+.kode-gallery-item:hover .kode-thumb img {
+    opacity: 0.1
+}
+
+.kode-gallery-item .kode-text {
+    float: left;
+    width: 100%;
+    padding: 15px 20px;
+    position: relative;
+
+}
+
+.kode-gallery-item:hover .kode-text {
+    padding: 15px 15px;
+    background-color: #fff;
+}
+
+.kode-gallery-item .kode-text h3 {
+    font-size: 26px;
+    margin: 0px;
+}
+
+.kode-gallery-item a.like {
+    position: absolute;
+    font-size: 18px;
+    right: 20px;
+    top: 15px;
+    color: #333;
+}
+
+.kode-contact-icon {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 30px 15px;
+    background-color: #fff;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+}
+
+.kode-contact-icon:hover {
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.kode-contact-icon i {
+    height: 100px;
+    width: 100px;
+    border: solid 3px #666666;
+    text-align: center;
+    padding: 22px 0px;
+    font-size: 50px;
+    border-radius: 100%;
+    margin: 0px 0px 20px 0px;
+}
+
+.kode-contact-icon:hover i {
+    color: #fff;
+}
+
+.kode-contact-icon a {
+    color: #333;
+    text-decoration: none;
+}
+
+.kode-contact-icon p {
+    margin: 0px;
+}
+
+.kode-map #map_list {
+    width: 100%;
+    height: 600px;
+}
+
+section.kode-contact {
+    padding-top: 30px;
+    padding-bottom: 50px;
+}
+
+.kode-contact {
+    text-align: center;
+}
+
+/*
+===========================================
+				SHOP
+===========================================
+*/
+.kode-shop {
+    float: left;
+    width: 100%;
+}
+
+.kode-shop ul {
+    list-style: none;
+}
+
+.kode-product {
+    background-color: #fff;
+    float: left;
+    width: 100%;
+    border: solid 1px #dfdfdf;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+}
+
+.kode-product:hover {
+    box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+.kode-product .kode-thumb {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.kode-product .kode-thumb:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0);
+    height: 100%;
+    width: 100%;
+}
+
+.kode-product:hover .kode-thumb:before {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.kode-product .kode-thumb img {
+    width: 100%;
+}
+
+.kode-product .kode-text {
+    float: left;
+    width: 100%;
+    padding: 20px 20px;
+    background-color: #fafafa;
+}
+
+.kode-product .kode-text h2 {
+    text-transform: uppercase;
+    font-size: 22px;
+    margin: 0px 0px 5px 0px;
+}
+
+.kode-product .kode-text h4 {
+    font-size: 18px;
+    font-weight: normal;
+    position: relative;
+    display: inline-block;
+    padding: 0px 0px 5px 0px;
+    margin: 0px;
+}
+
+.kode-product .kode-text h4 a, .kode-product .kode-text h2 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.kode-product .kode-text h4:before {
+    content: "";
+    height: 1px;
+    width: 100%;
+    left: 0px;
+    background-color: #666;
+    bottom: 0px;
+    position: absolute;
+}
+
+.kode-product .kode-text p.price {
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    margin: 0px;
+}
+
+.kode-product .rating {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.kode-product .btn-filled.cart, .kode-product .btn-filled.view {
+    font-size: 12px;
+    padding: 8px 10px;
+    position: absolute;
+    left: 25px;
+    top: 0%;
+    margin-top: -90px;
+    width: 100px;
+    text-align: center;
+}
+
+.kode-product .btn-filled.view {
+    left: auto;
+    right: 25px;
+}
+
+.kode-product:hover .btn-filled.cart, .kode-product:hover .btn-filled.view {
+    top: 55%;
+}
+
+/*
+===========================================
+				RATING STARS
+===========================================
+*/
+.rating {
+    unicode-bidi: bidi-override;
+    direction: rtl;
+}
+
+.rating > span {
+    display: inline-block;
+    position: relative;
+    font-size: 20px;
+    line-height: 20px;
+    color: #ffd40c;
+}
+
+.rating > span:hover:before,
+.rating > span:hover ~ span:before {
+    content: "\2605";
+    position: absolute;
+}
+
+/*
+===========================================
+				BLOG DETAIL
+===========================================
+*/
+.kode-blog-detail {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 30px 0px;
+}
+
+.kode-blog-detail .kode-thumb {
+    float: left;
+    width: 100%;
+    position: relative;
+}
+
+.kode-blog-detail .kode-thumb iframe {
+    width: 100%;
+    height: 400px;
+    margin: 0px;
+    float: left;
+}
+
+.kode-blog-detail .kode-thumb img {
+    float: left;
+    width: 100%;
+}
+
+.kode-blog-detail .kode-text {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    border: solid 1px #cfcfcf;
+    margin: 0px 0px 30px 0px;
+}
+
+.blog-meta {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 5px 0px;
+}
+
+.blog-meta ul {
+    list-style: none;
+    margin: 0px;
+    float: left;
+    width: 100%;
+}
+
+.blog-meta ul li {
+    float: left;
+    margin: 0px 0px 0px 30px;
+    font-size: 12px;
+    color: #333;
+    position: relative;
+}
+
+.blog-meta ul li:before {
+    position: absolute;
+    content: "|";
+    left: -15px;
+    top: 0px;
+}
+
+.blog-meta ul li:first-child:before {
+    display: none;
+}
+
+.blog-meta ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.blog-meta ul li:first-child {
+    margin: 0px;
+}
+
+.kode-blog-option {
+    float: left;
+    padding: 15px;
+    width: 100%;
+    border: solid 1px #cfcfcf;
+}
+
+.kode-blog-option h4 {
+    font-size: 16px;
+    font-weight: normal;
+    text-transform: uppercase;
+}
+
+.kode-blog-option .kode-tags {
+    float: left;
+}
+
+.kode-blog-option .kode-tags a {
+    display: inline-block;
+    padding: 2px 5px;
+    color: #333;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.kode-blog-option .kode-tags a:hover {
+    color: #fff;
+}
+
+.kode-blog-option .kode-tags i {
+    float: left;
+    font-size: 14px;
+    color: #333;
+    padding: 6px 0px;
+    margin: 0px 10px 0px 0px;
+}
+
+.kode-share-blog {
+    float: right;
+}
+
+.kode-share-blog ul {
+    float: left;
+    list-style: none;
+    margin: 0px;
+}
+
+.kode-share-blog ul li {
+    float: left;
+    margin: 0px 3px;
+}
+
+.kode-share-blog ul li a {
+    color: #333;
+    height: 30px;
+    width: 30px;
+    border: solid 1px #cfcfcf;
+    display: block;
+    text-align: center;
+    padding: 5px 0px;
+    line-height: 20px;
+}
+
+.kode-share-blog ul li a:hover {
+    color: #fff;
+}
+
+/*
+===========================================
+				COMMENTS
+===========================================
+*/
+.kode-comments {
+    float: left;
+    width: 100%;
+}
+
+.kode-comments h2 {
+    margin: 0px 0px 30px 0px;
+}
+
+.kode-comments ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    width: 100%;
+    float: left;
+}
+
+.kode-comments ul li {
+    float: left;
+    width: 100%;
+    position: relative;
+    margin: 0px 0px 30px 0px
+}
+
+.kode-comments ul ul {
+    padding: 30px 0px 0px 90px;
+}
+
+.kode-comments .kode-thumb {
+    float: left;
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+    border-radius: 100%;
+}
+
+.kode-comments .kode-thumb img {
+    float: left;
+    width: 100%;
+}
+
+.kode-comments .kode-text {
+    padding: 0px 0px 0px 90px;
+    position: relative;
+}
+
+.kode-comments .kode-text-cover {
+    position: relative;
+    float: left;
+    width: 100%;
+    padding: 0px 0px 0px 20px;
+}
+
+.kode-comments .kode-text-cover:before {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 1px;
+    background-color: #cfcfcf;
+    top: 0px;
+    left: 0px;
+}
+
+.kode-comments .kode-text-cover:after {
+    content: "";
+    height: 16px;
+    width: 16px;
+    border-top: solid 1px #cfcfcf;
+    border-left: solid 1px #cfcfcf;
+    transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    position: absolute;
+    left: -7px;
+    top: 20px;
+    background-color: #fff;
+}
+
+.kode-comments .kode-text h5 {
+    margin: 0px;
+}
+
+.kode-comments .kode-text h5 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.kode-comments .kode-text p {
+    margin: 0px;
+}
+
+.kode-comments .kode-text a.reply {
+    display: inline-block;
+    padding: 2px 10px;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    text-transform: uppercase;
+}
+
+.add-comment {
+    float: left;
+    width: 100%;
+}
+
+.add-comment h2 {
+    margin: 0px 0px 20px 0px;
+}
+
+.add-comment input[type="text"] {
+    float: left;
+    width: 100%;
+    height: 46px;
+    border: solid 1px #cfcfcf;
+    padding: 6px 10px 6px 35px;
+}
+
+.add-comment button {
+    float: right;
+}
+
+.kode-error {
+    float: left;
+    width: 100%;
+    text-align: center;
+    padding: 73px 0px 80px;
+}
+
+.kode-error > p {
+    font-size: 16px;
+}
+
+.kode-error h2 {
+    text-transform: uppercase;
+    font-size: 46px;
+}
+
+.kode-error h1.error {
+    font-size: 300px;
+    margin: 0px;
+    line-height: 300px;
+}
+
+.kode-error .input-container, .kode-under-construction .input-container {
+    float: none;
+    width: 50%;
+    margin: 30px auto 0px auto;
+    display: inline-block;
+}
+
+.kode-error button, .kode-under-construction button {
+    position: absolute;
+    right: 1px;
+    top: 1px;
+    bottom: 1px;
+    text-align: center;
+    border-radius: 0;
+    padding: 5px 20px;
+}
+
+.kode-under-construction button {
+    font-size: 14px;
+}
+
+.kode-error button i {
+    position: static;
+    color: #fff;
+    font-size: 22px;
+    margin: 0px;
+    line-height: 22px;
+
+}
+
+/*
+===========================================
+			UNDER CONSTRUCTION
+===========================================
+*/
+.kode-under-construction {
+    float: left;
+    width: 100%;
+    padding: 93px 0px 100px;
+    text-align: center;
+}
+
+.kode-under-construction h2 {
+    font-size: 60px;
+    text-transform: uppercase;
+    margin: 0px 0px 30px 0px;
+}
+
+.kode-under-construction .kode-text {
+    float: left;
+    width: 100%;
+    padding: 30px 0px;
+}
+
+/*
+===========================================
+			CAUES DETAIL
+===========================================
+*/
+.kode-cause-list-detail {
+    background: none;
+}
+
+.kode-cause-list-detail .kode-fund-raised .progress-bar {
+    line-height: 16px;
+}
+
+.kode-cause-list-detail .kode-text {
+    border-bottom: solid 1px #CCC;
+}
+
+.kode-cause-list-detail:hover {
+    box-shadow: none;
+}
+
+.kode-cause-list-detail .fund-meta {
+    margin: 0px 0px 20px 0px;
+}
+
+.kode-cause-list-detail .kode-fund-raised {
+    background-color: #f9f9f9;
+}
+
+.kode-cause-list-detail .progress {
+    background-color: #fff;
+    border: 2px solid #fff;
+    box-shadow: none;
+}
+
+.kode-choose-amount {
+    float: left;
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.kode-choose-amount h2 {
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.kode-choose-amount .btn-filled {
+    background-color: #fff;
+    color: #000;
+}
+
+.kode-choose-amount .btn-filled:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.kode-choose-amount .radio, .kode-choose-amount .checkbox {
+    float: left;
+
+}
+
+.kode-choose-amount label p {
+    float: left;
+    margin: 13px 0px;
+    color: #fff;
+}
+
+.choose-amount {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+}
+
+.kode-choose-amount label {
+    margin: 0px 20px;
+}
+
+.kode-cause-list-detail ul.listing {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    width: 100%
+}
+
+.kode-cause-list-detail ul.listing li {
+    float: left;
+    margin: 3px 0px;
+    width: 100%;
+    position: relative;
+    padding: 0px 0px 0px 15px;
+}
+
+.kode-cause-list-detail ul.listing li:before {
+    content: "\f105";
+    position: absolute;
+    font-family: FontAwesome;
+    left: 0px;
+    top: 50%;
+    margin-top: -7px;
+    line-height: normal;
+}
+
+.kode-cause-list-detail ul.listing li a {
+    color: #666;
+}
+
+.kode-related-couses {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 30px 0px;
+    border-bottom: solid 1px #CCC;
+}
+
+.kode-related-couses h2 {
+    margin-bottom: 20px;
+}
+
+.kode-cause-list-detail .fund-meta {
+    width: auto;
+    margin: 0px;
+}
+
+.kode-cause-list-detail .raised-text h6 {
+    margin: 0px;
+}
+
+.kode-cause-list-detail .kode-fund-raised ul li a {
+    display: block;
+    padding: 3px 20px;
+    border-radius: 4px;
+    border: solid 1px #ccc;
+    text-decoration: none;
+}
+
+.kode-cause-list-detail .kode-fund-raised ul li a:hover, .kode-cause-list-detail .kode-fund-raised ul li:hover i {
+    color: #fff;
+}
+
+.kode-cause-list-detail .kode-fund-raised ul li {
+    margin: 0px 0px 0px 10px;
+}
+
+.kode-cause-list-detail .kode-fund-raised ul li:first-child {
+    margin: 0px;
+}
+
+/*
+=================================================
+		CHECKBOX AND RADIO BUTTON CSS
+=================================================
+*/
+label {
+    cursor: pointer;
+}
+
+/* hide the "real" radios visually */
+
+.radio input {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+/* style the "fake" radios */
+
+.radio-value {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-radius: 100%;
+    display: inline-block;
+    height: 28px;
+    margin-right: 5px;
+    position: relative;
+    vertical-align: -0.5em;
+    width: 28px;
+}
+
+input:checked + .radio-value {
+    background-image: url(images/tick.png);
+}
+
+/*
+=================================================
+				SHOP DETAIL PAGE
+=================================================
+*/
+.kode-shop-detail {
+    float: left;
+    width: 100%;
+    border-bottom: solid 1px #ccc;
+    margin: 0px 0px 30px 0px;
+    padding: 0px 0px 30px 0px;
+}
+
+.kode-shop-detail .header {
+    float: left;
+    margin: 0px 0px 15px 0px;
+    padding: 0px 0px 15px 0px;
+    border-bottom: solid 1px #ccc;
+    width: 100%;
+}
+
+.kode-shop-detail .kode-thumb {
+    float: left;
+    width: 45%;
+}
+
+.kode-shop-detail .kode-thumb .larg-image {
+    float: left;
+    width: 100%;
+    border: 1px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.kode-shop-detail .kode-thumb .shop-thumbnail {
+    float: left;
+    width: 100%;
+}
+
+.kode-shop-detail .kode-thumb .shop-thumbnail ul {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    float: left;
+    width: 100%;
+}
+
+.kode-shop-detail .kode-thumb .shop-thumbnail ul li {
+    float: left;
+    width: 31.333%;
+    margin: 0px 0px 0px 3%;
+    border: 1px solid #ddd;
+}
+
+.kode-shop-detail .kode-thumb .shop-thumbnail ul li:first-child {
+    margin: 0px;
+}
+
+.kode-shop-detail .kode-thumb img {
+    width: 100%;
+}
+
+.kode-shop-detail .kode-text {
+    padding: 0px 0px 0px 20px;
+    width: 55%;
+    float: left;
+}
+
+.kode-shop-detail .kode-text h2 {
+    text-transform: uppercase;
+    float: left;
+    margin: 0px;
+}
+
+.kode-shop-detail .kode-text h2.price {
+    float: right;
+}
+
+.kode-shop-detail .rating {
+    float: left;
+    padding: 3px 0px 0px 0px;
+    margin: 0px 10px 0px 0px;
+}
+
+.kode-rating {
+    float: left;
+    width: 100%;
+}
+
+.kode-shop-detail .rating > span {
+    font-size: 26px;
+    float: left;
+    direction: rtl;
+}
+
+.kode-shop-detail .rating h5 {
+    display: inline-block;
+    margin: 0px;
+}
+
+.kode-shop-detail .product-quantity {
+    border-bottom: 1px solid #ccc;
+    float: left;
+    margin: 0 0 15px;
+    padding: 0 0 15px;
+    width: 100%;
+}
+
+.kode-shop-detail #myform {
+    float: left;
+    margin: 0px 20px 0px 0px;
+}
+
+.kode-shop-detail .product-quantity .qtyminus, .kode-shop-detail .product-quantity .qtyplus {
+    float: left;
+    width: 40px;
+    padding: 0px 0px;
+    border-radius: 0;
+    font-size: 20px;
+    background-color: #fff;
+    color: #333;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.kode-shop-detail .product-quantity .qtyminus:hover, .kode-shop-detail .product-quantity .qtyplus:hover {
+    color: #fff;
+}
+
+.kode-shop-detail .product-quantity .qty {
+    width: 60px;
+    float: left;
+    padding: 10px 10px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.kode-shop-detail .product-info {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+}
+
+.kode-shop-detail .product-info p {
+    margin: 0px;
+}
+
+.kode-shop-detail .kode-social-icons {
+    float: left;
+    width: 100%;
+    position: static;
+    text-align: left;
+}
+
+.product-info p a {
+    margin-right: 5px;
+}
+
+.kode-shop-detail .kode-social-icons ul li {
+    float: left;
+    margin: 0px 5px 0px 0px;
+}
+
+/*
+=================================================
+				CUSTOMER REVIEWS
+=================================================
+*/
+.kode-reviews {
+    float: left;
+    width: 100%;
+}
+
+.kode-reviews .nav-tabs {
+    margin: 0px;
+    border: 1px solid #ddd;
+}
+
+.kode-reviews .nav-tabs > li > a {
+    font-size: 18px;
+    text-transform: uppercase;
+    border: none;
+    border-radius: 0px;
+    margin: 0px;
+    color: #666;
+}
+
+.kode-reviews .nav-tabs > li {
+    border: none;
+}
+
+.kode-reviews .nav-tabs > li a:hover {
+    color: #fff;
+
+}
+
+.kode-reviews .nav-tabs > li.active > a, .kode-reviews .nav-tabs > li.active > a:hover, .kode-reviews .nav-tabs > li.active > a:focus {
+    border: none;
+    color: #fff;
+    outline: none;
+}
+
+.kode-reviews .tab-content {
+    padding: 20px;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    float: left;
+    width: 100%;
+}
+
+
+.customer-reviews {
+    float: left;
+    width: 100%;
+}
+
+.customer-reviews .kode-thumb {
+    float: left;
+}
+
+.customer-reviews .kode-text {
+    padding: 0px 0px 0px 110px;
+}
+
+.customer-reviews .header {
+    float: left;
+    width: 100%;
+}
+
+.customer-reviews .header h5 {
+    float: left;
+}
+
+.customer-reviews .header .rating {
+    float: right;
+}
+
+/*
+=================================================
+				EVENT DETAIL
+=================================================
+*/
+.kode-event-detail {
+    float: left;
+    width: 100%;
+}
+
+.kode-event-detail .kode-thumb, .kode-event-detail .kode-thumb img {
+    float: left;
+    width: 100%;
+}
+
+.kode-event-detail .kode-event-meta {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 20px 0px;
+}
+
+.kode-event-detail .kode-event-meta .meta-content {
+    float: left;
+    width: 25%;
+    background-color: #e5e5e5;
+    text-align: center;
+    padding: 30px 20px;
+}
+
+.kode-event-detail .kode-event-meta .meta-content:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.kode-event-detail .kode-event-meta .meta-content i {
+    font-size: 18px;
+    color: #6e6e6e;
+    margin: 0px 0px 10px 0px;
+}
+
+.kode-event-detail .kode-event-meta .meta-content h3 {
+    font-size: 22px;
+    color: #6e6e6e;
+    font-weight: normal;
+}
+
+.kode-event-detail .kode-text {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 30px 0px;
+}
+
+.kode-event-detail h2 {
+    text-transform: uppercase;
+}
+
+.kode-event-address {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 30px 0px;
+}
+
+.kode-detail {
+    float: left;
+    width: 100%;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.kode-event-detail .kode-map {
+    float: left;
+    width: 100%;
+}
+
+.kode-event-detail .kode-map iframe {
+    float: left;
+    width: 100%;
+}
+
+.kode-related-images {
+    float: left;
+    width: 100%;
+    margin: 0px 0px 30px 0px;
+}
+
+.kode-related-images .kode-images {
+    float: left;
+    width: 100%;
+}
+
+.kode-related-images .kode-images img {
+    float: left;
+    width: 100%;
+}
+
+/*
+=================================================
+				TEAM DETAIL
+=================================================
+*/
+.kode-team-detail {
+    float: left;
+    width: 100%;
+    margin-bottom: 30px;
+    border-bottom: solid 1px #ccc;
+    padding-bottom: 30px;
+}
+
+.kode-team-detail .kode-thumb {
+    float: left;
+    width: 100%;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.kode-team-detail .kode-thumb img {
+    float: left;
+    width: 100%;
+}
+
+.kode-team-detail .kode-text {
+    float: left;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.kode-team-detail h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.kode-team-detail .kode-text h5 {
+    text-transform: uppercase;
+}
+
+.kode-team-detail .kode-social-icons {
+    float: left;
+    bottom: 0px;
+    top: auto;
+    padding: 15px 0px;
+    background: rgba(0, 0, 0, 0.7)
+}
+
+.kode-team-detail .kode-social-icons ul li a {
+
+}
+
+.kode-team-detail .kode-social-icons ul li {
+    margin: 0px 5px;
+
+}
+
+.kode-team-detail .prectic-areas ul {
+    margin: 0px;
+    float: left;
+    width: 100%;
+    list-style: none;
+}
+
+.kode-team-detail .prectic-areas ul li {
+    font-size: 14px;
+    float: left;
+    width: 100%;
+    margin: 1px 0px;
+}
+
+.kode-team-detail .prectic-areas ul li a {
+    display: inline-block;
+    padding: 7px 10px;
+    background-color: rgba(0, 0, 0, 0.05);
+    text-decoration: none;
+    color: #333;
+}
+
+.kode-team-detail .prectic-areas ul li a:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+}
+
+.kode-team-bio {
+    float: left;
+    width: 100%;
+    padding: 30px 0px;
+    border-bottom: solid 1px #CCC;
+    margin-bottom: 30px;
+}
+
+.kode-team-bio h2 {
+    font-size: 30px;
+    text-transform: uppercase;
+}
+
+.kode-skills h5 {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0px 0px 3px 0px;
+}
+
+.kode-skills .progress {
+    float: left;
+    width: 100%;
+    height: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    overflow: inherit;
+}
+
+.kode-skills .progress .progress-bar span {
+    line-height: 15px;
+    float: right;
+    color: #000;
+    margin: -25px 0px 0px 0px;
+    position: relative;
+}
+
+.kode-skills .progress .progress-bar span:before {
+    content: "";
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 100%;
+    border-radius: 100%;
+}
+
+.kode-other-team {
+    float: left;
+    width: 100%;
+}
+
+.kode-team-detail .add-comment textarea {
+    height: 150px;
+}
+
+.kode-team-detail .add-comment .btn-filled {
+    float: left;
+    width: 100%;
+}
+
+.kode-skills {
+    float: left;
+    width: 100%;
+}
+
+/*
+=================================================
+				DONATE PAGE
+=================================================
+*/
+.kode-donate {
+    float: left;
+    width: 100%;
+    padding: 40px;
+    background-color: #f2f2f2;
+}
+
+.kode-donate h2 {
+    text-align: center;
+    font-size: 24px;
+    text-transform: uppercase;
+    margin: 0px 0px 20px 0px;
+}
+
+.kode-donate h3 {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.kode-donate input[type="text"] {
+    height: 40px;
+    width: 100%;
+    background-color: #fff;
+    border: solid 1px #fff;
+}
+
+.kode-donate .select-amount {
+    float: left;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 30px
+}
+
+.kode-donate .select-amount .donate-btn {
+    width: 126px;
+    height: 44px;
+    background-color: #333;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0px 5px;
+    padding: 8px 10px;
+    position: relative;
+}
+
+.kode-donate .select-amount .donate-btn:before {
+    content: "\f111";
+    font-family: FontAwesome;
+    font-size: 14px;
+    margin: 0px 5px 0px 0px;
+    display: inline-block;
+}
+
+.kode-donate .enter-amount {
+    float: left;
+    width: 100%;
+    margin: 30px 0px 30px 0px;
+    padding: 60px 30px 40px 30px;
+    border: solid 1px #ccc;
+    position: relative;
+}
+
+.kode-donate .enter-amount span.or {
+    background-color: #fbfbfb;
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    border: solid 1px #ccc;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    top: -23px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 0px;
+}
+
+.kode-donate .enter-amount button {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 40px;
+    background: #333;
+    color: #fff;
+    padding: 8px 20px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.kode-donate .enter-amount .input-container {
+    margin: 0px;
+}
+
+.kode-donate .payment-info {
+    float: left;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.kode-donate .payment-option {
+    float: left;
+    width: 100%;
+    height: 45px;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.kode-donate .payment-option:before {
+    content: "";
+    height: 1px;
+    width: 100%;
+    background-color: #ccc;
+    top: 50%;
+    position: absolute;
+    left: 0px;
+}
+
+.kode-donate .payment-option span.or {
+    background-color: #fbfbfb;
+    height: 45px;
+    width: 45px;
+    border-radius: 100%;
+    border: solid 1px #ccc;
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    margin: auto;
+    top: 0px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 10px 0px;
+}
+
+.kode-donate .personal-info {
+    float: left;
+    width: 100%
+}
+
+.kode-donate .personal-info h3 {
+    padding-bottom: 15px;
+    border-bottom: solid 1px #ccc;
+    margin-bottom: 20px;
+}
+
+.kode-donate .personal-info .btn-filled {
+    float: right;
+}
+
+/*
+
+font-family: 'Source Sans Pro', sans-serif;
+
+*/
+section.news-subscription {
+    background-image: url(images/banner-2.png);
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    padding: 50px 0px;
+}
+
+.news-subscription .container {
+    position: relative;
+}
+
+.news-subscription:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(229, 0, 126,0.4);
+}
+
+.news-subscription .heading-1 h2, .news-subscription .heading-1 p {
+    color: #fff;
+}
+
+.news-subscription .heading-1 p {
+    color: #abaaaa;
+}
+
+.submit-field {
+    width: 680px;
+    margin: 0px auto;
+    text-align: center;
+    position: relative;
+}
+
+.submit-field input[type="text"] {
+    width: 100%;
+    border: solid 1px rgba(255, 255, 255, 0.2);
+    background: none;
+    height: 70px;
+    font-size: 16px;
+    font-weight: 300;
+
+    padding: 15px 20px;
+    margin: 0px 0px 30px 0px;
+}
+
+.submit-field button {
+    font-size: 20px;
+    text-transform: uppercase;
+    border: none;
+    float: none;
+}
+
+.submit-field button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.news-subscription.subscription2 button {
+    background: none;
+    border: none;
+    position: absolute;
+    padding: 14px 30px;
+    color: #7d7d7d;
+    right: 0px;
+    top: 0px;
+    font-size: 30px;
+}
+
+.news-subscription.subscription2 {
+    padding: 70px 0px;
+}
+
+.news-subscription.subscription2 input[type="text"] {
+    margin: 0px;
+}
+
+section.client-section {
+    background-color: #f8f8f8;
+    padding: 50px 0px;
+}
+
+.client-section #owl-demo .item {
+    text-align: center;
+
+}
+
+.client-section #owl-demo .item img {
+    width: auto;
+}
+
+.client-section .owl-pagination {
+    display: none;
+}
+
+.client-section .owl-buttons {
+    position: absolute;
+    top: 0px;
+}
+
+.client-section .owl-buttons .owl-prev, .client-section .owl-buttons .owl-next {
+    height: 32px;
+    width: 32px;
+}
+
+.kode-testimonials-7 .bx-pager.bx-default-pager {
+    top: 107%;
+    position: absolute;
+}
+
+.progress-chart-awar h4 {
+    font-weight: 500;
+
+}
+
+.progress-chart-awar .progress .progress-bar {
+    line-height: 15px;
+    font-size: 12px;
+}
+
+.progress-chart-awar h5 {
+    margin-bottom: 5px;
+}
+
+.progress-bar.progress-bar-danger > span {
+    font-weight: 400;
+}
+
+.progress-chart-awar .progress {
+    border-radius: 10px;
+    height: 16px;
+    margin-bottom: 10px;
+}
+
+.kf_sticky {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+}
+
+.kf_sticky .navbar-nav > li {
+    padding: 34px 10px;
+}
+
+.kf_sticky .kd-search {
+    padding: 35px 0 12px;
+}
+
+.kf_sticky .logo, .kf_sticky, .kf_sticky .navbar-nav > li, .kf_sticky .kd-search {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.kode-taxt h2 {
+    font-size: 32px;
+}
+
+#kode-responsive-navigation {
+    display: none;
+}
+
+.kode-cause-content .kode-text p {
+    font-size: 15px;
+    margin: 0px;
+}
+
+.kode-cause-list .kode-text > h2 {
+    color: #777;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.breadcrumb li.active {
+    color: #fff;
+}
+
+section.kode-map {
+    padding: 0px;
+}
+
+/* Event Detail */
+.kode-detail-thumb, .kode-detail-thumb img, .event-contdown {
+    float: left;
+    width: 100%;
+}
+
+.kode-detail-thumb {
+    margin: 0px;
+}
+
+.event-contdown {
+    background-color: #efefef;
+    padding: 30px 20px 15px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.countdown-container {
+    display: inline-block;
+    width: 80%;
+}
+
+.clock-item .inner {
+    height: 0px;
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.clock-canvas {
+    background-color: #ffffff;
+    border-radius: 50%;
+    height: 0px;
+    padding-bottom: 100%;
+    box-shadow: 0px 0px 0px 7px #d8d6d6 inset;
+}
+
+.ev-text {
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    width: 100%;
+}
+
+.ev-text .val {
+    font-size: 50px;
+    position: absolute;
+    top: 50%;
+    left: 0px;
+    width: 100%;
+    margin-top: -10px;
+    color: #f0b31c;
+}
+
+.ev-text .type-time {
+    font-size: 20px;
+    color: #000;
+    float: left;
+    width: 100%;
+    margin: 10px 0px 0px 0px;
+    font-weight: normal;
+    font-family: 'Slabo 27px', serif;
+}
+
+.kode-map {
+    float: left;
+    width: 100%;
+    padding: 5px;
+    background-color: #ebebeb;
+    border: 1px solid #e6e6e6;
+}
+
+.kode-map iframe {
+    margin: 0px;
+}
+
+.evdetail-info {
+    float: left;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+}
+
+.evdetail-info li {
+    list-style: none;
+    float: left;
+    width: 100%;
+    font-size: 18px;
+    color: #747474;
+    text-transform: uppercase;
+    background-color: #f9f9f9;
+    padding: 12px 18px;
+    margin-bottom: 18px;
+    border-left: 1px solid #d5d5d5;
+    border-top: 1px solid #d5d5d5;
+}
+
+.evdetail-info li span {
+    float: left;
+    width: 40%;
+}
+
+.evdetail-info li span i {
+    margin-right: 10px;
+}
+
+.ev-btn {
+    float: left;
+    width: 100%;
+}
+
+.event-btns a {
+    margin: 0px 15px 15px 0px;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+    background: #fff;
+}
+
+/* Admin Post */
+.kode-admin-post {
+    float: left;
+    width: 100%;
+    padding: 15px 0px;
+    position: relative;
+    margin: 0px 0px 20px 0px;
+    border: 1px solid #dddddd;
+    border-left: none;
+    border-right: none;
+}
+
+.kode-admin-post figure {
+    border: 3px solid #efefef;
+    float: left;
+    margin: 0px 0px 0px 0px;
+}
+
+.kode-admin-post figure a {
+    float: left;
+    padding: 6px;
+    width: 100%;
+}
+
+.kode-admin-post figure, .kode-admin-post figure img {
+    border-radius: 100%;
+}
+
+.kode-admin-post figure ~ .admin-info {
+    padding: 15px 0px 0px 142px;
+}
+
+.admin-info h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+/* Action */
+.kode-call-toaction {
+    float: left;
+    width: 100%;
+    background-color: #efefef;
+    padding: 40px;
+    text-align: center;
+    border-bottom: 1px solid #dedada;
+    margin-bottom: 35px;
+}
+
+.kode-call-toaction h2 {
+    font-size: 54px;
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 1;
+    margin: 0px;
+}
+
+.kode-call-toaction span {
+    font-size: 24px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 30px;
+    display: inline-block;
+}
+
+.kode-action-btn {
+    display: inline-block;
+    padding: 12px 26px 9px 26px;
+    border-radius: 3px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bolder;
+}
+
+.k_capcha_image_frame i {
+    display: none;
+}
+
+.kode-under-construction .kode-text p {
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+.kode-error .input-container, .kode-under-construction .input-container {
+    margin-top: 0px;
+}
+
+.alert > p, .alert > ul {
+    color: #000;
+}
+
+.kode-team-detail blockquote {
+    margin: 30px 0px;
+}
+
+section.kode-pagesection {
+    padding: 50px 0px 30px;
+}
+
+
+/* Couses List */
+.kode-causes-list figure {
+    position: relative;
+
+}
+
+.kode-causes-list figure, .kode-causes-thumb, .cause-inner-caption, .kode-causes-list ul li img {
+    float: left;
+    width: 100%;
+}
+
+.kode-causes-thumb {
+    overflow: hidden;
+    position: relative;
+}
+
+.kode-causes-list ul li {
+    list-style: none;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.kode-causes-list ul li:hover .kode-causes-thumb:before {
+    opacity: 1;
+}
+
+.kode-causes-list ul li .kode-causes-thumb:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    opacity: 0;
+}
+
+.kode-causes-list ul li:hover img {
+    -webkit-transform: scale(1.4);
+    -moz-transform: scale(1.4);
+    -ms-transform: scale(1.4);
+    -o-transform: scale(1.4);
+    transform: scale(1.4);
+}
+
+.kode-label {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    width: 60px;
+    padding: 10px 0px 7px 0px;
+    color: #ffffff;
+    text-align: center;
+    z-index: 2;
+}
+
+.kode-label:before {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -10px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 10px solid red;
+    z-index: 1;
+}
+
+.kode-label:after {
+    content: '';
+    position: absolute;
+    left: 0px;
+    bottom: -11px;
+    border-left: 30px solid transparent;
+    border-right: 30px solid transparent;
+    border-top: 10px solid #cb9106;
+    z-index: 0;
+}
+
+.kode-label small {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 4px solid rgba(255, 255, 255, 0.5);
+    border-radius: 100%;
+    font-size: 16px;
+    color: #242424;
+    line-height: 1;
+    padding: 4px 0px 0px 0px;
+    margin-bottom: 10px;
+}
+
+.kode-label span {
+    display: block;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.kode-causes-box ul {
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+.kode-causes-box figure figcaption {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    background: url(images/caption-bg.png);
+    width: 100%;
+    z-index: 2;
+}
+
+.causes-skills .progress {
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 0px;
+    height: 9px;
+    overflow: inherit;
+}
+
+.causes-skills .progress-bar {
+
+    position: relative;
+}
+
+.causes-skills .progress-bar span {
+    position: absolute;
+    right: -20px;
+    bottom: 20px;
+    padding: 1px 6px;
+    color: #ffffff;
+    font-size: 13px;
+}
+
+.causes-skills .progress-bar span:before {
+    content: '';
+    position: absolute;
+    left: 9px;
+    bottom: -7px;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid red;
+}
+
+.cause-inner-caption {
+    padding: 0px 15px 12px 15px;
+}
+
+.kode-causes-info {
+    float: left;
+}
+
+.kode-causes-info h2 {
+    line-height: 1;
+    margin: 0px;
+}
+
+.kode-causes-info h2 a {
+    color: #ffffff;
+    text-transform: uppercase;
+}
+
+.kode-causes-info p {
+    color: #ffffff;
+    margin: 0px;
+}
+
+.kode-donate-btn {
+    float: right;
+    padding: 5px 18px 2px;
+    color: #ffffff;
+    text-transform: uppercase;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: 500;
+    text-shadow: 0px 1px 1px #000;
+}
+
+/* CouseDetail */
+.kode-couse-thumb, .kode-couse-thumb a, .kode-couse-thumb img {
+    float: left;
+    width: 100%;
+    margin: 0px;
+}
+
+.kode-couse-thumb figcaption {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+}
+
+.kode-couse-thumb figcaption .progress {
+    margin-bottom: 0px;
+}
+
+.kode-indetail {
+    float: left;
+    width: 100%;
+    background-color: ghostwhite;
+    padding: 24px;
+    margin-bottom: 30px;
+}
+
+.kode-uderdonation h2 {
+    font-weight: 500;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+}
+
+.kode-uderdonation ul {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.kode-uderdonation ul li {
+    float: left;
+    list-style: none;
+    margin: 0px 10px 10px 0px;
+}
+
+.kode-uderdonation ul li a {
+    float: left;
+    padding: 5px 15px 3px;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    color: #2b2b2b;
+    font-size: 16px;
+}
+
+.kode-uderdonation ul li a i {
+    font-size: 12px;
+    color: #757574;
+    float: left;
+    padding: 6px 8px 0px 0px;
+}
+
+.kode-uderdonation form {
+    float: left;
+    width: 100%;
+}
+
+.kode-uderdonation form input[type="text"] {
+    float: left;
+    width: 50%;
+    height: 41px;
+    border: 1px solid #d1d1d1;
+    border-radius: 4px;
+    background: none;
+    color: #2b2b2b;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.kode-uderdonation form input[type="submit"] {
+    float: left;
+    color: #fff;
+    font-weight: bolder;
+    text-transform: uppercase;
+    padding: 10px 40px 10px 40px;
+    border: none;
+    margin-left: 10px;
+}
+
+.vertical {
+    height: 46px;
+    -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+    transform: rotate(-90deg);
+    background-color: #e3e3e3;
+    height: 46px;
+    left: -10px;
+    position: absolute;
+    top: 52px;
+    width: 140px;
+}
+
+.cousedetail-info {
+    float: right;
+    width: 110px;
+    padding: 11px 0px 0px 0px;
+}
+
+.cousedetail-info span {
+    font-size: 36px;
+    color: #777777;
+    line-height: 0.7;
+    margin-bottom: 30px;
+    float: left;
+}
+
+.cousedetail-info span:last-child {
+    margin-bottom: 0px;
+}
+
+.cousedetail-info span small {
+    font-size: 16px;
+}
+
+.causes-skills .progress-bar span,
+.kode-causes-list ul li:hover .kode-label {
+    -webkit-backface-visibility: visible !important;
+    backface-visibility: visible !important;
+    -webkit-animation-name: flipInX;
+    animation-name: flipInX;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.more-service-btn:before, .kode-morebtn, .kode-causes-list ul li img,
+.kode-causes-list ul li .kode-causes-thumb:before {
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.kode-editor p {
+    margin-bottom: 10px;
+}

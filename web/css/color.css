@@ -1,0 +1,78 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/*
+============================================
+				TEXT COLOR
+============================================
+*/
+.causes-skills .progress-bar span:before {
+    border-top: 7px solid #e6007e;
+}
+
+.ev-text .val,
+.kf-services a.read-more, .kf-services:hover i, .kode-team-member .kode-text h3, .kode-blog-list .kode-text h2, .widget-recentpost ul li a:hover, .thumb-with-text h2, .kode-event-list-2 .kode-text h2, .widget-blog ul li a:hover, .kode-contact-icon a:hover, .share-cause li a:hover, .kode-product .kode-text h4 a:hover, .kode-product .kode-text h2 a:hover, .kode-comments .kode-text h5 a:hover, .kode-error h2, .kode-error h1.error, .kode-under-construction h2, .countdown-amount, .countdown-period, .kode-shop-detail .kode-text h2.price, .kode-team-detail .kode-text h5 {
+    color: #e6007e;
+}
+
+/*
+============================================
+			BACKGROUND COLOR
+============================================
+*/
+.causes-skills .progress-bar span, .kode-label,
+.causes-skills .progress-bar,
+.kode-label,
+.progress-bar-danger, .heading-4 h2:after,
+.parallax-bg-count:before, .video-section:before,
+.logo:before, .logo, .navigation ul li:before, .navigation ul ul, .main-banner .bxslider .caption a.donate:hover, .main-banner .bxslider .caption .banner-meta a:hover, .main-banner .bx-wrapper .bx-pager.bx-default-pager a.active, .slider-selection, .btn-filled, .btn-filled-rounded, .kode-cause-list .kode-thumb, .progress-section, .btn-borderd:hover, .kode-team-section, .kode-social-icons ul li a, .buy-template, .widget-social-network .input-container button, .kd-accordion .accordion.accordion-open, .kd-accordion .accordion:hover, .kode-fund-raised .progress-bar, .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus, .kode-event-list-2 .kode-thumb, .kode-blog-list .kode-thumb, .widget-categories ul li a:hover, .widget-blog ul li .kode-thumb, .widget-tags ul li a, .widget-archive ul li a:hover, .widget-flickr ul li, .kode-gallery-item .kode-thumb, .kode-gallery-item .kode-thumb, .kode-blog-list i, .kode-contact-icon:hover i, .kode-blog-detail .kode-thumb i, .kode-blog-detail .kode-thumb, .kode-blog-option .kode-tags a:hover, .kode-share-blog ul li a:hover, .kode-comments .kode-text a.reply, .kode-choose-amount, .kode-cause-list-detail .kode-fund-raised ul li a:hover, .kode-shop-detail .product-quantity .qtyminus:hover, .kode-shop-detail .product-quantity .qtyplus:hover, .kode-reviews .nav-tabs > li a:hover, .kode-reviews .nav-tabs > li.active > a, .kode-reviews .nav-tabs > li.active > a:hover, .kode-reviews .nav-tabs > li.active > a:focus, .kode-donate .select-amount .donate-btn.active, .kode-skills .progress .progress-bar span:before, .kode-skills .progress .progress-bar, .header-2 .nav-content .kode-donate-now a, .main-banner-2 .bxslider .caption-2 a, .kode-search-2 button, .navigation ul ul:before, .dl-menuwrapper button, .dl-menuwrapper ul, .header-2 .logo:after, .kode-blog-list .bx-pager a:hover {
+    background-color: #e6007e;
+}
+
+
+
+
+
+.logo:before, .logo, .navigation ul li:before {
+    background-color: #ffffff;
+}
+
+/*
+============================================
+				BORDER COLOR
+============================================
+*/
+blockquote,
+.main-banner .bxslider .caption a.donate:hover, .kf-services:hover, .btn-borderd:hover, .pagination > li > a:hover, .pagination > li > span:hover, .pagination > li > a:focus, .pagination > li > span:focus, .kode-contact-icon:hover i, .kode-share-blog ul li a:hover, .countdown-section, .kode-cause-list-detail .kode-fund-raised ul li a:hover {
+    border-color: #e6007e;
+}
+
+.kode-label {
+    background: #e6007e;
+}
+
+.kode-label:before {
+    border-top: 10px solid #e6007e;
+}
+
+.causes-skills .progress-bar span:before {
+    border-top: 7px solid #e6007e;
+}
+
+.kode-label:after {
+    border-top-color: #e6007e;
+}
+
+/*
+============================================
+			CSS TRANSITIONS
+============================================
+*/
+.kode-causes-list ul li:hover .kode-causes-thumb:before,
+.navigation ul li:before, .navigation ul ul, .navigation ul ul li a, .navigation ul ul li a:before, .main-banner .bxslider .caption a.donate, .main-banner .bxslider .caption .banner-meta a, .kf-services, .kf-services i, .btn-filled, .btn-filled-rounded, .kode-cause-list .kode-thumb img, .kode-cause-list, .video-title a.play, .btn-borderd, .kode-event-list:before, .kode-event-list img, .kode-team-member a:before, .kode-social-icons ul li a, .kode-team-member .kode-text, .kode-blog-list, .kode-blog-list .kode-avatar, .kode-blog-list .kode-thumb img, .widget-recentpost ul li a, .widget-social-network ul li span, .widget-social-network .input-container button, .widget-social-network ul li i, .footer-nav ul li a, .kd-accordion .accordion, .kode-testimonials-cover .bx-wrapper .bx-controls-direction a, .pagination > li > a, .pagination > li > span, .kode-event-list-2, .kode-event-list-2 img, .kode-event-list-2 .kode-thumb a:before, .kode-blog-list .kode-thumb a:before, .kode-cause-list .kode-thumb a:before, .widget-categories ul li a, .widget-categories ul li:before, .widget-blog ul li a, .widget-blog ul li .kode-thumb img, .widget-blog ul li .kode-thumb a:before, .widget-tags ul li a, .widget-archive ul li a, .widget-archive ul li:before, .widget-social ul li a, .widget-flickr ul li:before, .widget-flickr ul li img, .kode-gallery-item a.like, .kode-gallery-item, .kode-gallery-item .kode-text, .kode-gallery-item a.like, .kode-gallery-item .kode-thumb a:before, .kode-gallery-item .kode-thumb img, .kode-blog-list i, .kode-contact-icon i, .kode-contact-icon, .kode-product, .kode-product .kode-text h4 a, .kode-product .kode-text h2 a, .kode-product .kode-thumb:before, .kode-product .btn-filled.cart, .kode-product .btn-filled.view, .kode-blog-detail .kode-thumb, .kode-blog-option .kode-tags a, .kode-share-blog ul li a, .kode-comments .kode-text a.reply, .kode-fund-raised ul li a, .kode-shop-detail .product-quantity .qtyminus, .kode-shop-detail .product-quantity .qtyplus, .kode-team-member, .kode-team-detail .prectic-areas ul li a, .navigation ul li a, .header-2 .nav-content .kode-donate-now a, .btn-filled-white, .kode-blog-list .bx-pager a {
+    transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}

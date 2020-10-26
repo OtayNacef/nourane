@@ -1,0 +1,70 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="inner-banner">
+        <div class="container">
+            <h2>ACTUALITÉS</h2>
+            <ol class="breadcrumb">
+                <li><a href="{{ path('index') }}">Acceuil</a></li>
+                <li><a href="{{ path('indexBlog') }}">ACTUALITÉS</a></li>
+            </ol>
+        </div>
+    </div>
+    <!--CONTENT START-->
+
+                    <div class="content">
+                        <div class="container">
+                            <div class="content-cover">
+                                <div class="row">
+                                    {% for blog in blogs %}
+                                        <div class="col-md-4 col-sm-6">
+                                            <div class="kode-blog-list">
+                                                <div class="kode-thumb">
+                                                    <a href="{{ path('DetailsBlog' , {blog : blog.id}) }}"><img style="height: 300px;width: 360px" alt=""
+                                                                     src="{{ asset('AppImg/') }}{{ blog.imageName }}"></a>
+                                                </div>
+                                                <div class="kode-text">
+                                                    <div class="kode-avatar">
+                                                        <a href="#"><img style="height: 70px;width: 70px" alt=""
+                                                                         src="{{ asset('AppImg/') }}{{ blog.author.imageName }}"></a>
+                                                    </div>
+                                                    <h2>{{ blog.title }}</h2>
+                                                    <p>Publié par: {{ blog.author }}</p>
+                                                    <p>{% set datePost = blog.dateCreation|date('d-m-Y') %}
+                                                    {% set today = "now"|date('d-m-Y') %}
+                                                    {% set difference = date(today).diff(date(datePost)) %}
+                                                    {% set leftDays = difference.days %}
+                                                    {% if datePost == today %}
+                                                        publié il y a :1 jours
+                                                    {% else %}
+                                                        publié  il y a : {{ leftDays }} jours
+                                                    {% endif %}
+                                                    </p>
+
+                                                    {% if blog.content|length > 40   %}
+                                                        <h4>{{ blog.content|slice(0, 40)|raw("8") }} ...</h4>
+                                                        <a class="btn-filled-rounded" href="{{ path('DetailsBlog' , {blog : blog.id}) }}">
+                                                            Read More
+                                                        </a>
+                                                    {% else %}
+                                                        <h4>{{ blog.content|raw("8") }}</h4>
+                                                    {% endif %}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                                <!--PAGINATION START-->
+                                <nav>
+                                    <ul class="pagination">
+                                        {{ knp_pagination_render(blogs) }}
+                                    </ul>
+                                </nav>
+                                <!--PAGINATION END-->
+                            </div>
+                        </div>
+                    </div>
+
+{% endblock %}

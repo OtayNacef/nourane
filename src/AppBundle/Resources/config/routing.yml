@@ -1,0 +1,43 @@
+app_team:
+    resource: "@AppBundle/Resources/config/routing/team.yml"
+    prefix:   /team
+app_event:
+    resource: "@AppBundle/Resources/config/routing/event.yml"
+    prefix:   /event
+gallery:
+    resource: "@AppBundle/Resources/config/routing/product.yml"
+    prefix:   /gallery
+index:
+    path:     /
+    defaults: { _controller: AppBundle:Default:index }
+indexBlog:
+    path:     /list-actualite
+    defaults: { _controller: AppBundle:Default:indexBlog }
+DetailsBlog:
+    path:     /actualite/{blog}
+    defaults: { _controller: AppBundle:Default:show }
+addBlog:
+    path:     /add-actualite
+    defaults: { _controller: AppBundle:Default:new }
+aboutUs:
+    path:     /apropos
+    defaults: { _controller: AppBundle:Default:Aboutus }
+Slider:
+    path:     /slider
+    defaults: { _controller: AppBundle:Default:Slider }
+
+article1:
+    path:     /PREVENTION
+    defaults: { _controller: AppBundle:Default:article1 }
+
+article2:
+    path:     /Depistage
+    defaults: { _controller: AppBundle:Default:article2 }
+
+article3:
+    path:     /Faire un don
+    defaults: { _controller: AppBundle:Default:article3 }
+
+fairUnDon:
+    path:     /fairUnDon/{price}
+    defaults: { _controller: AppBundle:Default:don }

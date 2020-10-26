@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Donates list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Etat</th>
+                <th>Information</th>
+                <th>Datecreation</th>
+                <th>Montant</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for donate in donates %}
+            <tr>
+                <td><a href="{{ path('donate_show', { 'id': donate.id }) }}">{{ donate.id }}</a></td>
+                <td>{% if donate.etat %}Yes{% else %}No{% endif %}</td>
+                <td>{{ donate.information }}</td>
+                <td>{% if donate.dateCreation %}{{ donate.dateCreation|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ donate.montant }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('donate_show', { 'id': donate.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('donate_edit', { 'id': donate.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('donate_new') }}">Create a new donate</a>
+        </li>
+    </ul>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+<div class="card">
+    <div class="card-header"><h1>Ajout Image gallery</h1>
+    </div>
+    <div class="card-body">
+            {% form_theme form 'product/_form_theme.html.twig' %}
+
+            {{ form_start(form) }}
+
+            <div class="col-md-6 form-group mb-3">
+                <label for="nomEvenement">Nom galery</label>
+                {{ form_widget(form.name, {'attr': {'class': 'form-control'}}) }}
+
+            </div>
+
+        <div class="col-md-6 form-group mb-3">
+            <label for="nomEvenement">Photo principale</label>
+            {{ form_widget(form.imageFile)}}
+
+        </div> 
+    {{ form_end(form) }}
+        </div>
+        <div class="card-footer">
+
+                    <a class="btn btn-primary" href="{{ path('indexGallery') }}">
+                        Retour à la liste</a>
+
+    </div>
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+    <script type="application/javascript">
+        $('.add-another-collection-widget').click(function (e) {
+            var list = $($(this).attr('data-list-selector'));
+            var counter = list.data('widget-counter') | list.children().length;
+            var newWidget = list.attr('data-prototype');
+            newWidget = newWidget.replace(/__name__/g, counter);
+            counter++;
+            list.data('widget-counter', counter);
+            var newElem = $(list.attr('data-widget-tags')).html(newWidget);
+            newElem.appendTo(list);
+        });
+    </script>
+    {% endblock %}

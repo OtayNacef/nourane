@@ -1,0 +1,238 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="inner-banner">
+        <div class="container">
+            <h2>{{ event.nomEvenement }} </h2>
+            <ol class="breadcrumb">
+                <li><a href="#">Acceuil</a></li>
+                <li><a href="#">Actualité</a></li>
+            </ol>
+        </div>
+    </div>
+    <!--CONTENT START-->
+    <div class="content">
+        <div class="container">
+            <div class="content-cover">
+                <div class="row">
+                    <div class="col-lg-9">
+                        <div class="kode-event-detail">
+                            <figure class="kode-detail-thumb"><img src="{{ asset('AppImg/') }}{{ event.imageName }}"
+                                                                   alt=""></figure>
+
+                            <div class="event-contdown">
+                                <div class="countdown countdown-container" data-border-color="#F46D6D">
+                                    <div class="clock row">
+                                        <div class="clock-item clock-days countdown-time-value col-sm-6 col-md-3">
+                                            <div class="wrap">
+                                                <div class="inner">
+                                                    <div id="canvas-days" class="clock-canvas">
+                                                        <div class="kineticjs-content" role="presentation"
+                                                             style="position: relative; display: inline-block; width: 139px; height: 139px;">
+                                                            <canvas width="173" height="173"
+                                                                    style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 139px; height: 139px;"></canvas>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ev-text">
+                                                        <p class="val" id="days"></p>
+                                                        <p class="type-days type-time">JOURS</p>
+                                                    </div><!-- /.ev-text -->
+                                                </div><!-- /.inner -->
+                                            </div><!-- /.wrap -->
+                                        </div><!-- /.clock-item -->
+
+                                        <div class="clock-item clock-hours countdown-time-value col-sm-6 col-md-3">
+                                            <div class="wrap">
+                                                <div class="inner">
+                                                    <div class="clock-canvas">
+                                                        <div class="kineticjs-content" role="presentation"
+                                                             style="position: relative; display: inline-block; width: 139px; height: 139px;">
+                                                            <canvas width="173" height="173"
+                                                                    style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 139px; height: 139px;"></canvas>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ev-text">
+                                                        <p class="val" id="hours"></p>
+                                                        <p class="type-hours type-time">Heures</p>
+                                                    </div><!-- /.ev-text -->
+                                                </div><!-- /.inner -->
+                                            </div><!-- /.wrap -->
+                                        </div><!-- /.clock-item -->
+
+                                        <div class="clock-item clock-minutes countdown-time-value col-sm-6 col-md-3">
+                                            <div class="wrap">
+                                                <div class="inner">
+                                                    <div class="clock-canvas">
+                                                        <div class="kineticjs-content" role="presentation"
+                                                             style="position: relative; display: inline-block; width: 139px; height: 139px;">
+                                                            <canvas width="173" height="173"
+                                                                    style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 139px; height: 139px;"></canvas>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ev-text">
+                                                        <p class="val" id="minutes"></p>
+                                                        <p class="type-seconds type-time">Minutes</p>
+                                                    </div><!-- /.ev-text -->
+                                                </div><!-- /.inner -->
+                                            </div><!-- /.wrap -->
+                                        </div><!-- /.clock-item -->
+
+                                        <div class="clock-item clock-seconds countdown-time-value col-sm-6 col-md-3">
+                                            <div class="wrap">
+                                                <div class="inner">
+                                                    <div id="canvas-seconds" class="clock-canvas">
+                                                        <div class="kineticjs-content" role="presentation"
+                                                             style="position: relative; display: inline-block; width: 139px; height: 139px;">
+                                                            <canvas width="173" height="173"
+                                                                    style="padding: 0px; margin: 0px; border: 0px; background: transparent; position: absolute; top: 0px; left: 0px; width: 139px; height: 139px;"></canvas>
+                                                        </div>
+                                                    </div>
+                                                    <div class="ev-text">
+                                                        <p class="val" id="secondes"></p>
+                                                        <p class="type-seconds type-time">Secondes</p>
+                                                    </div><!-- /.text -->
+                                                </div><!-- /.inner -->
+                                            </div><!-- /.wrap -->
+                                        </div><!-- /.clock-item -->
+                                    </div><!-- /.clock -->
+                                </div>
+                            </div>
+                            <hr>
+                            <hr>
+                            <div class="kode-editor">
+                                <h2>{{ event.nomEvenement }}</h2>
+
+
+                                <div class="row">
+
+                                    <div class="col-md-12">
+                                        <ul class="evdetail-info">
+                                            <li>
+                                                <span><i class="fa fa-calendar"></i> Date debut</span> {{ event.start|date }}
+                                            </li>
+                                            <li>
+                                                <span><i class="fa fa-calendar"></i> Date Fin</span> {{ event.end|date }}
+                                            </li>
+                                            <li>
+                                                <span><i class="fa fa-map-marker"></i> Emplacement </span> {{ event.adr }}
+                                            </li>
+                                        </ul>
+                                        <div class="donate-text event-btns">
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <hr>
+                                <br>
+                                <p> {{ event.description|raw }}</p>
+                            </div>
+                            <br>
+
+                            <hr>
+                            <hr>
+                            <div class="kode-comments">
+                                <h2>Commentaires :</h2>
+                                <div id="disqus_thread"></div>
+                                <script>
+
+                                    (function () {
+                                        var d = document, s = d.createElement('script');
+                                        s.src = 'https://association-nourane.disqus.com/embed.js';
+                                        s.setAttribute('data-timestamp', +new Date());
+                                        (d.head || d.body).appendChild(s);
+                                    })();
+                                </script>
+                                <noscript>Please enable JavaScript to view the <a
+                                            href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+                                </noscript>
+
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="col-md-3 sidebar">
+
+                        <div class="widget widget-blog">
+                            <div class="widget-header">
+                                <h2>Evenements recentes</h2>
+                            </div>
+                            <ul>{% for eventlatest in latest %}
+                                    <li>
+                                        <div class="kode-thumb">
+                                            <a href="{{ path('event_show' , {id : eventlatest.id}) }}"><img width="70"
+                                                                                                            height="70"
+                                                                                                            src="{{ asset('AppImg/') }}{{ eventlatest.imageName }}"
+                                                                                                            alt=""></a>
+                                        </div>
+                                        <div class="kode-text">
+                                            <h5><a href="#">{{ eventlatest.nomEvenement }}</a></h5>
+                                            <p>{{ eventlatest.start|date }} </p>
+                                            <p>{{ eventlatest.start|date }} </p>
+                                        </div>
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="widget widget-social">
+                            <div class="widget-header">
+                                <h2>
+                                    Suivez nous</h2>
+                            </div>
+                            <ul>
+                                <li class="fb"><a href="#" data-toggle="tooltip" title="Facebook"><i
+                                                class="fa fa-facebook"></i></a></li>
+                                <li class="twitter"><a href="#" data-toggle="tooltip" title="Twitter"><i
+                                                class="fa fa-twitter"></i></a></li>
+                                <li class="youtube"><a href="#" data-toggle="tooltip" title="YouTube"><i
+                                                class="fa fa-youtube-play"></i></a></li>
+                                <li class="dribbble"><a href="#" data-toggle="tooltip" title="Dribbble"><i
+                                                class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <!--RIGHT SIDE BAR END-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Display the countdown timer in an element -->
+
+    <script src="{{ asset('js/jquery.min.js') }}"></script>
+
+    <script>
+        // Set the date we're counting down to
+        var tomorrow = new Date("{{ event.start|date('m/d/Y') }}");
+        tomorrow.setDate(tomorrow.getDate() + 1);
+        var x = setInterval(function () {
+            var now = new Date().getTime();
+            var distance = tomorrow - now;
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if (tomorrow < now) {
+                document.getElementById("days").innerHTML = 0;
+                document.getElementById("hours").innerHTML = 0;
+                document.getElementById("minutes").innerHTML = 0;
+                document.getElementById("secondes").innerHTML = 0;
+            } else {
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("secondes").innerHTML = seconds;
+            }
+
+
+            // If the count down is finished, write some text
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED";
+            }
+        }, 1000);
+    </script>
+
+{% endblock %}

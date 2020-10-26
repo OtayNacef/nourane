@@ -1,0 +1,49 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-header">
+            <h3>Modifier evenement</h3>
+        </div>
+        <div class="card-body">
+            {{ form_start(edit_form) }}
+            <div class="row">
+                <div class="col-md-6 form-group mb-3">
+                    <label for="nomEvenement">Nom evenement</label>
+                    {{ form_widget(edit_form.nomEvenement, {'attr': {'class': 'form-control'}}) }}
+
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="nomEvenement">Adresse</label>
+                    {{ form_widget(edit_form.adr, {'attr': {'class': 'form-control'}}) }}
+                </div>
+                <div class="col-md-6 form-group mb-3">
+                    <label for="nomEvenement">Description</label>
+                    {{ form_widget(edit_form.description) }}
+                </div>
+
+                <div class="col-md-6 form-group mb-3">
+                    <label for="nomEvenement">Date debut</label>
+                    {{ form_widget(edit_form.start, {'attr': {'class': ''}}) }}
+                    <br>
+                    <label for="nomEvenement">Date fin</label>
+                    {{ form_widget(edit_form.end, {'attr': {'class': '' }}) }}
+                </div>
+                <div class="col-md-6  input-group mb-3">
+                    <div class="custom-file">
+                        <label for="nomEvenement">image upload</label>
+
+                        {{ form_widget(edit_form.imageFile, {'attr': {'class': 'custom-file-input'}}) }}
+                        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">choisir une image</label>
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <button class="btn btn-primary">Modifier</button>
+                </div>
+            </div>
+            {{ form_end(edit_form) }}
+
+        </div>
+    </div>
+{% endblock %}

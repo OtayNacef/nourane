@@ -1,0 +1,161 @@
+{% extends 'base.html.twig' %}
+{% import hackzilla_ticket.templates.macros as macros %}
+{% block body %}
+    <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
+
+    <!--HEADER END-->
+    <div class="inner-banner">
+        <div class="container">
+            <h2>CONTACTEZ-NOUS</h2>
+
+        </div>
+    </div>
+    <!--CONTENT START-->
+    <div class="content">
+        <!--CONTACT SECTION START-->
+        <section>
+            <div class="container">
+                <!--HEADER SECTION START-->
+                <div class="section-header">
+                    <h2>SI VOUS AVEZ UNE QUESTION CONTACTEZ-NOUS!</h2>
+                </div>
+                <!--HEADER SECTION END-->
+                <div class="row">
+
+                    <div class="col-md-4 col-sm-6">
+                        <div class="kode-contact-icon">
+                            <i class="fa fa-map-marker"></i>
+                            <h2>Addresse</h2>
+                            <p>centre Médical Hannibal</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="kode-contact-icon">
+                            <i class="fa fa-envelope-o"></i>
+                            <h2>E-mail</h2>
+                            <p><a href="mailto:info@kodeforest.com">Contact@association-nourane.tn</a></p>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="kode-contact-icon">
+                            <i class="fa fa-phone"></i>
+                            <h2>Telephone</h2>
+                            <p>+216 27 387 100</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% if app.user %}
+            <section>
+
+
+                <div class="container">
+                    <!--HEADER SECTION START-->
+                    <div class="section-header">
+                        <h2>{{ 'HEADING_TICKET_LIST'|trans({}, translationDomain|default('messages')) }} du support</h2>
+                    </div>
+                    <!--HEADER SECTION END-->
+                    <div class="row">
+
+
+                        <div class="col-xs-4">
+                            <div class="btn-group">
+                                <a href="{{ path('hackzilla_ticket', {'state': 'STATUS_OPEN'|trans({}, translationDomain|default('messages'))}) }}"
+                                   class="btn-filled-rounded {{ ticketState != 'STATUS_CLOSED'|trans({}, translationDomain|default('messages')) ? 'active' : '' }}">{{ 'STATUS_OPEN'|trans({}, translationDomain|default('messages'))|upper }}</a>
+                                <a href="{{ path('hackzilla_ticket', {'state': 'STATUS_CLOSED'|trans({}, translationDomain|default('messages'))}) }}"
+                                   class="btn-filled-rounded {{ ticketState == 'STATUS_CLOSED'|trans({}, translationDomain|default('messages')) ? 'active' : '' }}">{{ 'STATUS_CLOSED'|trans({}, translationDomain|default('messages'))|upper }}</a>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4 text-center">
+                            <div class="btn-group">
+                                <a href="{{ path('hackzilla_ticket') }}"
+                                   class="btn-filled-rounded  {{ ticketPriority is null ? 'active' : '' }}"><span
+                                            class="glyphicon glyphicon-remove"></span></a>
+                                <a href="{{ path('hackzilla_ticket', {'priority': 'PRIORITY_HIGH'|trans({}, translationDomain|default('messages'))}) }}"
+                                   class="btn-filled-rounded {{ ticketPriority == 'PRIORITY_HIGH'|trans({}, translationDomain|default('messages')) ? 'active' : '' }}">{{ 'PRIORITY_HIGH'|trans({}, translationDomain|default('messages'))|upper }}</a>
+                                <a href="{{ path('hackzilla_ticket', {'priority': 'PRIORITY_MEDIUM'|trans({}, translationDomain|default('messages'))}) }}"
+                                   class="btn-filled-rounded {{ ticketPriority == 'PRIORITY_MEDIUM'|trans({}, translationDomain|default('messages')) ? 'active' : '' }}">{{ 'PRIORITY_MEDIUM'|trans({}, translationDomain|default('messages'))|upper }}</a>
+                                <a href="{{ path('hackzilla_ticket', {'priority': 'PRIORITY_LOW'|trans({}, translationDomain|default('messages'))}) }}"
+                                   class="btn-filled-rounded  {{ ticketPriority == 'PRIORITY_LOW'|trans({}, translationDomain|default('messages')) ? 'active' : '' }}">{{ 'PRIORITY_LOW'|trans({}, translationDomain|default('messages'))|upper }}</a>
+                            </div>
+                        </div>
+
+                        <div class="col-xs-4 text-right">
+                            <div class="btn-group">
+                                <a href="{{ path('hackzilla_ticket_new') }}" class="btn-filled-rounded"><span
+                                            class="glyphicon glyphicon-plus"></span> {{ 'BUTTON_NEW'|trans({}, translationDomain|default('messages')) }}
+                                </a>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="row">
+                    <div class="col-12 align-self-center">
+                        <div class="card card-block">
+
+                            <div class="col-md-2">
+                                <p></p>
+                            </div>
+                            <div style="padding-top: 20px" class="col-md-8 ">
+
+
+                                <table class="table-responsive table-dark">
+                                    <thead>
+                                    <tr>
+                                        <th{% if pagination.isSorted('t.subject') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'HEADING_SUBJECT'|trans({}, translationDomain|default('messages')), 't.subject') }}</th>
+                                        <th{% if pagination.isSorted('t.userCreated') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'HEADING_AUTHOR'|trans({}, translationDomain|default('messages')), 't.userCreated') }}</th>
+                                        <th{% if pagination.isSorted('t.status') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'HEADING_STATUS'|trans({}, translationDomain|default('messages')), 't.status') }}</th>
+                                        <th{% if pagination.isSorted('t.priority') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'HEADING_PRIORITY'|trans({}, translationDomain|default('messages')), 't.priority') }}</th>
+                                        <th{% if pagination.isSorted('t.modified') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'HEADING_MODIFIED'|trans({}, translationDomain|default('messages')), 't.lastMessage') }}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% for entity in pagination %}
+                                        <tr>
+
+                                            <td>
+                                                <a href="{{ path('hackzilla_ticket_show', { 'ticketId': entity.id }) }}">{{ entity.subject }}</a>
+                                            </td>
+                                            <td>{{ entity.userCreatedObject }}</td>
+                                            <td>{{ macros.status_btn(entity.status, entity.statusString|trans({}, translationDomain|default('messages')), true, translationDomain) }}</td>
+                                            <td>{{ macros.priority_btn(entity.priority, entity.priorityString|trans({}, translationDomain|default('messages')), true, translationDomain) }}</td>
+                                            <td>{% if entity.lastMessage %}{{ entity.lastMessage|date('LABEL_DATE_TIME_FORMAT'|trans({}, translationDomain|default('messages'))) }}{% endif %}</td>
+                                        </tr>
+                                    {% else %}
+                                        <tr>
+                                            <td colspan="7">{{ 'MESSAGE_NO_TICKETS'|trans({}, translationDomain|default('messages')) }}
+
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                    </tbody>
+                                </table>
+                                <div class="navigation text-right">
+                                    {{ knp_pagination_render(pagination, '@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig') }}
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+        {% else %}
+            <section class="buy-template">
+                <div class="container">
+                    <h2>Nous contacter</h2>
+                    <h4>Connectez-vous pour contacter l'association</h4>
+                    <a class="btn-borderd" href="{{ path('fos_user_security_login') }}">S'authentifier!</a>
+                </div>
+            </section>
+        {% endif %}
+    </div>
+{% endblock %}

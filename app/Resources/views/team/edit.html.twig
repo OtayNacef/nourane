@@ -1,0 +1,113 @@
+{% extends 'admin.html.twig' %}
+
+{% block body %}
+    <div class="card">
+        <div class="card-header">
+            <h1>Team edit</h1>
+        </div>
+        <div class="card-body">
+
+
+            {{ form_start(edit_form) }}
+
+
+            <div class="form-row">
+
+                <div class="col-md-6">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="position-relative form-group"><label for="exampleEmail11"
+                                                                             class="">Nom</label>
+
+                                {{ form_widget(edit_form.nom, { 'attr': {'class': 'form-control'} }) }}
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="position-relative form-group"><label
+                                        for="exampleEmail11" class="">poste</label>
+                                {{ form_widget(edit_form.poste, { 'attr': {'class': 'form-control'} }) }}
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="col-md-6">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="position-relative form-group"><label
+                                        for="examplePassword11" class="">Specialite</label>
+                                {{ form_widget(edit_form.specialite, { 'attr': {'class': 'form-control'} }) }}
+
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="position-relative form-group"><label
+                                        for="exampleEmail11" class="">facebook</label>
+                                {{ form_widget(edit_form.facebook, { 'attr': {'class': 'form-control'} }) }}
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+
+                <div class="col-md-6">
+                    <div class="form-row">
+                        <div class="col-md-6">
+                            <div class="position-relative form-group"><label for="exampleEmail11"
+                                                                             class="">Instagram</label>
+
+                                {{ form_widget(edit_form.instagram, { 'attr': {'class': 'form-control'} }) }}
+
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="position-relative form-group"><label
+                                        for="exampleEmail11" class="">Linkedin</label>
+                                {{ form_widget(edit_form.linkedin, { 'attr': {'class': 'form-control'} }) }}
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+
+                <div class="col-md-6">
+                    <div class="form-row">
+
+                        <div class="col-md-12">
+                            <div class="position-relative form-group"><label
+                                        for="exampleEmail11" class="">Image</label>
+                                {{ form_widget(edit_form.imageFile) }}
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mc_embed_signup_scroll" class="htc__news__inner">
+                <div class="slider__btn">
+                    <button class="btn btn-primary" type="submit"><i
+                                class="fa fa-check"></i>&nbsp; Modifier
+                    </button>
+                </div>
+            </div>
+
+
+            {{ form_end(edit_form) }}
+
+        </div>
+    </div>
+{% endblock %}
