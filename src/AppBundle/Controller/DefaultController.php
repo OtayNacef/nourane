@@ -14,7 +14,17 @@ use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class DefaultController extends Controller
 {
+    public function policyAction(Request $request)
+    {
+        return $this->render('policy/policy.html.twig');
 
+    }
+
+    public function tosAction(Request $request)
+    {
+        return $this->render('policy/tos.html.twig');
+
+    }
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();

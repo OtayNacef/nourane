@@ -56,6 +56,17 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
      * @var string|null
      */
     private $imageName;
+    /** @ORM\Column(name="facebook_id", type="string", length=255, nullable=true) */
+    protected $facebook_id;
+
+    /** @ORM\Column(name="facebook_access_token", type="string", length=255, nullable=true) */
+    protected $facebook_access_token;
+
+    /** @ORM\Column(name="google_id", type="string", length=255, nullable=true) */
+    protected $google_id;
+
+    /** @ORM\Column(name="google_access_token", type="string", length=255, nullable=true) */
+    protected $google_access_token;
     /**
      * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
      * of 'UploadedFile' is injected into this setter to trigger the update. If this
@@ -81,12 +92,12 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
         return $this->imageFile;
     }
 
-    public function setImageName(?string $imageName): void
+    public function setImageName( $imageName)
     {
         $this->imageName = $imageName;
     }
 
-    public function getImageName(): ?string
+    public function getImageName()
     {
         return $this->imageName;
     }
@@ -151,9 +162,89 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
     /**
      * @param mixed $id
      */
-    public function setId($id): void
+    public function setId($id)
     {
         $this->id = $id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string $email
+     */
+    public function setEmail($email)
+    {
+        $this->email = $email;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFacebookId()
+    {
+        return $this->facebook_id;
+    }
+
+    /**
+     * @param mixed $facebook_id
+     */
+    public function setFacebookId($facebook_id): void
+    {
+        $this->facebook_id = $facebook_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFacebookAccessToken()
+    {
+        return $this->facebook_access_token;
+    }
+
+    /**
+     * @param mixed $facebook_access_token
+     */
+    public function setFacebookAccessToken($facebook_access_token): void
+    {
+        $this->facebook_access_token = $facebook_access_token;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGoogleId()
+    {
+        return $this->google_id;
+    }
+
+    /**
+     * @param mixed $google_id
+     */
+    public function setGoogleId($google_id): void
+    {
+        $this->google_id = $google_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getGoogleAccessToken()
+    {
+        return $this->google_access_token;
+    }
+
+    /**
+     * @param mixed $google_access_token
+     */
+    public function setGoogleAccessToken($google_access_token): void
+    {
+        $this->google_access_token = $google_access_token;
     }
 
 

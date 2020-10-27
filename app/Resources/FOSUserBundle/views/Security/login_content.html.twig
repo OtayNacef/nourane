@@ -6,50 +6,79 @@
         <div class="container">
             <div class="section-header">
                 <h2>Connectez-vous</h2>
-                <hr style="color: black !important;" class="space s" />
+                <hr style="color: black !important;" class="space s"/>
 
             </div>
 
             {% if error %}
                 <div class="title-base text-left">
-                    <hr />
+                    <hr/>
 
                     <h2 style="color: black !important;">{{ error.messageKey|trans(error.messageData, 'security') }}</h2>
 
 
                 </div>
-                <hr style="color: black !important;" class="space s" />
+                <hr style="color: black !important;" class="space s"/>
 
             {% endif %}
-                <form class="comments-form" id="contactform" action="{{ path("fos_user_security_check") }}" method="post">
-                    {% if csrf_token %}
-                        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
-                    {% endif %}
+            <form class="comments-form" id="contactform" action="{{ path("fos_user_security_check") }}" method="post">
+                {% if csrf_token %}
+                    <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"/>
+                {% endif %}
                 <div class="row">
                     <div class="col-md-12">
                         <div class="input-container">
                             <i class="fa fa-user"></i>
-                            <input placeholder="username" class="required" type="text" id="username" name="_username" value="{{ last_username }}" required="required" autocomplete="username" />
+                            <input placeholder="username" class="required" type="text" id="username" name="_username"
+                                   value="{{ last_username }}" required="required" autocomplete="username"/>
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="input-container">
                             <i class="fa fa-key"></i>
-                            <input placeholder="password" class="required email" type="password" id="password" name="_password" required="required" autocomplete="current-password" />
+                            <input placeholder="password" class="required email" type="password" id="password"
+                                   name="_password" required="required" autocomplete="current-password"/>
                         </div>
                     </div>
-                    <p style="color: black !important;">Vous n'avez pas de compte? <a href="{{ path('fos_user_registration_register') }}"> S'inscrire maintenant </a> </p>
-                    <p style="color: black !important;"><a href="{{ path('fos_user_resetting_request') }}"> mot de passe oublié ? </a> </p>
+                    <div class="col-md-3  pull-left">
+                        <div class="widget widget-social-network">
+                                <h2>Connecter avec</h2>
+                            <ul>
+                                <li class="fb">
+                                    <a href="{{ path('facebook_login') }}">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="google">
+                                    <a href="#">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
 
-                    <hr style="color: black !important;" class="space s" />
+                            </ul>
+                        </div>
+                    </div>
+                    <br>
+                    <hr style="color: black !important;" class="space s"/>
 
+                    <p style="color: black !important;">Vous n'avez pas de compte? <a
+                                href="{{ path('fos_user_registration_register') }}"> S'inscrire maintenant </a></p>
+                    <p style="color: black !important;"><a href="{{ path('fos_user_resetting_request') }}"> mot de passe
+                            oublié ? </a></p>
+
+                    <hr style="color: black !important;" class="space s"/>
+                    <div class="col-md-3 justify-content-center">
+
+                    </div>
                     <div class="col-md-3 justify-content-center pull-right">
                         <button class="btn-filled">Connecter-Vous <i
                                     class="fa fa-sign-in"></i></button>
                     </div>
 
+
                 </div>
-                <div class="hidden-me" id="contact_form_responce"><p></p></div></form>
+                <div class="hidden-me" id="contact_form_responce"><p></p></div>
+            </form>
         </div>
     </section>
 

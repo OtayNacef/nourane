@@ -31,16 +31,7 @@
                                                     </div>
                                                     <h2>{{ blog.title }}</h2>
                                                     <p>Publié par: {{ blog.author }}</p>
-                                                    <p>{% set datePost = blog.dateCreation|date('d-m-Y') %}
-                                                    {% set today = "now"|date('d-m-Y') %}
-                                                    {% set difference = date(today).diff(date(datePost)) %}
-                                                    {% set leftDays = difference.days %}
-                                                    {% if datePost == today %}
-                                                        publié il y a :1 jours
-                                                    {% else %}
-                                                        publié  il y a : {{ leftDays }} jours
-                                                    {% endif %}
-                                                    </p>
+                                                   {{ blog.dateCreation|time_diff  }}
 
                                                     {% if blog.content|length > 40   %}
                                                         <h4>{{ blog.content|slice(0, 40)|raw("8") }} ...</h4>

@@ -7,14 +7,20 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    locale: fr
+    locale: en
     images: '%kernel.project_dir%/web/AppImg'
+    github_client_id: <replace-with-your-github-client-id>
+    github_secret: <replace-with-your-github-secret>
+    facebook_app_id: '349357086167022'
+    facebook_app_secret: '24f04c931ab2067fed96eba8c7aa1059'
+    google_app_id: '595222389445-6dpvdr557e0bl4hkn8sldmmtirkqmrkj.apps.googleusercontent.com'
+    google_app_secret: 'gP9zq5JzDw3Pk3JUQZc1A8CR'
 
 framework:
     templating:
         engines: ['twig']
     #esi: ~
-    translator: ~
+    translator: { fallbacks: ['%locale%'] }
     secret: '%secret%'
     router:
         resource: '%kernel.project_dir%/app/config/routing.yml'
@@ -105,3 +111,28 @@ knp_paginator:
         sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
         filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
 
+hwi_oauth:
+    connect:
+        account_connector: my_user_provider
+    firewall_name: main
+    fosub:
+        username_iterations: 30
+        properties:
+            facebook: facebook_id
+            google: google_id
+    resource_owners:
+        facebook:
+            type:                facebook
+            client_id:           "%facebook_app_id%"
+            client_secret:       "%facebook_app_secret%"
+            scope: "email"
+            infos_url:           "https://graph.facebook.com/me?fields=email,first_name,last_name,name,picture.type(square),id"
+            paths:
+                email:       email
+                firstname:   first_name
+                lastname:    last_name
+        google:
+            type:                google
+            client_id:           "%google_app_id%"
+            client_secret:       "%google_app_secret%"
+            scope:               "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"

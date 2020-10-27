@@ -8,6 +8,8 @@ use AppBundle\Form\ProductType;
 use AppBundle\Form\VideosType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Vich\UploaderBundle\Form\Type\VichFileType;
+use Vich\UploaderBundle\Form\Type\VichImageType;
 
 /**
  * Product controller.
@@ -104,13 +106,19 @@ class ProductController extends Controller
      * Displays a form to edit an existing product entity.
      *
      */
-    public function editAction(Request $request, Product $product)
+    public function editAction(Request $request, $id)
     {
-        $deleteForm = $this->createDeleteForm($product);
-        $editForm = $this->createForm('AppBundle\Form\ProductType', $product);
+        $em = $this->getDoctrine()->getManager();
+        $product = $em->getRepository('AppBundle:Product')->find($id);
+
+        $editForm = $this->createFormBuilder($product)
+            ->add('name')
+            ->add('imageFile', VichFileType::class, array('required' => false))
+            ->getForm();
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $this->getDoctrine()->getManager()->persist($product);
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('product_edit', array('id' => $product->getId()));
@@ -119,7 +127,6 @@ class ProductController extends Controller
         return $this->render('product/edit.html.twig', array(
             'product' => $product,
             'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
         ));
     }
 

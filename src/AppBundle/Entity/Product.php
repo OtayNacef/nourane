@@ -34,7 +34,7 @@ class Product
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\ProductImage", mappedBy="productImages",cascade={"persist"})
      *
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="ProductImage", referencedColumnName="id", onDelete="CASCADE")
+     *   @ORM\JoinColumn(name="ProductImage", referencedColumnName="id", onDelete="CASCADE",nullable=true)
      * })
      *
      */

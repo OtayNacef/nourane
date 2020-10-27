@@ -47,10 +47,14 @@
                                                     <div class="ul-widget-card__rate-icon --version-2">
                                                         <a class="btn btn-outline-danger"
                                                            href="{{ path('deleteAlbums', {'id': p.id}) }}"
-                                                           type="button">Supprimer</a> <a
-                                                                class="btn btn-outline-success"
-                                                                href="{{ path('indexGalleryAdmin', {'id': p.id}) }}"
+                                                           type="button">Supprimer</a>
+                                                        <a class="btn btn-outline-success"
+                                                           href="{{ path('indexGalleryAdmin', {'id': p.id}) }}"
                                                                 type="button">Afficher</a>
+                                                        <a class="btn btn-outline-warning"
+                                                           href="{{ path('product_edit', {'id': p.id}) }}"
+                                                           type="button">modifier</a>
+
                                                     </div>
                                                 </div>
                                             </div>

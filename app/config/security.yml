@@ -22,8 +22,21 @@ security:
                 success_handler: authentication.handler.login_success_handler
                 #success_handler: authentication.handler.login_success_handler
                 #login_path:    /
+            oauth:
+                resource_owners:
+                    facebook:           "/login/check-facebook"
+                    google:             "/login/check-google"
+                login_path:        /login
+                failure_path:      /login
+    
+                oauth_user_provider:
+                    #this is my custom user provider, created from FOSUBUserProvider - will manage the
+                    #automatic user registration on your site, with data from the provider (facebook. google, etc.)
+                    service: my_user_provider
+
             logout:       true
             anonymous:    true
+           
 
     access_control:
         - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }

@@ -2,8 +2,12 @@
 # https://symfony.com/doc/current/service_container.html
 parameters:
     #parameter_name: value
-
+    my_user_provider.class: AppBundle\Entity\FOSUBUserProvider
 services:
+    my_user_provider:
+        class: "%my_user_provider.class%"
+        #this is the place where the properties are passed to the UserProvider - see config.yml
+        arguments: ['@fos_user.user_manager',{facebook: facebook_id, google: google_id}]
     authentication.handler.login_success_handler:
         class:  AppBundle\Listener\LoginSuccessHandler
         arguments:  ['@router', '@security.authorization_checker']
