@@ -4,209 +4,148 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <link href="{{ asset('profile.css') }}" rel="stylesheet">
 
-    <!-- jp Tittle Wrapper Start -->
-    <div class="jp_tittle_main_wrapper">
-        <div class="jp_tittle_img_overlay"></div>
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="jp_tittle_heading_wrapper">
-                        <div class="jp_tittle_heading">
-                            <h2>Edit-Profile</h2>
-                        </div>
-                        <div class="jp_tittle_breadcrumb_main_wrapper">
-                            <div class="jp_tittle_breadcrumb_wrapper">
-                                <ul>
-                                    <li><a href="#">Home</a> <i class="fa fa-angle-right"></i></li>
-                                    <li>Edit-{{ app.user.username }}-Profile</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div class="container">
+
     </div>
-    <!-- jp Tittle Wrapper End -->
-    <!-- jp ad post Wrapper Start -->
-    <div class="jp_adp_main_section_wrapper">
-        <div class="container">
-            {{ form_start(form) }}
 
-            {{ form_errors(form) }}
+    <hr>
+    <div class="container">
+        <div class="row profile">
+            <div class="col-md-3">
+                <div class="profile-sidebar">
+                    <!-- SIDEBAR USERPIC -->
+                    <div class="profile-userpic">
+                        {% if 'https' in app.user.imageName %}
+                            <img src="{{ app.user.imageName }}" class="img-responsive" alt="">
+                        {% else %}
+                            <img src="{{ asset("AppImg/" ) }}{{ app.user.imageName }}" class="img-responsive" alt="">
 
-            <div class="row">
-
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="jp_adp_form_heading_wrapper">
-                        <h2 style="color: #8dc539">Edit Your Profile</h2>
+                        {% endif %}
                     </div>
-                    <div class="jp_adp_form_wrapper">
-                        {{ form_widget(form.username) }}
-                    </div>
-
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-                    <div class="jp_adp_form_heading_wrapper">
-                        <p>Fields with * are mandetory</p>
-                    </div>
-                    <div class="jp_adp_form_wrapper">
-                        {{  form_widget(form.email) }}
-
-                    </div>
-
-                </div>
-
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-
-                    <div class="jp_adp_form_wrapper">
-                        {{ form_widget(form.adresse, { 'id': 'ala', 'placeholder':'Worker Account ?' }) }}
-                    </div>
-                    <div class="row">
-
-                        <div class="col-lg-6 col-md-6 col-md-6 col-xs-12">
-                            <div class="jp_adp_form_wrapper">
-                                {{ form_widget(form.nom, { 'id': 'type' , 'placeholder':'Worker Account ?'}) }}
-                            </div>
+                    <!-- END SIDEBAR USERPIC -->
+                    <!-- SIDEBAR USER TITLE -->
+                    <div class="profile-usertitle">
+                        <div class="profile-usertitle-name">
+                            {{ app.user.nom }} {{ app.user.prenom }}
                         </div>
-                        <div class="col-lg-6 col-md-6 col-md-6 col-xs-12">
-                            <div class="jp_adp_form_wrapper">
-                                {{ form_widget(form.prenom, { 'id': 'spe' }) }}
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 bottom_line_Wrapper">
-
-                    <div class="jp_adp_form_wrapper">
-                        {{  form_widget(form.telephone) }}
 
                     </div>
-                    <div class="row">
-
-                        <div class="col-lg-6 col-md-6 col-md-6 col-xs-12">
-                            <div class="jp_adp_form_wrapper">
-                                {{ form_widget(form.current_password,{'placeholder':'your password' }) }}
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="jp_adp_choose_resume">
-                        <div class="custom-input">
-                            <span><i class="fa fa-upload"></i> &nbsp;Upload Picture</span>
-                            {{  form_widget(form.imageFile) }}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="jp_adp_choose_resume_bottom_btn_post">
-                        <ul>
+                    <div class="profile-usermenu">
+                        <br>
+                        <ul class="nav">
+                            <li class="active">
+                                <a href="{{ path('fos_user_profile_edit') }}">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    Paramètres du compte </a>
+                            </li>
                             <li>
-                                <style>
-                                    #btn{
-                                        border-color:#8dc539;
-                                        background: #8dc539;
-                                        height: 50px; width: 160px;
-                                        transition-duration: 0.4s;
-                                    }
-                                    #btn:hover{
-                                        border-color: #8dc539;
-                                        background: transparent;
-                                        color: #8dc539;
-                                    }
-                                </style>
-                                <button id="btn" type="submit" class="btn btn-primary"><i class="fa fa-plus-circle"></i>&nbsp; Create My Profile</button>
+                                <a href="{{ path('fos_user_change_password') }}">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    Modifier mot de passe </a>
+                            </li>
+                            <li>
+                                <a href="{{ path('mesdons') }}">
+                                    <i class="glyphicon glyphicon-user"></i>
+                                    Mes dons</a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-            {{ form_end(form) }}
+            <div class="col-md-9">
+                <div class="profile-content">
+                    <div class="row">
+                        {% if app.request.hasPreviousSession %}
+                            {% for type, messages in app.session.flashbag.all() %}
+                                {% for message in messages %}
 
+                                    <div role="alert" class="alert success-message alert-dismissible fade in">
+                                        <button aria-label="Close" data-dismiss="alert" class="close" type="button">
+                                            <span aria-hidden="true">×</span></button>
+                                        <p> {{ message }}</p>
+                                    </div>
+                                {% endfor %}
+                            {% endfor %}
+                        {% endif %}
+
+                        {{ form_start(form) }}
+
+                        {{ form_errors(form) }}
+
+                        <div class="col-md-6">
+                            <label>Email</label>
+
+                            <div class="input-container">
+                                <i class="fa fa-envelope"></i>
+                                {{ form_widget(form.email, {'attr': {'class': 'required','placeholder':'email'}}) }}
+                                {{ form_errors(form.email) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Nom d'utilisateur</label>
+                            <div class="input-container">
+                                <i class="fa fa-user"></i>
+                                {{ form_widget(form.username, {'attr': {'class': 'required','placeholder':'username'}}) }}
+                                {{ form_errors(form.username) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Nom</label>
+
+                            <div class="input-container">
+                                <i class="fa fa-user"></i>
+                                {{ form_widget(form.nom, {'attr': {'class': 'required','placeholder':'nom'}}) }}
+                                {{ form_errors(form.nom) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>prenom</label>
+
+                            <div class="input-container">
+                                <i class="fa fa-user"></i>
+                                {{ form_widget(form.prenom, {'attr': {'placeholder':'prenom'}}) }}
+                                {{ form_errors(form.prenom) }}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label>Adresse</label>
+
+                            <div class="input-container">
+                                <i class="fa fa-map-marker"></i>
+                                {{ form_widget(form.adresse, {'attr': {'class': 'required','placeholder':'adresse'}}) }}
+                                {{ form_errors(form.adresse) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Numéro de téléphone</label>
+
+                            <div class="input-container">
+                                <i class="fa fa-phone"></i>
+                                {{ form_widget(form.telephone, {'attr': {'class': 'required','placeholder':'Numero Telephone'}}) }}
+                                {{ form_errors(form.telephone) }}
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <label>Photo de profil</label>
+                            <div class="input-container">
+                                {{ form_widget(form.imageFile) }}
+                                {{ form_errors(form.imageFile) }}
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="col-md-3 justify-content-center pull-right">
+                                <button class="btn-filled">Modifier <i
+                                            class="fa fa-pencil"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                    {{ form_end(form) }}
+
+                </div>
+            </div>
         </div>
     </div>
-    <!-- jp ad post Wrapper End -->
-
-
-{% endblock %}
-
-{% block scripts %}
-
-    <script>
-        $('#spe').hide();
-        $("#type").change(function () {
-            var selected_option = $('#type').val();
-
-            if (selected_option === '1') {
-                document.getElementById("spe").required = true;
-                $('#spe').attr('pk','1').show();
-            }
-            if (selected_option !== '1') {
-                document.getElementById("spe").required = false;
-                $("#spe").removeAttr('pk').hide();
-            }
-        })
-    </script>
-    <script>
-
-        function initAutocomplete() {
-
-
-
-            // Create the search box and link it to the UI element.
-            var input = document.getElementById('ala');
-            var searchBox = new google.maps.places.SearchBox(input);
-
-            // Bias the SearchBox results towards current map's viewport.
-
-
-            var markers = [];
-            // Listen for the event fired when the user selects a prediction and retrieve
-            // more details for that place.
-            searchBox.addListener('places_changed', function() {
-                var places = searchBox.getPlaces();
-
-                if (places.length == 0) {
-                    return;
-                }
-
-                // Clear out the old markers.
-                markers.forEach(function(marker) {
-                    marker.setMap(null);
-                });
-                markers = [];
-
-                // For each place, get the icon, name and location.
-                var bounds = new google.maps.LatLngBounds();
-                places.forEach(function(place) {
-                    if (!place.geometry) {
-                        console.log("Returned place contains no geometry");
-                        return;
-                    }
-
-
-                    // Create a marker for each place.
-
-
-                    if (place.geometry.viewport) {
-                        // Only geocodes have viewport.
-                        bounds.union(place.geometry.viewport);
-                    } else {
-                        bounds.extend(place.geometry.location);
-                    }
-                });
-            });
-
-        }
-
-    </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDOogBL2cC0dSezucKzQGWxMIMmclqWNts&amp;sensor=false&libraries=places&callback=initAutocomplete"
-            async defer></script>
-
 
 {% endblock %}

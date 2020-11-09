@@ -236,7 +236,7 @@ class Event
     /**
      * @return bool
      */
-    public function isSpecial()
+    public function getSpecial()
     {
         return $this->special;
     }

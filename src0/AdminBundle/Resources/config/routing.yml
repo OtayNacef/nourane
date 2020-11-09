@@ -1,0 +1,92 @@
+admin_homepage:
+  path:     /
+  defaults: { _controller: AdminBundle:Default:listactualite }
+editBlog:
+  path:     /editBlog/{blog}
+  defaults: { _controller: AppBundle:Default:editBlog }
+deleteBlog:
+  path:     /deleteBlog/{blog}
+  defaults: { _controller: AppBundle:Default:delete }
+users:
+  path:     /users
+  defaults: { _controller: AdminBundle:Default:user}
+indexEventAdmin:
+  path:     /events
+  defaults: { _controller: AdminBundle:Default:listEvent}
+listactualite:
+  path:     /
+  defaults: { _controller: AdminBundle:Default:listactualite }
+indexAdminActualite:
+  path:     /listactualite
+  defaults: { _controller: AdminBundle:Default:listactualite }
+indexGallery:
+  path:     /gallery
+  defaults: { _controller: AdminBundle:Default:indexGallery }
+deletePhotos:
+  path:     /{id}/deleteImages
+  defaults: { _controller: AppBundle:Product:deleteImage }
+admin_block:
+  path:     /{id}/adminblock
+  defaults: { _controller: AdminBundle:Default:adminBlock }
+admin_delete_user:
+  path:     /{id}/supprimerdelete
+  defaults: { _controller: AdminBundle:Default:adminDelete }
+teamAdmin:
+  path:     /team
+  defaults: { _controller: AppBundle:Team:indexTeamAdmin }
+
+addSlider:
+  path:     /addSlider
+  defaults: { _controller: AdminBundle:Default:addSlider }
+
+listSlider:
+  path:     /listSlider
+  defaults: { _controller: AdminBundle:Default:listSlider }
+
+editSlider:
+  path:     /editSlider/{id}
+  defaults: { _controller: AdminBundle:Default:editSlider }
+
+deleteFriend:
+  path:     /deleteFriend/{id}
+  defaults: { _controller: AdminBundle:Default:deleteFriend }
+
+addFriend:
+  path:     /addFriend
+  defaults: { _controller: AdminBundle:Default:addFriend }
+
+listFriend:
+  path:     /listFriend
+  defaults: { _controller: AdminBundle:Default:listFriend }
+
+editFriend:
+  path:     /editFriend/{id}
+  defaults: { _controller: AdminBundle:Default:editFriend }
+
+deleteSlider:
+  path:     /deleteSlider/{id}
+  defaults: { _controller: AdminBundle:Default:deleteSlider }
+indexGalleryAdmin:
+  path:     /showalbum/{id}
+  defaults: { _controller: AdminBundle:Default:indexGalleryAdmin }
+deleteAlbums:
+  path:     /deleteimages/{id}
+  defaults: { _controller: AppBundle:Product:deleteAlbum }
+donsAdmin:
+  path:     /dons
+  defaults: { _controller: AdminBundle:Default:donationList  }
+donsAdminfilter:
+  path:     /dons/{filter}
+  defaults: { _controller: AdminBundle:Default:donationFilter  }
+excelexport:
+  path:     /dons-export
+  defaults: { _controller: AdminBundle:Default:excelexport  }
+aventParticipation:
+  path:     /event-participation/{event}
+  defaults: { _controller: AdminBundle:Default:aventParticipation}
+excelexportEvent:
+  path:     /events-export
+  defaults: { _controller: AdminBundle:Default:excelexportEvent  }
+indexEventPayedAdmin:
+  path:     /events-payed
+  defaults: { _controller: AdminBundle:Default:listEventPayed}

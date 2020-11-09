@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+{% import hackzilla_ticket.templates.macros as macros %}
+
+{% block body %}
+<div class="inner-banner">
+    <div class="container">
+        <h2>CONTACTEZ-NOUS</h2>
+
+    </div>
+</div>
+<!--CONTENT START-->
+<div class="content">
+    <!--CONTACT SECTION START-->
+    <section>
+        <div class="container">
+    <p>
+        <a href="{{ path('hackzilla_ticket') }}" class="btn btn-default">{{ 'BUTTON_BACK_TO_LIST'|trans({}, translationDomain|default('messages')) }}</a>
+    </p>
+
+    <h1>
+        {{ macros.status_btn(ticket.status, ticket.statusString|trans({}, translationDomain|default('messages')), false, translationDomain) }}
+        {{ macros.priority_btn(ticket.priority, ticket.priorityString|trans({}, translationDomain|default('messages')), false, translationDomain) }}
+        <small>#{{ ticket.id }}</small>
+        - {{ ticket.subject }}
+    </h1>
+
+    <p>
+        <i>{{ 'LABEL_CREATED_BY'|trans({}, translationDomain|default('messages')) }} {{ ticket.userCreatedObject }}
+            , {{ ticket.createdAt|date('LABEL_DATE_FORMAT'|trans({}, translationDomain|default('messages'))) }}</i>
+        {# <br />{{ 'LABEL_PRIORITY'|trans({}, translationDomain|default('messages')) }} <span class="label label-{{ ticket.priority == 0 ? 'default' : (ticket.priority == 20 ? 'primary' : (ticket.priority == 21 ? 'warning' : 'danger')) }}">{{ ticket.priorityString|trans({}, translationDomain|default('messages')) }}</span> #}
+    </p>
+
+
+    {# <h3>{{ 'HEADING_TICKET_THREAD'|trans({}, translationDomain|default('messages')) }}</h3> #}
+    {% set previousStatus = null %}
+    {% set previousPriority = null %}
+
+    {% for message in ticket.messages %}
+
+        {% if previousStatus and previousStatus != message.status %}
+            {{ macros.status_alert(message.status, message.statusString|trans({}, translationDomain|default('messages')), translationDomain) }}
+        {% endif %}
+
+        {% if previousPriority and previousPriority != message.priority %}
+            {{ macros.priority_alert(message.priority, message.priorityString|trans({}, translationDomain|default('messages')), translationDomain) }}
+        {% endif %}
+
+        {% if message.message|length > 0 %}
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    {{ message.userObject }}
+                    {# <br />{{ 'LABEL_PRIORITY'|trans({}, translationDomain|default('messages')) }} <span class="label label-{{ message.priority == 0 ? 'default' : (message.priority == 20 ? 'primary' : (message.priority == 21 ? 'warning' : 'danger')) }}">{{ message.priorityString|trans({}, translationDomain|default('messages')) }}</span> #}
+                    {# <br />{{ 'LABEL_STATUS'|trans({}, translationDomain|default('messages')) }} <span class="label label-{{ message.status ? 'success' : 'danger' }}">{{ message.statusString|trans({}, translationDomain|default('messages')) }}</span> #}
+
+                    <span class="pull-right">
+                {% if message.userObject != ticket.userCreatedObject %}<span
+                        class="label label-danger">{{ 'LABEL_ADMIN'|trans({}, translationDomain|default('messages')) }}</span> {% endif %}
+                        <small><i>{{ message.createdAt|date('LABEL_DATE_TIME_FORMAT'|trans({}, translationDomain|default('messages'))) }}</i></small>
+            </span>
+                </div>
+                <div class="panel-body">
+                    {{ message.message|nl2br }}
+                    {% if(hasTicketFeature('attachment')) %}
+                        {% include hackzilla_ticket.templates.show_attachment with {'message': message} %}
+                    {% endif %}
+                </div>
+            </div>
+        {% endif %}
+
+        {% set previousStatus = message.status %}
+        {% set previousPriority = message.priority %}
+    {% endfor %}
+
+    <hr />
+
+    {% if form is defined %}
+        <div class="well well-sm">
+            {{ form_start(form, {'method': 'POST', 'action': path('hackzilla_ticket_reply', {'ticketId': ticket.id})}) }}
+            {% include hackzilla_ticket.templates.prototype with {'form': form} %}
+
+            {{ form_rest(form) }}
+
+            <p class="form_actions">
+                <button type="submit" class="btn btn-primary">{{ 'BUTTON_UPDATE'|trans({}, translationDomain|default('messages')) }}</button>
+            </p>
+            {{ form_end(form) }}
+        </div>
+    {% endif %}
+
+    {% if delete_form is defined %}
+        {{ form_start(delete_form, {'method': 'POST', 'action': path('hackzilla_ticket_delete', {'ticketId': ticket.id}), 'attr': {'class': 'text-right'}}) }}
+        <input type="hidden" name="_method" value="DELETE"/>
+        {{ form_widget(delete_form) }}
+
+        <button type="submit" class="btn btn-danger">{{ 'BUTTON_DELETE'|trans({}, translationDomain|default('messages')) }}</button>
+        {{ form_end(delete_form) }}
+    {% endif %}
+        </div></section></div>
+{% endblock %}

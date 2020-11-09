@@ -1,0 +1,62 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+
+    <div class="page-content">
+
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Liste des dons</h4>
+                        <p class="card-description">
+                            <code></code>
+                        </p>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Nom & prenom</th>
+                                    <th scope="col">Raison Fiscal</th>
+                                    <th scope="col">Date</th>
+                                    <th scope="col">Montant</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for don in dons %}
+
+                                    <tr>
+                                        <th scope="row">{{ don.id }}</th>
+                                        <td>{{ don.donator.nom }} {{ don.donator.prenom }}</td>
+                                        <td>{{ don.societe }}</td>
+                                        <td>{{ don.dateCreation|date }}</td>
+                                        <td>{{ don.montant }} TND</td>
+                                        {% if don.etat == 'Payé' %}
+                                            <td><span class="btn btn-success">{{ don.etat }}</span></td>
+                                        {% elseif don.etat == 'created' %}
+                                            <td><span class="btn btn-warning">Crée</span></td>
+                                        {% else %}
+                                            <td><span class="btn btn-danger">{{ don.etat }}</span></td>
+                                        {% endif %}
+                                        <td><a class="text-success mr-2" href="#"><i
+                                                        class="nav-icon i-Pen-2 font-weight-bold"></i>Afficher</a></td>
+                                    </tr>
+
+                                {% endfor %}
+                                </tbody>
+
+                            </table>
+                            <div class="pagination">
+
+                                {{ knp_pagination_render(dons, 'Pagination/pagination.html.twig') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

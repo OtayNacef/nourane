@@ -23,7 +23,7 @@ final class Versions
      * @deprecated please use {@see self::rootPackageName()} instead.
      *             This constant will be removed in version 2.0.0.
      */
-    const ROOT_PACKAGE_NAME = 'associationnourane';
+    const ROOT_PACKAGE_NAME = 'symfony/framework-standard-edition';
 
     /**
      * Array of all available composer packages.
@@ -51,7 +51,7 @@ final class Versions
   'doctrine/migrations' => '3.0.1@69eaf2ca5bc48357b43ddbdc31ccdffc0e2a0882',
   'doctrine/orm' => '2.7.4@7d84a4998091ece4d645253ac65de9f879eeed2f',
   'doctrine/persistence' => '1.3.8@7a6eac9fb6f61bba91328f15aa7547f4806ca288',
-  'doctrine/reflection' => '1.2.1@55e71912dfcd824b2fdd16f2d9afe15684cfce79',
+  'doctrine/reflection' => '1.2.2@fa587178be682efe90d005e3a322590d6ebb59a5',
   'emanueleminotto/simple-html-dom' => '1.5@09b7f3ad5b62d1cc3dfc2d326845e73d2cdc2819',
   'exercise/htmlpurifier-bundle' => 'v3.0.1@852d00ce4ec6b077fb6f3bfa7931b55ab46666da',
   'ezyang/htmlpurifier' => 'v4.13.0@08e27c97e4c6ed02f37c5b2b20488046c8d90d75',
@@ -95,9 +95,9 @@ final class Versions
   'sensio/framework-extra-bundle' => 'v5.4.1@585f4b3a1c54f24d1a8431c729fc8f5acca20c8a',
   'sensiolabs/security-checker' => 'v6.0.3@a576c01520d9761901f269c4934ba55448be4a54',
   'swiftmailer/swiftmailer' => 'v5.4.12@181b89f18a90f8925ef805f950d47a7190e9b950',
-  'symfony/http-client' => 'v5.1.7@df757997ee95101c0ca94c7ea2b76e16a758e0ca',
+  'symfony/http-client' => 'v5.1.8@97a6a1f9f5bb3a6094833107b58a72bc9a9165cc',
   'symfony/http-client-contracts' => 'v2.3.1@41db680a15018f9c1d4b23516059633ce280ca33',
-  'symfony/mime' => 'v5.1.7@4404d6545125863561721514ad9388db2661eec5',
+  'symfony/mime' => 'v5.1.8@f5485a92c24d4bcfc2f3fc648744fb398482ff1b',
   'symfony/monolog-bundle' => 'v3.6.0@e495f5c7e4e672ffef4357d4a4d85f010802f940',
   'symfony/orm-pack' => 'v2.0.0@46aa731f213140388ee11ff3d2b6776a3b4a0d90',
   'symfony/polyfill-apcu' => 'v1.20.0@f5191eb0e98e08d12eb49fc0ed0820e37de89fdf',
@@ -113,14 +113,14 @@ final class Versions
   'symfony/polyfill-php80' => 'v1.20.0@e70aa8b064c5b72d3df2abd5ab1e90464ad009de',
   'symfony/service-contracts' => 'v2.2.0@d15da7ba4957ffb8f1747218be9e1a121fd298a1',
   'symfony/swiftmailer-bundle' => 'v2.6.7@c4808f5169efc05567be983909d00f00521c53ec',
-  'symfony/symfony' => 'v3.4.45@acaf962168168e4a5cd4b0a6d349dfc11fcc774d',
-  'twig/twig' => 'v2.14.0@d495243dade48c39b6a5261c26cdbd8c5703f6a0',
+  'symfony/symfony' => 'v3.4.46@8cd680e4db34bedbe79f1cb306456dde77adf6b6',
+  'twig/twig' => 'v2.14.1@5eb9ac5dfdd20c3f59495c22841adc5da980d312',
   'vich/uploader-bundle' => '1.4.x-dev@c257283253c57273fed46079fa03ecc79f072585',
   'zendframework/zend-code' => '3.4.1@268040548f92c2bfcba164421c1add2ba43abaaa',
   'zendframework/zend-eventmanager' => '3.2.1@a5e2583a211f73604691586b8406ff7296a946dd',
   'sensio/generator-bundle' => 'v3.1.7@28cbaa244bd0816fd8908b93f90380bcd7b67a65',
-  'symfony/phpunit-bridge' => 'v3.4.45@260a244e5bddadd61889ae5201d01a8234c4f076',
-  'associationnourane' => '3.4.x-dev@4c80cfcc70145e2f4ab5095f87665b712da87353',
+  'symfony/phpunit-bridge' => 'v3.4.46@8d05c61270c40f457e0fc11d47cc112c0f2e3606',
+  'symfony/framework-standard-edition' => '3.4.x-dev@6b39f552a6f3360e2fb602aee63b9b065fe8fa18',
 );
 
     private function __construct()

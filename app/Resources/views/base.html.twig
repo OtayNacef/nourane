@@ -4,30 +4,26 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Association Nourane</title>
-    <meta name="Description" content="Mieux vaut prévenir que guérir. Prévention et dépistage du cancer du sein : l'Association Nourane est à vos côtés.">
-    <meta name="Keywords" content="association, cancer,sein association nourane, nourane , tunis">
-    <!-- CUSTOM STYLE -->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.ico') }}" />
+    <title>{% block title %}{% endblock %} Association Nourane</title>
+
+    <meta name="Description"
+          content="Mieux vaut prévenir que guérir. Prévention et dépistage du cancer du sein : l'Association Nourane est à vos côtés.">
+    <meta name="Keywords"
+          content="association, cancer,sein association nourane, nourane , tunis,prévention cancer,marathon,soutenir,Fondation contre le Cancer,don,cancer du sein">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('images/favicon.ico') }}"/>
+
     <link href="{{ asset('style.css') }}" rel="stylesheet">
-    <!-- THEME TYPO -->
     <link href="{{ asset('css/themetypo.css') }}" rel="stylesheet">
-    <!-- BOOTSTRAP -->
+    <link href="{{ asset('css/donation.css') }}" rel="stylesheet">
     <link href="{{ asset('css/bootstrap.css') }}" rel="stylesheet">
-    <!-- COLOR FILE -->
     <link href="{{ asset('css/color.css') }}" rel="stylesheet">
-    <!-- FONT AWESOME -->
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
-    <!-- BX SLIDER -->
-    <link href="{{ asset('css/jquery.bxslider.css') }}" rel="stylesheet">
-    <!-- BX SLIDER -->
-    <link href="{{ asset('css/bootstrap-slider.css') }}" rel="stylesheet">
     <link href="{{ asset('js/dl-menu/component.css') }}" rel="stylesheet">
     <link href="{{ asset('css/responsive.css') }}" rel="stylesheet">
     <link href="{{ asset('css/widget.css') }}" rel="stylesheet">
-
     <link href="{{ asset('css/shortcode.css') }}" rel="stylesheet">
     <link href="{{ asset('css/owl.carousel.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css" rel="stylesheet">
 
 </head>
 <body>
@@ -42,12 +38,9 @@
                 <div class="logo">
                     <img style="height: 60px;" src="{{ asset('images/nouran.png') }}" alt="">
                 </div>
-                <!--LOGOEND-->
-                <!--NAVIGATION CONTENT START-->
                 <div class="nav-content">
-                    <!--NAVIGATION START-->
                     <div id="kode-responsive-navigation" class="dl-menuwrapper">
-                        <button  class="dl-trigger">Open Menu</button>
+                        <button class="dl-trigger">Open Menu</button>
 
                         <ul class="dl-menu">
                             <li class="menu-item kode-parent-menu"><a href="{{ path('index') }}">Acceuil</a>
@@ -78,9 +71,9 @@
                                 <li><a href="{{ path('hackzilla_ticket') }}">Contact</a></li>
                             {% endif %}
                             {% if is_granted('ROLE_ADMIN') %}
-                               <li>
-                                   <a href="{{ path('indexAdminActualite') }}" >Administrateur</a>
-                               </li>
+                                <li>
+                                    <a href="{{ path('indexAdminActualite') }}">Administrateur</a>
+                                </li>
                             {% endif %}
                         </ul>
 
@@ -88,7 +81,8 @@
                     <!--NAVIGATION START-->
                     <div style="margin-left: 20px" class="navigation">
                         <ul>
-                            <li class="menu-item kode-parent-menu"><a style="color: white !important;" href="{{ path('index') }}">Acceuil</a>
+                            <li class="menu-item kode-parent-menu"><a style="color: white !important;"
+                                                                      href="{{ path('index') }}">Acceuil</a>
                             </li>
                             <li class="menu-item kode-parent-menu"><a style="color: white !important;" href="#">Association</a>
                                 <ul class="dl-submenu">
@@ -111,23 +105,105 @@
 
                             <li><a style="color: white !important;" href="{{ path('indexBlog') }}">Actualités</a>
                             </li>
-                            <li><a style="color: white !important;" href="{{ path('hackzilla_ticket') }}">Contact</a></li>
+                            <li><a style="color: white !important;" href="{{ path('hackzilla_ticket') }}">Contact</a>
+                            </li>
                             {% if is_granted('ROLE_ADMIN') %}
                                 <li>
-                                    <a style="color: white !important;" href="{{ path('indexAdminActualite') }}" >Administrateur</a>
+                                    <a style="color: white !important;" href="{{ path('indexAdminActualite') }}">Administrateur</a>
                                 </li>
                             {% endif %}
                         </ul>
                     </div>
                     <div class="pull-right">
+
+                        <style>
+                            @media screen and (max-width: 600px) {
+                                #name {
+                                    visibility: hidden;
+                                }
+                            }
+                        </style>
                         {% if app.user %}
-                            <a style="margin-right: 15px" href="{{ path('fos_user_security_logout') }}" class="btn-filled-login">Déconnecté</a>
+                            <div class="m">
+                                <a class="mini-photo-wrapper" href="#">
+                                    <div class="row">
+                                        <div id="name" class="col-md-6 pull-left">
+                                            <p style="padding-top: 8px;font-family: 'Slabo 27px', serif;font-weight: bold; color: #ffffff;">
+                                                <b>{{ app.user.username }}</b></p>
+                                        </div>
+                                        <div class="col-md-6 pull-right">
+                                            {% if 'https' in app.user.imageName %}
+
+                                                <img style="border-radius: 50%;" class="mini-photo"
+                                                     src="{{ app.user.imageName }}"
+                                                     width="36" height="36"/>
+                                            {% else %}
+                                                <img style="border-radius: 50%;" class="mini-photo"
+                                                     src="{{ asset('AppImg/') }}{{ app.user.imageName }}"
+                                                     width="36" height="36"/>
+                                            {% endif %}
+                                        </div>
+
+
+                                    </div>
+                                </a>
+                                <div class="menu-container">
+                                    <ul class="user-menu">
+                                        <div class="profile-highlight">
+
+                                            {% if 'https' in app.user.imageName %}
+                                                <img src="{{ app.user.imageName }}" class="img-responsive" alt="">
+                                            {% else %}
+                                                <img src="{{ asset('AppImg/') }}{{ app.user.imageName }}"
+                                                     alt="profile-img" width=36 height=36>
+                                            {% endif %}
+                                            <div class="details">
+                                                <div id="profile-name">{{ app.user.nom }} {{ app.user.prenom }}</div>
+                                            </div>
+                                        </div>
+                                        <li style="list-style: none;" class="user-menu__item">
+                                            <a class="user-menu-link" href="{{ path('fos_user_profile_edit') }}">
+                                                <img src="{{ asset('images/edit.png') }}"
+                                                     alt="trophy_icon" width=20 height=20>
+                                                <div>Modifier Profil</div>
+                                            </a>
+                                        </li>
+                                        <li style="list-style: none;" class="user-menu__item">
+                                            <a class="user-menu-link" href="{{ path('fos_user_change_password') }}">
+                                                <img src="{{ asset('images/password.jpg') }}"
+                                                     alt="team_icon" width=20 height=20>
+                                                <div>Modifier mot de passe</div>
+                                            </a>
+                                        </li>
+                                        <li style="list-style: none;" class="user-menu__item">
+                                            <a class="user-menu-link" href="{{ path('mesdons') }}">
+                                                <img src="{{ asset('images/don.png') }}"
+                                                     alt="team_icon" width=20 height=20>
+                                                <div>Mes Dons</div>
+                                            </a>
+                                        </li>
+                                        <div class="footer">
+                                            <li class="user-menu__item">
+
+                                                <a class="user-menu-link" href="{{ path('fos_user_security_logout') }}"
+                                                   style="color: #e6007e;">
+                                                    <img src="{{ asset('images/logout.png') }}"
+                                                         alt="team_icon" width=20 height=20>
+                                                    <div>Déconnecté</div>
+                                                </a>
+                                            </li>
+                                        </div>
+                                    </ul>
+                                </div>
+                            </div>
                         {% else %}
                             <a href="{{ path('fos_user_security_login') }}" class="btn-filled-login">Connecter-Vous</a>
-                            <a style="margin-right: 15px" href="{{ path('fos_user_registration_register') }}" class="btn-filled-register">S'inscrire</a>
+                            <a style="margin-right: 15px" href="{{ path('fos_user_registration_register') }}"
+                               class="btn-filled-register">S'inscrire</a>
                         {% endif %}
 
                     </div>
+
                 </div>
             </div>
         </div>
@@ -146,22 +222,28 @@
         </div>
     </div>
 </div>
-
+{% if app.user %}
+<script>
+    document.querySelector('.mini-photo-wrapper').addEventListener('click', function () {
+        document.querySelector('.menu-container').classList.toggle('active');
+    });
+    {% endif %}
+</script>
 
 <script src="{{ asset('js/jquery.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap.min.js') }}"></script>
-<script src="{{ asset('js/jquery.bxslider.min.js') }}"></script>
 <script src="{{ asset('js/bootstrap-slider.js') }}"></script>
 <script src="{{ asset('js/waypoints.min.js') }}"></script>
 <script src="{{ asset('js/jquery.counterup.min.js') }}"></script>
 <script src="{{ asset('js/jquery.countdown.js') }}"></script>
+<script src="{{ asset('js/owl.carousel.js') }}"></script>
 <script src="{{ asset('js/bg-moving.js') }}"></script>
 <script src="{{ asset('js/dl-menu/modernizr.custom.js') }}"></script>
 <script src="{{ asset('js/dl-menu/jquery.dlmenu.js') }}"></script>
 <script src="{{ asset('js/functions.js') }}"></script>
-<script src="{{ asset('js/owl.carousel.js') }}"></script>
 <script src="{{ asset('js/jquery.accordion.js') }}"></script>
 <script src="{{ asset('js/jquery.circlechart.js') }}"></script>
+<script src="{{ asset('js/jquery.bxslider.min.js') }}"></script>
 </body>
 
 </html>

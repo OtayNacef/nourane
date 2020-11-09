@@ -1,0 +1,70 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
+
+    <div class="page-content">
+
+        <div class="row">
+            <div class="col-lg-12 grid-margin stretch-card">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title">Don de {{ donator.Donator }}</h4>
+                    </div>
+                    <div class="card-body">
+                        <hr>
+                        <div class="row">
+                            <div class="col-md-4 col-6">
+                                <div class="mb-4">
+                                    <p class="text-primary mb-1"><i class="i-Checked-User text-16 mr-1"></i> Nom et Prenom</p>
+                                    <span>{{ donator.Donator.nom }} {{ donator.Donator.prenom }}</span>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-primary mb-1"><i class="i-Home1 text-16 mr-1"></i> Raison Social</p>
+                                    <span>{{ donator.societe}}</span>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-primary mb-1"><i class="i-Email text-16 mr-1"></i> Email</p><span>{{ donator.Donator.email }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="mb-4">
+                                    <p class="text-primary mb-1"><i class="i-Dollar text-16 mr-1"></i> Montant</p>
+                                    <span>{{ donator.montant }} TND</span>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-primary mb-1"><i class="i-Receipt text-16 mr-1"></i> id Payment</p>
+                                    <span>{{ donator.paymentId }}</span>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-primary mb-1"><i class="i-Calendar text-16 mr-1"></i> Date de don
+                                    </p><span>{{ donator.dateCreation|date }}</span>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-6">
+                                <div class="mb-4">
+                                    <p class="text-primary mb-1"><i class="i-Dollar text-16 mr-1"></i> Adresse</p>
+                                    <span>{{ donator.adresse }} TND</span>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-primary mb-1"><i class="i-Receipt text-16 mr-1"></i> Telephone</p>
+                                    <span>{{ donator.telephone }}</span>
+                                </div>
+                                <div class="mb-4">
+                                    <p class="text-primary mb-1"><i class="i-Calendar text-16 mr-1"></i> Etat
+                                    </p><span>{{ donator.etat }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+
+{% endblock %}

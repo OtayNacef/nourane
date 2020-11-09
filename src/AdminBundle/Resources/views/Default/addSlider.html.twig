@@ -14,11 +14,9 @@
                 <div class="col-md-6">
                     <div class="form-row">
                         <div class="col-md-6">
-                            <div class="position-relative form-group"><label for="exampleEmail11"
-                                                                             class="">Titre</label>
-
+                            <div class="position-relative form-group">
+                                <label for="exampleEmail11" class="">Titre</label>
                                 {{ form_widget(form.title, { 'attr': {'class': 'form-control'} }) }}
-
                             </div>
                         </div>
                     </div>
@@ -26,16 +24,12 @@
             </div>
 
             <div class="form-row">
-
                 <div class="col-md-6">
                     <div class="form-row">
-
                         <div class="col-md-6">
-                            <div class="position-relative form-group"><label
-                                        for="exampleEmail11" class="">contenue</label>
+                            <div class="position-relative form-group">
+                                <label for="exampleEmail11" class="">contenue</label>
                                 {{ form_widget(form.content, { 'attr': {'class': 'form-control'} }) }}
-
-
                             </div>
                         </div>
                     </div>
@@ -46,28 +40,51 @@
                 <div class="col-md-6">
                     <div class="form-row">
                         <div class="col-md-6">
-                            <label
-                                    for="examplePassword11" class="">Image</label>
+                            <label class="">Image</label>
                             <div class="position-relative form-group">
                                 {{ form_widget(form.photo, { 'attr': {'class': 'custom-file-input'} }) }}
-                                <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">choisir une image</label>
+                                <label class="custom-file-label" for="inputGroupFile02"
+                                       aria-describedby="inputGroupFileAddon02">choisir une image</label>
                             </div>
                         </div>
 
                     </div>
                 </div>
             </div>
-
-            <div id="mc_embed_signup_scroll" class="htc__news__inner">
-                <div class="slider__btn">
-                    <button class="btn btn-primary" type="submit"><i
-                                class="fa fa-check"></i>&nbsp; Ajouter
-                    </button>
+            <div class="col-md-6">
+                <div class="form-row">
+                    <label>Avec bouton?</label><br>
+                    <input type="checkbox" name="mycheckbox" id="mycheckbox" value="0" />
+                </div>
+                <div id="mycheckboxdiv" style="display:none">
+                    <div class="position-relative form-group">
+                        <label for="exampleEmail11"
+                               class="">Lien bouton</label>
+                        {{ form_widget(form.url, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
+                    <div class="position-relative form-group">
+                        <label for="exampleEmail11"
+                               class="">Nom de bouton</label>
+                        {{ form_widget(form.buttonName, { 'attr': {'class': 'form-control'} }) }}
+                    </div>
                 </div>
             </div>
-            {{ form_end(form) }}
+
         </div>
-
     </div>
+    <div id="mc_embed_signup_scroll" class="htc__news__inner">
+        <div class="slider__btn">
+            <button class="btn btn-primary" type="submit"><i
+                        class="fa fa-check"></i>&nbsp; Ajouter
+            </button>
+        </div>
+    </div>
+    {{ form_end(form) }}
+    <script src="{{ asset('assets/js/plugins/jquery-3.5.1.min.js') }}"></script>
 
+    <script type="text/javascript">
+        $('#mycheckbox').change(function() {
+            $('#mycheckboxdiv').toggle();
+        });
+    </script>
 {% endblock %}

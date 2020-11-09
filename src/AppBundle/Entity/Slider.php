@@ -43,6 +43,49 @@ class Slider
     private $photo;
 
 
+    /**
+     * @ORM\Column(type="string",nullable=true)
+     *
+     */
+    private $url;
+    /**
+     * @ORM\Column(type="string",nullable=true)
+     *
+     */
+    private $buttonName;
+
+    /**
+     * @return mixed
+     */
+    public function getButtonName()
+    {
+        return $this->buttonName;
+    }
+
+    /**
+     * @param mixed $buttonName
+     */
+    public function setButtonName($buttonName)
+    {
+        $this->buttonName = $buttonName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * @param mixed $url
+     */
+    public function setUrl($url)
+    {
+        $this->url = $url;
+    }
+
 
     /**
      * Get id
@@ -101,7 +144,6 @@ class Slider
     {
         $this->photo = $photo;
     }
-
 
 
 }

@@ -219,7 +219,7 @@ aside div.widget:first-child, .sidebar div.widget:first-child {
 }
 .widget-recentpost ul{
 	float:left;
-	width:100#;
+	width:100px;
 	margin:0px;
 	padding:0px;
 	list-style:none;
@@ -318,7 +318,7 @@ aside div.widget:first-child, .sidebar div.widget:first-child {
 }
 .widget-social-network ul li:hover i{
 	padding:28px 0px;
-	
+
 }
 .widget-social-network ul li span{
 	float:left;
@@ -345,14 +345,26 @@ aside div.widget:first-child, .sidebar div.widget:first-child {
 
 .widget-social-network ul li.fb i, .widget-social-network ul li.fb span{
 	background-color:#466aa6;
+	border-radius: 12px;
+
 }
 .widget-social-network ul li.google i, .widget-social-network ul li.google span{
 	background-color:#cf360c;
+	border-radius: 12px;
+
 }
 .widget-social-network ul li.dribbble i, .widget-social-network ul li.dribbble span{
 	background-color:#ee5b78;
 }
 
+.widget-social-network ul li.instagram i, .widget-social-network ul li.instagram span{
+	background: radial-gradient(circle farthest-corner at 35% 90%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 0 140%, #fec564, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e33f5f 50%, #f77638 70%, #fec66d 100%);
+	border-radius: 12px;
+}
+.widget-social-network ul li.youtube i, .widget-social-network ul li.youtube span{
+	background-color:#c00;
+	border-radius: 12px;
+}
 .input-container{
 	float:left;
 	width:100%;
@@ -415,13 +427,16 @@ aside div.widget:first-child, .sidebar div.widget:first-child {
 .widget-social ul li.youtube a{
 	background-color:#d41616
 }
+.widget-social ul li.youtube a{
+	background-color:#d41616
+}
 .widget-social ul li.dribbble a{
 	background-color:#f47fc6
 }
-.widget-social ul li.behanc a{
+.widget-social ul li.instagram a{
 	background-color:#1080fd
 }
-.widget-social ul li.pintrest a{
+.widget-social ul li.youtube a{
 	background-color:#ea1414
 }
 .widget-social ul li.google a{
@@ -500,7 +515,7 @@ aside div.widget:first-child, .sidebar div.widget:first-child {
 	transform:scale(0);
 	-moz-transform:scale(0);
 	-webkit-transform:scale(0)
-	
+
 }
 .widget-blog ul li:hover .kode-thumb a:before{
 	transform:scale(1);
@@ -540,52 +555,6 @@ aside div.widget:first-child, .sidebar div.widget:first-child {
 ===========================================
 			FLICKR WIDGET
 ===========================================
-*/
-
-.widget-flickr{
-}
-.widget-flickr ul{
-	list-style:none;
-	margin:-10px 0px 0px -10px;
-}
-.widget-flickr ul li {
-	margin:10px 0px 0px 10px;
-	position:relative;
-	float:left;
-	width:80px;
-	border-radius:4px;
-	overflow:hidden;
-}
-.widget-flickr ul li:hover img{
-	opacity:0.1
-}
-.widget-flickr ul li:before{
-	content:"\f067";
-	font-family:FontAwesome;
-	font-size:20px;
-	color:#fff;
-	position:absolute;
-	left:0px;
-	top:50%;
-	width:100%;
-	text-align:center;
-	margin-top:-15px;
-	z-index:10;
-	transform:scale(0);
-	-moz-transform:scale(0);
-	-webkit-transform:scale(0)
-	
-}
-.widget-flickr ul li:hover:before{
-	transform:scale(1);
-	-webkit-transform:scale(1);
-	-moz-transform:scale(1);
-}
-
-/*
-=============================================
-		TESTIMONIALS STYLE 7
-=============================================
 */
 .kode-testimonials-7{
 	float:left;
@@ -641,7 +610,7 @@ aside div.widget:first-child, .sidebar div.widget:first-child {
 	text-align:center;
 	margin:0px 0px 20px 0px;
 }
-.heading h2{	
+.heading h2{
 	font-size:40px;
 	color:#000;
 	position:relative;
@@ -698,7 +667,7 @@ aside div.widget:first-child, .sidebar div.widget:first-child {
 	left:0px;
 	right:0px;
 	margin:auto;
-	bottom:0px;	
+	bottom:0px;
 }
 .heading-4 p{
 	font-size:14px;
@@ -713,3 +682,4 @@ aside div.widget:first-child, .sidebar div.widget:first-child {
 .kd-tab.kd-vertical-tab ul{
 	margin:0px;
 }
+

@@ -10,6 +10,7 @@ return array(
     'AppKernel' => $baseDir . '/app/AppKernel.php',
     'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Collator' => $vendorDir . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/Collator.php',
+    'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'IntlDateFormatter' => $vendorDir . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/IntlDateFormatter.php',
     'JsonException' => $vendorDir . '/symfony/polyfill-php73/Resources/stubs/JsonException.php',
     'Locale' => $vendorDir . '/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs/Locale.php',

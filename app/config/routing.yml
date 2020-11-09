@@ -10,26 +10,29 @@ fos_user:
 hackzilla_ticket:
     resource: "@HackzillaTicketBundle/Resources/config/routing/ticket.yml"
     prefix: /ticket
-
-hwi_oauth_security:
-    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
-    prefix: /login
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
 
 hwi_oauth_connect:
     resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
-    prefix: /connect
-
-hwi_oauth_redirect:
-    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
     prefix:   /login
 facebook_login:
-    path: /login/facebook
+    path: /connect/facebook
 google_login:
-    path: /login/google
+    path: /connect/google
 policy:
     path: /policy
     defaults: { _controller: AppBundle:Default:policy }
 tos:
     path: /tos
     defaults: { _controller: AppBundle:Default:tos }
-    
+success:
+    path: /success
+    defaults: { _controller: AppBundle:Default:success }
+mydonation:
+    path: /profile/mes-don
+    defaults: { _controller: AppBundle:Donate:index }

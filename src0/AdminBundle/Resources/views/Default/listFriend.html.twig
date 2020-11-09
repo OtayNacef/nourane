@@ -1,0 +1,40 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+
+    <div class="card">
+        <div class="card-header">
+            <h1>Toutes les partenaires/Sponsors</h1>
+            <a class="btn btn-primary pull-right" href="{{ path('addFriend') }}">ajouter un partenaire / Sponsor</a>
+
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="display table table-striped table-bordered">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for slider in sliders %}
+
+                        <tr>
+                            <th scope="row">{{ slider.id }}</th>
+                            <td><img class="rounded-circle m-0 avatar-sm-table" src="{{ asset('AppImg/') }}{{ slider.photo }} " alt=""></td>
+                            <td><a class="text-success mr-2" href="{{ path('editFriend', {'id': slider.id}) }}"><i
+                                            class="nav-icon i-Pen-2 font-weight-bold"></i></a>
+                                <a class="text-danger mr-2" href="{{ path('deleteFriend', {'id': slider.id}) }}"><i
+                                            class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

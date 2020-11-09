@@ -11,9 +11,11 @@ use Vich\UploaderBundle\Mapping\Annotation as Vich;
 /**
  * @ORM\Table(name="fos_user")
  * @ORM\Entity()
+ * @ORM\HasLifecycleCallbacks()
  * @Vich\Uploadable
  */
-class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\UserInterface{
+class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\UserInterface
+{
 
     /**
      * @ORM\Id
@@ -25,22 +27,29 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
 
     /**
      *
-     * @ORM\Column(name="telephone", type="integer", length=3000, nullable=true)
+     * @ORM\Column(name="telephone", type="integer", length=3000)
      */
-    private $telephone;
+    protected $telephone;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="nom", type="string", length=100, nullable=true)
+     * @ORM\Column(name="nom", type="string", length=100)
      */
-    private $nom;
+
+    protected $nom;
     /**
      * @var string
      *
-     * @ORM\Column(name="prenom", type="string", length=100, nullable=true)
+     * @ORM\Column(name="prenom", type="string", length=100)
      */
-    private $prenom;
+    protected $prenom;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="adresse", type="text" , nullable=false)
+     */
+    protected $adresse = "";
     /**
      * NOTE: This is not a mapped field of entity metadata, just a simple property.
      *
@@ -48,14 +57,20 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
      *
      * @var File|null
      */
-    private $imageFile;
-
+    protected $imageFile;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="societe", type="string", length=100,nullable=true)
+     */
+    protected $societe;
     /**
      * @ORM\Column(type="string")
      *
      * @var string|null
      */
-    private $imageName;
+    protected $imageName;
+
     /** @ORM\Column(name="facebook_id", type="string", length=255, nullable=true) */
     protected $facebook_id;
 
@@ -67,40 +82,13 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
 
     /** @ORM\Column(name="google_access_token", type="string", length=255, nullable=true) */
     protected $google_access_token;
-    /**
-     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
-     * of 'UploadedFile' is injected into this setter to trigger the update. If this
-     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
-     * must be able to accept an instance of 'File' as the bundle will inject one here
-     * during Doctrine hydration.
-     *
-     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile|null $imageFile
-     */
-    public function setImageFile(?File $imageFile = null): void
-    {
-        $this->imageFile = $imageFile;
 
-        if (null !== $imageFile) {
-            // It is required that at least one field changes if you are using doctrine
-            // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
-        }
+    public function __construct()
+    {
+        parent::__construct();
+        // your own logic
     }
 
-    public function getImageFile(): ?File
-    {
-        return $this->imageFile;
-    }
-
-    public function setImageName( $imageName)
-    {
-        $this->imageName = $imageName;
-    }
-
-    public function getImageName()
-    {
-        return $this->imageName;
-    }
     /**
      * @return string
      */
@@ -112,7 +100,7 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
     /**
      * @param string $nom
      */
-    public function setNom( $nom)
+    public function setNom(string $nom)
     {
         $this->nom = $nom;
     }
@@ -126,6 +114,22 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
     }
 
     /**
+     * @return string
+     */
+    public function getAdresse()
+    {
+        return $this->adresse;
+    }
+
+    /**
+     * @param string $adresse
+     */
+    public function setAdresse($adresse)
+    {
+        $this->adresse = $adresse;
+    }
+
+    /**
      * @param string $prenom
      */
     public function setPrenom($prenom)
@@ -134,19 +138,50 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
     }
 
 
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
 
-    public function __construct() {
-        parent::__construct();
-        // your own logic
+    /**
+     * @ORM\PrePersist
+     */
+    public function setImageName($image_name)
+    {
+        $this->imageName = $image_name;
+
+        return $this;
+    }
+
+    /**
+     * If manually uploading a file (i.e. not using Symfony Form) ensure an instance
+     * of 'UploadedFile' is injected into this setter to trigger the update. If this
+     * bundle's configuration parameter 'inject_on_load' is set to 'true' this setter
+     * must be able to accept an instance of 'File' as the bundle will inject one here
+     * during Doctrine hydration.
+     *
+     * @param File|\Symfony\Component\HttpFoundation\File\UploadedFile $imageFile
+     * @throws \Exception
+     */
+    public function setImageFile(?File $imageFile = null)
+    {
+        $this->imageFile = $imageFile;
+
+    }
+
+    public function getImageFile()
+    {
+        return $this->imageFile;
     }
 
 
-
-    function getTelephone() {
+    function getTelephone()
+    {
         return $this->telephone;
     }
 
-    function setTelephone($telephone) {
+    function setTelephone($telephone)
+    {
         $this->telephone = $telephone;
     }
 
@@ -194,7 +229,7 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
     /**
      * @param mixed $facebook_id
      */
-    public function setFacebookId($facebook_id): void
+    public function setFacebookId($facebook_id)
     {
         $this->facebook_id = $facebook_id;
     }
@@ -210,7 +245,7 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
     /**
      * @param mixed $facebook_access_token
      */
-    public function setFacebookAccessToken($facebook_access_token): void
+    public function setFacebookAccessToken($facebook_access_token)
     {
         $this->facebook_access_token = $facebook_access_token;
     }
@@ -226,7 +261,7 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
     /**
      * @param mixed $google_id
      */
-    public function setGoogleId($google_id): void
+    public function setGoogleId($google_id)
     {
         $this->google_id = $google_id;
     }
@@ -242,11 +277,26 @@ class User extends BaseUser implements \Hackzilla\Bundle\TicketBundle\Model\User
     /**
      * @param mixed $google_access_token
      */
-    public function setGoogleAccessToken($google_access_token): void
+    public function setGoogleAccessToken($google_access_token)
     {
         $this->google_access_token = $google_access_token;
     }
 
+    /**
+     * @return string
+     */
+    public function getSociete()
+    {
+        return $this->societe;
+    }
+
+    /**
+     * @param string $societe
+     */
+    public function setSociete($societe)
+    {
+        $this->societe = $societe;
+    }
 
 
 }

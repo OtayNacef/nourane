@@ -20,11 +20,18 @@ class DefaultController extends Controller
 
     }
 
+    public function successAction(Request $request)
+    {
+        return $this->render(':donate:success.html.twig');
+
+    }
+
     public function tosAction(Request $request)
     {
         return $this->render('policy/tos.html.twig');
 
     }
+
     public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
@@ -42,14 +49,29 @@ class DefaultController extends Controller
 
             return new Response($request->get('don'));
         }
+        $friends = $em->getRepository('AppBundle:Partner')->findAll();
+
         return $this->render('default/index.html.twig', array(
             'sliders' => $sliders,
             'blogs' => $bloglatest,
             'events' => $events,
-            'team' => $team
+            'team' => $team,
+            'partner' => $friends
+
         ));
     }
 
+
+    public function sliderAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $sliders = $em->getRepository('AppBundle:Slider')->findAll();
+
+        return $this->render('slider.html.twig', array(
+            'sliders' => $sliders,
+
+        ));
+    }
 
     public function AboutusAction()
     {
@@ -78,6 +100,11 @@ class DefaultController extends Controller
     public function article3Action()
     {
         return $this->render('default/Article3.html.twig');
+    }
+
+    public function failAction()
+    {
+        return $this->render(':donate:error.html.twig');
     }
 
     /**
@@ -113,7 +140,7 @@ class DefaultController extends Controller
         $form = $this->createFormBuilder($blog)
             ->add('title', TextType::class, array('attr' => array('class' => 'form-control', 'placeholder' => 'Titre *')))
             ->add('content', CKEditorType::class, array('attr' => array('class' => 'form-control', 'placeholder' => 'content *')))
-            ->add('dateCreation', DateTimeType::class)
+            ->add('dateCreation', DateTimeType::class, array('attr' => array('class' => 'form-control')))
             ->add('imageFile', VichFileType::class, array('data_class' => null))
             ->getForm();
         $form->handleRequest($request);
@@ -170,7 +197,7 @@ class DefaultController extends Controller
                 ->add('title', TextType::class, array('attr' => array('class' => 'form-control', 'placeholder' => 'Titre *')))
                 ->add('content', CKEditorType::class, array('attr' => array('class' => 'form-control', 'placeholder' => 'content *')))
                 ->add('dateCreation', DateTimeType::class)
-                ->add('imageFile', VichFileType::class, array('required' => false,'data_class' => null))
+                ->add('imageFile', VichFileType::class, array('required' => false, 'data_class' => null))
                 ->getForm();
             $editForm->handleRequest($request);
 

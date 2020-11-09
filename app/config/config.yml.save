@@ -1,0 +1,149 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: "@AdminBundle/Resources/config/services.yml" }
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: fr
+    images: '%kernel.project_dir%/web/AppImg'
+    github_client_id: <replace-with-your-github-client-id>
+    github_secret: <replace-with-your-github-secret>
+    facebook_app_id: '349357086167022'
+    facebook_app_secret: '24f04c931ab2067fed96eba8c7aa1059'
+ #    google_app_id: '595222389445-6dpvdr557e0bl4hkn8sldmmtirkqmrkj.apps.googleusercontent.com'
+ #   google_app_secret: 'gP9zq5JzDw3Pk3JUQZc1A8CR'
+    google_app_id: '950096029899-aa9d8nm6sbo85e5dci85jhr41ueutv6k.apps.googleusercontent.com'
+    google_app_secret: 'N5x9kqwo9bmlw7r-ydNFW9hv'
+    ctp: '0391357514'
+    pwdcp: 'Phv3k55TV'
+
+framework:
+    templating:
+        engines: ['twig']
+    #esi: ~
+    translator: { fallbacks: ['%locale%'] }
+    secret: '%secret%'
+    router:
+        resource: '%kernel.project_dir%/app/config/routing.yml'
+        strict_requirements: ~
+    form: ~
+    csrf_protection: ~
+    validation: { enable_annotations: true }
+    #serializer: { enable_annotations: true }
+    default_locale: '%locale%'
+    trusted_hosts: ~
+    session:
+        # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+        handler_id: session.handler.native_file
+        save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+    fragments: ~
+    http_method_override: true
+    assets: ~
+    php_errors:
+        log: true
+
+# Twig Configuration
+twig:
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    globals:
+        counts: '@AppBundle\Service\Variables'
+    form_themes:
+        - '@FOSCKEditor/Form/ckeditor_widget.html.twig'
+# Doctrine Configuration
+doctrine:
+    dbal:
+        driver: pdo_mysql
+        host: '%database_host%'
+        port: '%database_port%'
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: '%mailer_transport%'
+    host: '%mailer_host%'
+    username: '%mailer_user%'
+    password: '%mailer_password%'
+    spool: { type: memory }
+
+sensio_framework_extra:
+   router:
+        annotations: false
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: ahmed@esprit.tn
+        sender_name: ahmed
+    registration:
+        form:
+            type: AppBundle\Form\RegistrationFormType
+    profile:
+        form:
+            type: AppBundle\Form\ProfileFormType
+            
+hackzilla_ticket:
+    user_class: AppBundle\Entity\User
+    features:
+        attachment: false
+    templates:
+        index: '@App/Ticket/index.html.twig'
+        new: '@App/Ticket/new.html.twig'
+        prototype: '@App/Ticket/prototype.html.twig'
+        show: '@App/Ticket/show.html.twig'
+        show_attachment: '@App/Ticket/show_attachment.html.twig'
+vich_uploader:
+    db_driver: orm
+    mappings:
+        product_image:
+            upload_destination: '%kernel.project_dir%/web/AppImg'
+            inject_on_load:     false
+            delete_on_update:   true
+            delete_on_remove:   true
+            namer:
+                service: vich_uploader.namer_uniqid
+                
+knp_paginator:
+    page_range: 5                       # number of links showed in the pagination menu (e.g: you have 10 pages, a page_range of 3, on the 5th page you'll see links to page 4, 5, 6)
+    template:
+        pagination: '/Pagination/pagination.html.twig'     # sliding pagination controls template
+        sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
+        filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
+hwi_oauth:
+    connect:
+        account_connector: my_user_provider
+    firewall_names: ["main"]
+    fosub:
+        username_iterations: 30
+        properties:
+            facebook: facebook_id
+            google: google_id
+    resource_owners:
+        facebook:
+            type:                facebook
+            client_id:           "%facebook_app_id%"
+            client_secret:       "%facebook_app_secret%"
+            scope: "email"
+            infos_url:           "https://graph.facebook.com/me?fields=email,first_name,last_name,name,picture.type(square),id"
+            paths:
+                email:       email
+                firstname:   first_name
+                lastname:    last_name
+        google:
+            type:                google
+            client_id:           "%google_app_id%"
+            client_secret:       "%google_app_secret%"
+            scope:               "https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/userinfo.profile"

@@ -1,66 +1,118 @@
-
-    {% trans_default_domain 'FOSUserBundle' %}
+{% trans_default_domain 'FOSUserBundle' %}
     {% extends 'base.html.twig' %}
+{% block title %}Inscription - Association Nourane{% endblock %}
+
     {% block body %}
 
         <section style="padding-top: 250px; padding-bottom: 130px;" class="kode-contact">
             <div class="container">
                 <div class="section-header">
                     <h2>S'inscrire</h2>
-                    <hr style="color: black !important;" class="space s" />
+                    <hr style="color: black !important;" class="space s"/>
 
                 </div>
 
 
-                    {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'comments-form','id':'my_form'}}) }}
+                {{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'comments-form','id':'my_form'}}) }}
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="input-container">
-                                <i class="fa fa-envelope"></i>
-                                {{ form_widget(form.email, {'attr': {'class': 'required','placeholder':'email'}}) }}
-                                {{ form_errors(form.email) }}
-                            </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-container">
+                            <i class="fa fa-envelope"></i>
+                            {{ form_widget(form.email, {'attr': {'class': 'required','placeholder':'email'}}) }}
+                            {{ form_errors(form.email) }}
                         </div>
-                        <div class="col-md-12">
-                            <div class="input-container">
-                                <i class="fa fa-user"></i>
-                                {{ form_widget(form.username, {'attr': {'class': 'required','placeholder':'username'}}) }}
-                                {{ form_errors(form.username) }}
-                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-container">
+                            <i class="fa fa-user"></i>
+                            {{ form_widget(form.username, {'attr': {'class': 'required','placeholder':'username'}}) }}
+                            {{ form_errors(form.username) }}
                         </div>
-                        <div class="col-md-12">
-                            <div class="input-container">
-                                <i class="fa fa-key"></i>
-                                {{ form_widget(form.plainPassword.first, {'attr': {'class': 'required','placeholder':'password'}}) }}
-                                {{ form_errors(form.plainPassword.first) }}
-                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-container">
+                            <i class="fa fa-user"></i>
+                            {{ form_widget(form.nom, {'attr': {'class': 'required','placeholder':'nom'}}) }}
+                            {{ form_errors(form.nom) }}
                         </div>
-                        <div class="col-md-12">
-                            <div class="input-container">
-                                <i class="fa fa-key"></i>
-                                {{ form_widget(form.plainPassword.second, {'attr': {'class': 'required','placeholder':'confirm password'}}) }}
-                                {{ form_errors(form.plainPassword.second) }}
-                            </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-container">
+                            <i class="fa fa-user"></i>
+                            {{ form_widget(form.prenom, {'attr': {'class': 'required','placeholder':'prenom'}}) }}
+                            {{ form_errors(form.prenom) }}
                         </div>
-                        <div class="col-md-12">
-                            <div class="input-container">
-                                {{ form_widget(form.imageFile, {'attr': {'class': 'btn-filled-rounded','placeholder':'confirm password'}}) }}
-                                {{ form_errors(form.imageFile) }}
-                            </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="input-container">
+                            <i class="fa fa-map-marker"></i>
+                            {{ form_widget(form.adresse, {'attr': {'class': 'required','placeholder':'adresse'}}) }}
+                            {{ form_errors(form.adresse) }}
                         </div>
-                        <p style="color: black !important;">
-                            Vous avez déjà un compte ?<a href="{{ path('fos_user_security_login') }}">
-                                Connecte-vous maintenant </a> </p>
-                        <hr style="color: black !important;" class="space s" />
-
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-container">
+                            <i class="fa fa-lock"></i>
+                            {{ form_widget(form.plainPassword.first, {'attr': {'class': 'required','placeholder':'password'}}) }}
+                            {{ form_errors(form.plainPassword.first) }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-container">
+                            <i class="fa fa-lock"></i>
+                            {{ form_widget(form.plainPassword.second, {'attr': {'class': 'required','placeholder':'confirm password'}}) }}
+                            {{ form_errors(form.plainPassword.second) }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-container">
+                            <i class="fa fa-phone"></i>
+                            {{ form_widget(form.telephone, {'attr': {'class': 'required','placeholder':'Numero Telephone'}}) }}
+                            {{ form_errors(form.telephone) }}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="input-container">
+                            {{ form_widget(form.imageFile) }}
+                            {{ form_errors(form.imageFile) }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
                         <div class="col-md-3 justify-content-center pull-right">
                             <button class="btn-filled">S'inscrire <i
                                         class="fa fa-sign-in"></i></button>
                         </div>
-
                     </div>
-                    <div class="hidden-me" id="contact_form_responce"><p></p></div>
+                    <hr style="color: black !important;" class="space s"/>
+
+                    <p style="color: black !important;">
+                        Vous avez déjà un compte ?<a href="{{ path('fos_user_security_login') }}">
+                            Connecte-vous maintenant </a></p>
+
+                    <hr style="color: black !important;" class="space s"/>
+                    <div class="col-md-3  pull-left">
+
+                        <div class="widget widget-social-network">
+                            <h2>S'inscrire avec</h2>
+                            <ul>
+                                <li class="fb">
+                                    <a href="{{ path('facebook_login') }}">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="google">
+                                    <a href="{{ path('google_login') }}">
+                                        <i class="fa fa-google-plus"></i>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="hidden-me" id="contact_form_responce"><p></p></div>
                 {{ form_end(form) }}
             </div>
         </section>

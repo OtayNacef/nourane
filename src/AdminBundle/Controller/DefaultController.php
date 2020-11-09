@@ -2,6 +2,7 @@
 
 namespace AdminBundle\Controller;
 
+use AppBundle\Entity\Event;
 use AppBundle\Entity\Partner;
 use AppBundle\Entity\ProductImage;
 use AppBundle\Entity\Slider;
@@ -10,17 +11,161 @@ use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Lock\LockInterface;
 use Vich\UploaderBundle\Form\Type\VichFileType;
 
 class DefaultController extends Controller
 {
-
     public function indexAction()
     {
-
         $em = $this->getDoctrine()->getManager();
-
         return $this->render('AdminBundle:Default:index.html.twig');
+    }
+
+    public function donationListAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('AppBundle:Donate')->findAll();
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $users,
+            $request->query->getInt('page', 1)/*page number*/,
+            9/*limit per page*/
+        );
+        return $this->render('AdminBundle:Default:usersDonation.html.twig', ['dons' => $pagination]);
+    }
+
+    public function donationFilterAction(Request $request, $filter)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if ($filter == "payed") {
+            $users = $em->getRepository('AppBundle:Donate')->findByEtat('Payé');
+        } elseif
+        ($filter == "refused") {
+            {
+                $users = $em->getRepository('AppBundle:Donate')->findByEtat('refused');
+            }
+        }
+        $paginator = $this->get('knp_paginator');
+        $pagination = $paginator->paginate(
+            $users,
+            $request->query->getInt('page', 1)/*page number*/,
+            9/*limit per page*/
+        );
+        return $this->render('AdminBundle:Default:usersDonation.html.twig', ['dons' => $pagination]);
+    }
+
+    public function ShowDonatorAction(Request $request, $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $don = $em->getRepository('AppBundle:Donate')->find($id);
+
+        return $this->render('@Admin/Default/showDonator.html.twig', array(
+            'donator' => $don,
+        ));
+    }
+
+    public function excelexportAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if ($request->isMethod('POST')) {
+            if ($request->get("etat") == 1) {
+                $query = $em->createQuery("SELECT us.nom,us.prenom,dn.societe,us.email,dn.etat,dn.dateCreation,dn.montant,dn.telephone FROM
+                                           AppBundle:Donate dn INNER JOIN AppBundle:User us WHERE dn.donator = us.id  and dn.etat =:paye 
+                                           and dn.dateCreation >= :de and dn.dateCreation <= :a ")
+                    ->setParameter('paye', 'Payé')
+                    ->setParameter('de', $request->get("datede") . '%')
+                    ->setParameter('a', $request->get("datea") . '%');
+                $query->getResult();
+                $projects = $query->getResult();
+
+            } elseif ($request->get("etat") == 0) {
+                $query = $em->createQuery("SELECT us.nom,us.prenom,dn.societe,us.email,dn.etat,dn.dateCreation,dn.montant,dn.telephone FROM
+         AppBundle:Donate dn INNER JOIN AppBundle:User us WHERE dn.donator = us.id  and (dn.dateCreation >= :de and dn.dateCreation <= :a)")
+                    ->setParameter('de', $request->get("datede") . '%')
+                    ->setParameter('a', $request->get("datea") . '%');
+                $projects = $query->getResult();
+            }
+        }
+
+
+        $fp = fopen('php://output', 'w');
+        $params = array('Nom', 'Prenom', 'Societe', 'email', 'etat', 'Date de Paiment', 'Montant', 'Telephone');
+        fputcsv($fp, $params);
+        foreach ($projects as $fields) {
+            $fields['dateCreation'] = $fields['dateCreation']->format('d/m/Y');;
+            $fields['etat'] = utf8_decode($fields['etat']);
+            $fields['montant'] = $fields['montant'] . ' TND';
+            fputcsv($fp, $fields);
+        }
+        $response = new Response(stream_get_contents($fp));
+        fclose($fp);
+        $obj = new \DateTime();
+        $dmy = $obj->format('d-m-Y');
+        header('Content-Encoding: UTF-8');
+        header('Content-type: text/csv; charset=UTF-8');
+        header("Content-Disposition: attachment; filename=" . $dmy . "-Dons.csv");
+        header("Pragma: no-cache");
+        header("Expires: 0");
+        header('Content-Transfer-Encoding: binary');
+        return $response;
+
+    }
+
+    public function excelexportEventAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        if ($request->isMethod('post')) {
+            if ($request->get("etat") == 1) {
+                $query = $em->createQuery("SELECT us.nom,us.prenom,us.email,dn.etat,dn.dateInscrit,dn.montant,us.telephone FROM
+                                           AppBundle:EventPart dn INNER JOIN AppBundle:User us WHERE dn.userid = us.id 
+                                        and dn.etat =:paye and (dn.dateInscrit >= :de and dn.dateInscrit <= :a)  ")
+                    ->setParameter('paye', 'Payé')
+                    ->setParameter('de', $request->get("datedeb") . '%')
+                    ->setParameter('a', $request->get("datefin") . '%');
+                $projects = $query->getResult();
+
+            } elseif ($request->get("etat") == 0) {
+                $query = $em->createQuery("SELECT us.nom,us.prenom,us.email,dn.etat,dn.dateInscrit,dn.montant,us.telephone FROM
+                     AppBundle:EventPart dn INNER JOIN 
+                    AppBundle:User us WHERE dn.userid = us.id and( dn.dateInscrit >= :de and dn.dateInscrit <= :a )")
+                    ->setParameter('de', $request->get("datedeb") . '%')
+                    ->setParameter('a', $request->get("dateFin") . '%');
+                $projects = $query->getResult();
+            }
+        }
+        $fp = fopen('php://output', 'w');
+        $params = array('Nom', 'Prenom', 'email', 'etat', 'Date de Paiment', 'Montant', 'Telephone');
+        fputcsv($fp, $params);
+        foreach ($projects as $fields) {
+            $fields['dateInscrit'] = $fields['dateInscrit']->format('d/m/Y');;
+            $fields['etat'] = utf8_decode($fields['etat']);
+            $fields['montant'] = $fields['montant'] . ' TND';
+            fputcsv($fp, $fields);
+        }
+        $response = new Response(stream_get_contents($fp));
+        fclose($fp);
+        $obj = new \DateTime();
+        $dmy = $obj->format('d-m-Y');
+
+        header('Content-Encoding: UTF-8');
+        header('Content-type: text/csv; charset=UTF-8');
+        header("Content-Disposition: attachment; filename=" . $dmy . "Event.csv");
+        header("Pragma: no-cache");
+        header("Expires: 0");
+        header('Content-Transfer-Encoding: binary');
+        return $response;
+
+    }
+
+    public function findCsvByDateAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $from = $request->get('from');
+        $to = $request->get('to');
+        $btc = $em->getRepository('AppBundle:Donate')->DeleteBtcTimeout($from, $to);
+        return $this->redirectToRoute('BTCHistoryadmin');
     }
 
     public function userAction(Request $request)
@@ -51,6 +196,29 @@ class DefaultController extends Controller
         return $this->render('blog/indexAdmin.html.twig', ['blogs' => $pagination]);
     }
 
+    /**
+     * Finds and displays a event entity.
+     *
+     */
+    public function aventParticipationAction(Request $request, Event $event)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $query = $em->createQuery('SELECT V From AppBundle:EventPart V order by V.dateInscrit');
+        $recentevent = $query->getResult();
+
+        $paginator = $this->get('knp_paginator');
+
+        $pagination = $paginator->paginate(
+            $recentevent,
+            $request->query->getInt('page', 1)/*page number*/,
+            9/*limit per page*/
+        );
+        return $this->render('event/eventpart.html.twig', array(
+            'event' => $event,
+            'parts' => $pagination
+        ));
+    }
+
     public function listEventAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
@@ -63,6 +231,20 @@ class DefaultController extends Controller
             9/*limit per page*/
         );
         return $this->render('event/indexadmin.html.twig', ['events' => $pagination]);
+    }
+
+    public function listEventPayedAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $events = $em->getRepository('AppBundle:Event')->findBySpecial(1);
+        $paginator = $this->get('knp_paginator');
+
+        $pagination = $paginator->paginate(
+            $events,
+            $request->query->getInt('page', 1)/*page number*/,
+            9/*limit per page*/
+        );
+        return $this->render('event/payedEvent.html.twig', ['events' => $pagination]);
     }
 
     public function indexGalleryAction(Request $request)
@@ -89,7 +271,8 @@ class DefaultController extends Controller
             'photos' => $pagination
         ));
     }
-    public function indexGalleryAdminAction(Request $request,$id)
+
+    public function indexGalleryAdminAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
         $videos = $em->getRepository('AppBundle:Videos')->findAll();
@@ -132,6 +315,7 @@ class DefaultController extends Controller
 
         ));
     }
+
     public function adminBlockAction($id)
     {
         $em = $this->getDoctrine()->getManager();
@@ -177,8 +361,9 @@ class DefaultController extends Controller
                 ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
                 ->add('content', TextareaType::class, array('required' => false, 'attr' => array('class' => 'form-control')))
                 ->add('photo', FileType::class, array('required' => false, 'data_class' => null, 'label' => 'upload your photo', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-bottom:15px')))
+                ->add('url', TextType::class, array('required' => false,'attr' => array('class' => 'form-control')))
+                ->add('buttonName', TextType::class, array('required' => false, 'attr' => array('class' => 'form-control')))
                 ->getForm();
-
             $form->handleRequest($request);
             if ($form->isSubmitted() && $form->isValid()) {
 
@@ -186,28 +371,21 @@ class DefaultController extends Controller
                 $content = $form['content']->getData();
 
                 $file = $cat->getPhoto();
-
                 if ($file) {
-
                     $fileName = md5(uniqid()) . '.' . $file->guessExtension();
-
-                    // Move the file to the directory where brochures are stored
-
                     $file->move(
                         $this->getParameter('images'),
                         $fileName
                     );
-
                 } else {
 
                     $fileName = "";
                 }
-
-
                 $cat->setTitle($titre);
                 $cat->setContent($content);
                 $cat->setPhoto($fileName);
-
+                $cat->setButtonName($form['buttonName']->getData());
+                $cat->setUrl($form['url']->getData());
                 $sn->persist($cat);
                 $sn->flush();
 
@@ -258,6 +436,8 @@ class DefaultController extends Controller
                 ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
                 ->add('content', TextareaType::class, array('required' => false, 'attr' => array('class' => 'form-control')))
                 ->add('photo', FileType::class, array('required' => false, 'data_class' => null, 'label' => 'upload your photo', 'attr' => array('class' => 'btn btn-primary', 'style' => 'margin-bottom:15px')))
+                ->add('url', TextType::class, array('attr' => array('class' => 'form-control')))
+                ->add('buttonName', TextType::class, array('attr' => array('class' => 'form-control')))
                 ->getForm();
 
             $form->handleRequest($request);
@@ -290,7 +470,8 @@ class DefaultController extends Controller
 
                 $cat->setTitle($titre);
                 $cat->setContent($desc);
-
+                $cat->setButtonName($form['buttonName']->getData());
+                $cat->setUrl($form['url']->getData());
                 $sn->persist($cat);
                 $sn->flush();
 
@@ -437,4 +618,7 @@ class DefaultController extends Controller
             return $this->redirectToRoute('fos_user_security_login');
     }
 
+
 }
+
+?>

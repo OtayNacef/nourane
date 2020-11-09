@@ -1,5 +1,7 @@
 {% trans_default_domain 'FOSUserBundle' %}
 {% extends 'base.html.twig' %}
+{% block title %}Connectez Vous- Association Nourane{% endblock %}
+
 {% block body %}
 
     <section style="padding-top: 250px; padding-bottom: 220px;" class="kode-contact">
@@ -50,7 +52,7 @@
                                     </a>
                                 </li>
                                 <li class="google">
-                                    <a href="#">
+                                    <a href="{{ path('google_login') }}">
                                         <i class="fa fa-google-plus"></i>
                                     </a>
                                 </li>
@@ -74,7 +76,6 @@
                         <button class="btn-filled">Connecter-Vous <i
                                     class="fa fa-sign-in"></i></button>
                     </div>
-
 
                 </div>
                 <div class="hidden-me" id="contact_form_responce"><p></p></div>

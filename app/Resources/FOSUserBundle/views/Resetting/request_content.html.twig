@@ -1,11 +1,31 @@
 {% trans_default_domain 'FOSUserBundle' %}
+{% extends 'base.html.twig' %}
+{% block title %}Récupérer mon mot de passe- Association Nourane{% endblock %}
 
-<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
-    <div>
-        <label for="username">{{ 'resetting.request.username'|trans }}</label>
-        <input type="text" id="username" name="username" required="required" />
-    </div>
-    <div>
-        <input type="submit" value="{{ 'resetting.request.submit'|trans }}" />
-    </div>
-</form>
+{% block body %}
+
+    <section style="padding-top: 250px; padding-bottom: 220px;" class="kode-contact">
+        <div class="container">
+            <div class="section-header">
+                <h2>Récupérer mot de passe</h2>
+                <hr style="color: black !important;" class="space s"/>
+
+            </div>
+
+
+
+            <form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request">
+                <div>
+                    <label for="username">{{ 'resetting.request.username'|trans }}</label>
+                    <input type="text" id="username" name="username" required="required"/>
+                </div>
+                <div>
+                    <button class="btn-filled">{{ 'resetting.request.submit'|trans }} <i class="fa fa-key"></i></button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+
+
+{% endblock %}

@@ -1,8 +1,8 @@
 {
-    "name": "AssociationNourane",
+    "name": "symfony/framework-standard-edition",
     "license": "MIT",
     "type": "project",
-    "description": "Nourane",
+    "description": "nourane",
     "autoload": {
         "psr-4": {
             "": "src/"
@@ -26,6 +26,8 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "knplabs/knp-paginator-bundle": "^2.8",
         "php-http/guzzle6-adapter": "^2.0",
+        "php-http/httplug-bundle": "^1.7",
+        "php-http/message": "^1.9",
         "salavert/time-ago-in-words": "1.*",
         "sensio/distribution-bundle": "^5.0.19",
         "sensio/framework-extra-bundle": "^5.0.0",
@@ -34,8 +36,7 @@
         "symfony/swiftmailer-bundle": "^2.6.4",
         "symfony/symfony": "3.4.*",
         "twig/twig": "^1.0||^2.0",
-        "vich/uploader-bundle": "1.4.x-dev",
-        "php-http/httplug-bundle": "^1.7"
+        "vich/uploader-bundle": "1.4.x-dev"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

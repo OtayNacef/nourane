@@ -11,11 +11,14 @@ services:
     authentication.handler.login_success_handler:
         class:  AppBundle\Listener\LoginSuccessHandler
         arguments:  ['@router', '@security.authorization_checker']
-
-        # authentication.handler.login_success_handler:
-       # class:  AdminBundle\Listener\LoginSuccessHandler
-       # arguments:  ['@router', '@security.authorization_checker']
-    # default configuration for services in *this* file
+    app.form.registration:
+        class: AppBundle\Form\RegistrationFormType
+        tags:
+          - { name: form.type, alias: app_user_registration }
+    app.profile.form.type:
+        class: AppBundle\Form\ProfileFormType
+        tags:
+            - { name: form.type, alias: app_user_profile }
     _defaults:
         # automatically injects dependencies in your services
         autowire: true

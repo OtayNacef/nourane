@@ -26,5 +26,5 @@ return array(
     '6a47392539ca2329373e0d33e1dba053' => $vendorDir . '/symfony/polyfill-intl-icu/bootstrap.php',
     '582a6a67bb36af25a77a4963e8aa1f9c' => $vendorDir . '/emanueleminotto/simple-html-dom/simple_html_dom.php',
     '2cffec82183ee1cea088009cef9a6fc3' => $vendorDir . '/ezyang/htmlpurifier/library/HTMLPurifier.composer.php',
-    'b689f8de062e3d806320f6c951f0f5c5' => $vendorDir . '/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php',
+    '719971e375036615a0685b6fb054583d' => $vendorDir . '/symfony/symfony/src/Symfony/Component/VarDumper/Resources/functions/dump.php',
 );

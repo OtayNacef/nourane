@@ -1,9 +1,17 @@
-{% extends "@FOSUser/layout.html.twig" %}
 
 {% trans_default_domain 'FOSUserBundle' %}
+{% extends 'base.html.twig' %}
+{% block title %}Récupérer mon mot de passe- Association Nourane{% endblock %}
 
-{% block fos_user_content %}
-<p>
-{{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
-</p>
+{% block body %}
+
+    <section style="padding-top: 250px; padding-bottom: 220px;" class="kode-contact">
+        <div class="container">
+            {% block fos_user_content %}
+                <p>
+                    {{ 'resetting.check_email'|trans({'%tokenLifetime%': tokenLifetime})|nl2br }}
+                </p>
+            {% endblock %}
+        </div>
+    </section>
 {% endblock %}

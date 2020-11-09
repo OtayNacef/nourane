@@ -1,0 +1,102 @@
+{% extends 'admin.html.twig' %}
+{% block body %}
+    <div class="main-content">
+        <div class="breadcrumb">
+            <h1>Acceuil</h1>
+            <ul>
+                <li><a href="#">Gallery</a></li>
+            </ul>
+        </div>
+        <div class="separator-breadcrumb border-top"></div>
+
+
+        <div class="col-md-12 ">
+            <div class="card text-left">
+                <div class="card-body">
+                    <h4 class="card-title mb-3"></h4>
+
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item"><a class="nav-link active show" id="home-basic-tab" data-toggle="tab"
+                                                href="#homeBasic" role="tab" aria-controls="homeBasic"
+                                                aria-selected="true">Images</a></li>
+                        <li class="nav-item"><a class="nav-link" id="profile-basic-tab" data-toggle="tab"
+                                                href="#profileBasic" role="tab" aria-controls="profileBasic"
+                                                aria-selected="false">Videos</a></li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade active show" id="homeBasic" role="tabpanel"
+                             aria-labelledby="home-basic-tab">
+                            <div class="card-header">
+                                <h1>Toutes les images</h1>
+                                {{ form_start(form) }}
+                                <button class="btn btn-primary pull-right" type="submit">ajouter une image</button>
+
+                                {{ form_end(form) }}
+                            </div>
+                            <section class="widget-card">
+                                <div class="row">
+                                    {% for p in photos %}
+                                        <div class="col-lg-4 col-xl-4 mt-3">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <img
+                                                            class="d-block w-100 rounded"
+                                                            src="{{ asset('AppImg/') }}{{ p.imageName }}"
+                                                            alt="Second slide">
+                                                    <div class="ul-widget-card__rate-icon --version-2">
+                                                        <a class="btn btn-outline-danger"
+                                                           href="{{ path('product_delete_image', {'id': p.id}) }}"
+                                                           type="button">Supprimer</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                    <div class="navigation">
+                                        {{ knp_pagination_render(photos) }}
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                        <div class="tab-pane fade" id="profileBasic" role="tabpanel"
+                             aria-labelledby="profile-basic-tab">
+                            <div class="card-header">
+                                <h1>Toutes les videos</h1>
+                                <a class="btn btn-primary pull-right" href="{{ path('product_new_videos') }}">Créer un nouvel video</a>
+
+                            </div>
+                            <section id="videos" class="widget-card">
+                                <div class="row">
+                                    {% for p in videos %}
+                                        <div class="col-lg-4 col-xl-4 mt-3">
+                                            <div class="card">
+                                                <div class="card-body">
+                                                    <img
+                                                            class="d-block w-100 rounded"
+                                                            src="{{ p.imageName }}"
+                                                            alt="Second slide">
+                                                    <div class="ul-widget-card__rate-icon --version-2">
+                                                        <a class="btn btn-outline-danger"
+                                                           href="{{ path('product_delete', {'id': p.id}) }}"
+                                                           type="button">Supprimer</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="navigation">
+                                            {{ knp_pagination_render(videos) }}
+                                        </div>
+                                    {% endfor %}
+
+                                </div>
+                            </section>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+{% endblock %}

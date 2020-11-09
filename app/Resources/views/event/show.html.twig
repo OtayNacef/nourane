@@ -1,4 +1,5 @@
 {% extends 'base.html.twig' %}
+{% block title %}{{ event.nomEvenement }} - Association Nourane{% endblock %}
 
 {% block body %}
 
@@ -7,7 +8,7 @@
             <h2>{{ event.nomEvenement }} </h2>
             <ol class="breadcrumb">
                 <li><a href="#">Acceuil</a></li>
-                <li><a href="#">Actualité</a></li>
+                <li><a href="#">évènement</a></li>
             </ol>
         </div>
     </div>
@@ -121,6 +122,64 @@
                                         <div class="donate-text event-btns">
                                         </div>
                                     </div>
+                                    {% if event.special== 1 %}
+                                        <form method="post" action="{{ path('payment') }}">
+                                            <input type="hidden" name="_csrf_token"
+                                                   value="{{ csrf_token('ctp-pay') }}"
+                                            >
+                                            <div style="background-color: #efefef!important;"
+                                                 class="kode-choose-amount">
+                                                <div class="front">
+                                                    <div class="heading heading-4"><h2 class="buttonamount"
+                                                                                       style="color: #ff0094"></h2>
+                                                    </div>
+                                                    <br>
+                                                    <div class="donate-amount-box">
+                                                        <div class="donate-amount">
+                                                            <div class="denomination selected">
+                                                                <input autocomplete="off" type="radio" name="amount"
+                                                                       id="amount10"
+                                                                       value="{{ event.price }}">
+                                                                <label style="color: #ffffff"
+                                                                       for="amount10">{{ event.price }} TND</label>
+                                                            </div>
+                                                            <div class="denomination">
+                                                                <input autocomplete="off" type="radio" name="amount"
+                                                                       id="amount15"
+                                                                       value="{{ event.price + 5 }}">
+                                                                <label style="color: #ffffff"
+                                                                       for="amount15">{{ event.price + 5 }} TND</label>
+                                                            </div>
+                                                            <div class="denomination">
+                                                                <input autocomplete="off" type="radio" name="amount"
+                                                                       id="amount25"
+                                                                       value="{{ event.price + 10 }}">
+                                                                <label style="color: #ffffff"
+                                                                       for="amount25">{{ event.price + 10 }} TND</label>
+                                                            </div>
+                                                            <input type="text" id="totalamount" name="totalamount"
+                                                                   value="0" hidden/>
+                                                            <div class="denomination-other">
+                                                                <input style="margin-top: 10px!important;"
+                                                                       autocomplete="off" type="text" name="amount"
+                                                                       value=""
+                                                                       placeholder="Autre montant">
+                                                            </div>
+
+                                                            <div class="donate-blue donate-payment">
+                                                                <div class="donate-submit">
+                                                                    <button type="submit" autocomplete="off">Participer
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </form>
+                                    {% endif %}
                                 </div>
                                 <hr>
                                 <hr>
@@ -175,24 +234,30 @@
                                 {% endfor %}
                             </ul>
                         </div>
-                        <div class="widget widget-social">
-                            <div class="widget-header">
-                                <h2>
-                                    Suivez nous</h2>
-                            </div>
+                        <br>
+                        <div class="widget widget-social-network">
+                            <h2 style="color: #e6007e"><b>Suivez-nous sur</b></h2>
+                            </br>
                             <ul>
-                                <li class="fb"><a href="#" data-toggle="tooltip" title="Facebook"><i
-                                                class="fa fa-facebook"></i></a></li>
-                                <li class="twitter"><a href="#" data-toggle="tooltip" title="Twitter"><i
-                                                class="fa fa-twitter"></i></a></li>
-                                <li class="youtube"><a href="#" data-toggle="tooltip" title="YouTube"><i
-                                                class="fa fa-youtube-play"></i></a></li>
-                                <li class="dribbble"><a href="#" data-toggle="tooltip" title="Dribbble"><i
-                                                class="fa fa-instagram"></i></a></li>
+                                <li class="fb">
+                                    <a href="https://www.facebook.com/association.nourane"  target="_blank">
+                                        <i class="fa fa-facebook"></i>
+                                    </a>
+                                </li>
+                                <li class="instagram">
+                                    <a href="https://www.instagram.com/association_nourane/"  target="_blank">
+                                        <i class="fa fa-instagram"></i>
+                                    </a>
+                                </li>
+                                <li class="youtube">
+                                    <a href="https://www.youtube.com/channel/UCv_E15tk09Tfjv_JPT4fSzw"  target="_blank">
+                                        <i class="fa fa-youtube"></i>
+                                    </a>
+                                </li>
+
                             </ul>
                         </div>
-
-                    </div>
+                </div>
                     <!--RIGHT SIDE BAR END-->
                 </div>
             </div>

@@ -12,60 +12,100 @@
     <link href="{{ asset("") }}assets/css/themes/lite-purple.min.css" rel="stylesheet"/>
     <link href="{{ asset("") }}assets/css/plugins/perfect-scrollbar.min.css" rel="stylesheet"/>
     <link href="{{ asset('css/font-awesome.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker.css">
 
 </head>
 
 <body class="text-left">
+
 <div class="app-admin-wrap layout-sidebar-large">
     <div class="main-header">
-        <div class="logo">
-            <img style="width: 120px!important;" src="{{ asset("") }}images/logo1.png" alt="">
-        </div>
         <div class="menu-toggle">
             <div></div>
             <div></div>
             <div></div>
         </div>
-        <div style="margin: auto">
-
-        </div>
-    </div>
-    <div class="side-content-wrap">
-        <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
-
+        <div class="side-content-wrap">
+            <div class="sidebar-left open rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
                 <ul class="navigation-left">
-                    <li class="nav-item"><a class="nav-item-hold" href="{{path('index')}}"><i class="nav-icon i-Home1">
-                            </i><span class="nav-text">Site Web</span></a>
+                    <li class="nav-item"><a class="nav-item-hold" href="{{ path('index') }}"><i style="color:#e6007e"
+                                                                                                class="nav-icon i-Home1"></i><span
+                                    class="nav-text">Site Web</span></a>
                         <div class="triangle"></div>
                     </li>
-
-                    <li class="nav-item"><a class="nav-item-hold" href="{{ path('users')}}"><i
-                                    class="nav-icon i-Administrator"></i><span
+                    <li class="nav-item"><a class="nav-item-hold" href="{{ path('users') }}"><i style="color:#e6007e"
+                                                                                                class="nav-icon i-Administrator"></i><span
                                     class="nav-text">Utilisateurs</span></a>
                         <div class="triangle"></div>
                     </li>
+                    <li class="nav-item" data-item="don"><a class="nav-item-hold" href="#"><i style="color:#e6007e"
+                                                                                              class="nav-icon i-Coins"></i><span
+                                    class="nav-text">Dons</span></a>
+                        <div class="triangle"></div>
+                    </li>
                     <li class="nav-item"><a class="nav-item-hold" href="{{ path('indexAdminActualite') }}"><i
-                                    class="nav-icon i-Notepad"></i><span
-                                    class="nav-text"> Actualité</span></a>
+                                    style="color:#e6007e"
+                                    class="nav-icon i-Notepad"></i><span class="nav-text">Actualité</span></a>
                         <div class="triangle"></div>
                     </li>
-                    <li class="nav-item"><a class="nav-item-hold" href="{{ path('indexEventAdmin') }}"><i
-                                    class="nav-icon i-Calendar"></i><span
-                                    class="nav-text"> Events</span></a>
+                    <li class="nav-item" data-item="widgets"><a class="nav-item-hold" href="#"><i
+                                    style="color:#e6007e"
+                                    class="nav-icon i-Calendar"></i><span class="nav-text">Evenements</span></a>
                         <div class="triangle"></div>
                     </li>
-                    <li class="nav-item"><a class="nav-item-hold" href="{{path('teamAdmin')}}"><i
-                                    class="nav-icon i-Doctor"></i><span class="nav-text"> Members & Site parameter</span></a>
+                    <li class="nav-item" data-item="charts"><a class="nav-item-hold" href="#"><i style="color:#e6007e"
+                                                                                                 class="nav-icon i-Doctor"></i><span
+                                    class="nav-text">Membres & Sponsors </span></a>
                         <div class="triangle"></div>
                     </li>
-                    <li class="nav-item"><a class="nav-item-hold" href="{{ path('indexGallery') }}"><i
-                                    class="nav-icon i-Folder"></i><span class="nav-text"> Gallery</span></a>
+                    <li class="nav-item" data-item="gallery"><a class="nav-item-hold" href="datatables.html"><i
+                                    style="color:#e6007e"
+                                    class="nav-icon i-Folder"></i><span class="nav-text">Gallery</span></a>
                         <div class="triangle"></div>
                     </li>
                 </ul>
+            </div>
+            <div class="sidebar-left-secondary rtl-ps-none" data-perfect-scrollbar="" data-suppress-scroll-x="true">
+                <!-- Submenu Dashboards-->
+                <ul class="childNav" data-parent="don">
+                    <li class="nav-item"><a href="{{ path('donsAdminfilter' ,{'filter':'payed'}) }}"><i
+                                    class="nav-icon i-Coins"></i><span class="item-name">Payée</span></a></li>
+                    <li class="nav-item"><a href="{{ path('donsAdmin') }}"><i class="nav-icon i-Coins-2"></i><span
+                                    class="item-name">Tous</span></a></li>
+                </ul>
+
+                <ul class="childNav" data-parent="widgets">
+                    <li class="nav-item"><a href="{{ path('indexEventPayedAdmin') }}"><i class="nav-icon i-Coins-3"></i><span
+                                    class="item-name">Payée</span></a></li>
+                    <li class="nav-item"><a href="{{ path('indexEventAdmin') }}"><i
+                                    class="nav-icon i-Calendar"></i><span
+                                    class="item-name">Tous les evenements</span></a></li>
+                </ul>
+                <!-- chartjs-->
+                <ul class="childNav" data-parent="charts">
+                    <li class="nav-item"><a href="{{ path('teamAdmin') }}"><i class="nav-icon i-Checked-User"></i><span
+                                    class="item-name">Membres</span></a></li>
+                    <li class="nav-item"><a href="{{ path('listFriend') }}"><i class="nav-icon i-Add-UserStar"></i><span
+                                    class="item-name">Sponsors</span></a></li>
+                </ul>
+                <ul class="childNav" data-parent="gallery">
+                    <li class="nav-item"><a href="{{ path('listSlider') }}"><i class="nav-icon i-Crop-2"></i><span
+                                    class="item-name">Slider</span></a></li>
+                    <li class="nav-item"><a href="{{ path('indexGallery') }}"><i class="nav-icon i-Loading-3"></i><span
+                                    class="item-name">Images & Videos</span></a></li>
+                </ul>
+            </div>
+
+
+            <div class="sidebar-overlay"></div>
         </div>
-        <div class="sidebar-overlay"></div>
+        <div style="margin: auto">
+            <img style="width: 120px!important;" src="{{ asset("") }}images/logo1.png" alt="">
+        </div>
+
     </div>
+
     <!-- =============== Left side End ================-->
     <div class="main-content-wrap sidenav-open d-flex flex-column">
         {% block body %}
@@ -85,6 +125,8 @@
 <script src="{{ asset("") }}assets/js/scripts/echart.options.min.js"></script>
 <script src="{{ asset("") }}assets/js/scripts/dashboard.v1.script.min.js"></script>
 <script src="{{ asset("") }}assets/js/plugins/datatables.min.js"></script>
-<script src="{{ asset("") }}assets/js/scripts/datatables.script.min.js"></script>*
+<script src="{{ asset("") }}assets/js/scripts/datatables.script.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+
 
 </body>

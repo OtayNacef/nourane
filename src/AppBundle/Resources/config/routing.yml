@@ -7,6 +7,9 @@ app_event:
 gallery:
     resource: "@AppBundle/Resources/config/routing/product.yml"
     prefix:   /gallery
+donate:
+    resource: "@AppBundle/Resources/config/routing/donate.yml"
+    prefix:   /don
 index:
     path:     /
     defaults: { _controller: AppBundle:Default:index }
@@ -25,19 +28,27 @@ aboutUs:
 Slider:
     path:     /slider
     defaults: { _controller: AppBundle:Default:Slider }
-
 article1:
     path:     /PREVENTION
     defaults: { _controller: AppBundle:Default:article1 }
-
 article2:
     path:     /Depistage
     defaults: { _controller: AppBundle:Default:article2 }
-
 article3:
-    path:     /Faire un don
+    path:     /Faire-un-don
     defaults: { _controller: AppBundle:Default:article3 }
-
 fairUnDon:
     path:     /fairUnDon/{price}
     defaults: { _controller: AppBundle:Default:don }
+checkpayment:
+    path:     /checkpayment/{id}/
+    defaults: { _controller: AppBundle:Donate:checkPayment }
+payment:
+    path:     /payment
+    defaults: { _controller: AppBundle:Event:payment }
+checkPaymentEve:
+    path:     /payment-check/{id}/
+    defaults: { _controller: AppBundle:Event:payment }
+failurl:
+    path:     /payment-failed
+    defaults: { _controller: AppBundle:Default:fail }

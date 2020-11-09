@@ -1,0 +1,36 @@
+admin:
+    resource: "@AdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+app:
+    resource: "@AppBundle/Resources/config/routing.yml"
+    prefix:   /
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+hackzilla_ticket:
+    resource: "@HackzillaTicketBundle/Resources/config/routing/ticket.yml"
+    prefix: /ticket
+hwi_oauth_redirect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/redirect.xml"
+    prefix:   /connect
+
+hwi_oauth_connect:
+    resource: "@HWIOAuthBundle/Resources/config/routing/connect.xml"
+    prefix:   /connect
+hwi_oauth_login:
+    resource: "@HWIOAuthBundle/Resources/config/routing/login.xml"
+    prefix:   /login
+facebook_login:
+    path: /connect/facebook
+google_login:
+    path: /connect/checkgoogle policy:    path: /policy
+    defaults: { _controller: AppBundle:Default:policy }
+tos:
+    path: /tos
+    defaults: { _controller: AppBundle:Default:tos }
+success:
+    path: /success
+    defaults: { _controller: AppBundle:Default:success }
+mydonation:
+    path: /profile/mes-don
+    defaults: { _controller: AppBundle:Donate:index }

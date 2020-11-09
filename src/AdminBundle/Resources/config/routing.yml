@@ -13,6 +13,9 @@ users:
 indexEventAdmin:
   path:     /events
   defaults: { _controller: AdminBundle:Default:listEvent}
+indexEventPayedAdmin:
+  path:     /events-payed
+  defaults: { _controller: AdminBundle:Default:listEventPayed}
 listactualite:
   path:     /
   defaults: { _controller: AdminBundle:Default:listactualite }
@@ -72,4 +75,21 @@ indexGalleryAdmin:
 deleteAlbums:
   path:     /deleteimages/{id}
   defaults: { _controller: AppBundle:Product:deleteAlbum }
-  
+donsAdmin:
+  path:     /dons
+  defaults: { _controller: AdminBundle:Default:donationList  }
+donsAdminfilter:
+  path:     /dons/{filter}
+  defaults: { _controller: AdminBundle:Default:donationFilter  }
+excelexport:
+  path:     /dons-export
+  defaults: { _controller: AdminBundle:Default:excelexport  }
+aventParticipation:
+  path:     /event-participation/{event}
+  defaults: { _controller: AdminBundle:Default:aventParticipation}
+excelexportEvent:
+  path:     /events-export
+  defaults: { _controller: AdminBundle:Default:excelexportEvent  }
+ShowDonator:
+  path:     /ShowDonator/{id}
+  defaults: { _controller: AdminBundle:Default:ShowDonator }

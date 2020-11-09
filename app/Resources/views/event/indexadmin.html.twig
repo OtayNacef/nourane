@@ -17,6 +17,7 @@
                         <th scope="col">Date debut</th>
                         <th scope="col">Date Fin</th>
                         <th scope="col">Action</th>
+                        <th scope="col">Participation</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -31,6 +32,9 @@
                                             class="nav-icon i-Pen-2 font-weight-bold"></i></a>
                                 <a class="text-danger mr-2" href="{{ path('event_delete', {'id': event.id}) }}"><i
                                             class="nav-icon i-Close-Window font-weight-bold"></i></a></td>
+                            <td><a class="text-success mr-2" href="{{ path('aventParticipation', {'event': event.id}) }}">Afficher</a></td>
+                            </td>
+
                         </tr>
                     {% endfor %}
 

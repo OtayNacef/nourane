@@ -16634,7 +16634,7 @@ a.typo_link.text-gray-900:after {
       .layout-sidebar-large .sidebar-left .navigation-left .nav-item.active {
         color: #663399; }
         .layout-sidebar-large .sidebar-left .navigation-left .nav-item.active .nav-item-hold {
-          color: #663399; }
+          color: #e6007e; }
       .layout-sidebar-large .sidebar-left .navigation-left .nav-item .nav-item-hold {
         display: block;
         width: 100%;
@@ -16663,7 +16663,7 @@ a.typo_link.text-gray-900:after {
         bottom: 0;
         border-style: solid;
         border-width: 0 0 30px 30px;
-        border-color: transparent transparent #663399 transparent; }
+        border-color: transparent transparent #e6007e transparent; }
 
 .layout-sidebar-large .sidebar-left-secondary {
   left: calc(-220px - 20px);
